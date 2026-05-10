@@ -1,0 +1,289 @@
+{
+  "chrome": {
+    "breadcrumbHome": "Inici",
+    "breadcrumbServices": "Serveis",
+    "eyebrowService": "SERVEI",
+    "eyebrowWhat": "QUÈ ÉS",
+    "eyebrowFor": "PER A QUI",
+    "eyebrowCaps": "CAPACITATS",
+    "eyebrowDelivery": "ENTREGA",
+    "deliveryTitle": "Com ho construïm",
+    "deliveryLede": "La seqüència de treball. Els temps s'ajusten a l'abast del projecte — sempre a mida.",
+    "eyebrowOutcomes": "RESULTATS",
+    "outcomesTitle": "El que aconsegueixes",
+    "eyebrowFaq": "DUBTES",
+    "faqTitle": "Preguntes freqüents",
+    "eyebrowRelated": "TAMBÉ OFERIM",
+    "relatedTitle": "Altres serveis",
+    "relatedLink": "Veure servei",
+    "ctaSub": "Primera trucada gratuïta. Una resposta clara en 20 minuts.",
+    "ctaPrimary": "Reserva una trucada",
+    "ctaEmail": "contact@mindrise-labs.com"
+  },
+  "items": {
+    "agents": {
+      "name": "Agents d'IA",
+      "tagline": ["Assistents que pensen,", "conversen i actuen."],
+      "sub": "Construïm agents a mida que parlen amb els teus clients, automatitzen el back-office o executen tasques dins del teu stack. Raonen amb context real, no són un chatbot amb FAQs.",
+      "stack": ["Frontier LLMs", "Multi-modal", "LangGraph", "Tool-use", "RAG", "Streaming"],
+      "whatTitle": "Agents, no chatbots.",
+      "whatBody": "Un agent és un sistema que rep una instrucció, planifica passos, consulta eines (CRM, ERP, bases de coneixement) i entrega un resultat o una decisió. Nosaltres dissenyem el cicle complet — prompting, arquitectura, memòria, avaluació — i l'integrem al teu dia a dia.",
+      "forWhoTitle": "Si reconeixes algun d'aquests escenaris:",
+      "forWho": [
+        "Rebeu centenars de consultes repetitives al suport i voleu un primer nivell automàtic amb escalat net.",
+        "Teniu processos interns (cotitzacions, onboarding, triatge) que depenen de reglament viu i documentació dispersa.",
+        "El vostre equip comercial perd hores omplint CRM, enviant correus de seguiment o qualificant leads.",
+        "Voleu explotar bases de coneixement internes (wikis, drives, tickets) amb respostes fiables i traçables."
+      ],
+      "capsTitle": "Què podem construir",
+      "capsLede": "Un agent neix d'un problema concret, no d'una tecnologia. Aquests són els patrons que dominem.",
+      "capabilities": [
+        { "name": "Agents de suport", "desc": "Primer nivell de suport amb accés a la base de coneixement, tiquets i CRM. Resol, classifica o escala amb context." },
+        { "name": "Agents de vendes", "desc": "Qualifiquen leads, enriqueixen dades, envien seguiments i preparen reunions. Integrats al teu CRM." },
+        { "name": "Agents operacionals", "desc": "Automatitzen processos interns: onboarding, KYC, triatge, cotitzacions. Amb punts de control humà." },
+        { "name": "Assistents de coneixement", "desc": "RAG sobre els teus documents: wikis, manuals, contractes. Respostes amb citacions verificables." },
+        { "name": "Multi-agent", "desc": "Orquestració de múltiples agents especialitzats que cooperen en tasques complexes de diversos passos." },
+        { "name": "Veu i telèfon", "desc": "Agents de veu per a IVRs intel·ligents, cribratge de trucades i reserves automatitzades." }
+      ],
+      "delivery": [
+        { "name": "Discovery tècnic", "desc": "Mapejat del procés, dades disponibles, sistemes a integrar i criteris d'èxit." },
+        { "name": "Prototip funcional", "desc": "Primer agent operatiu amb el cas d'ús prioritari, avaluat contra exemples reals." },
+        { "name": "Integració & producció", "desc": "Connexió a CRM/ERP, auth, logs, límits i canals (web, Slack, WhatsApp)." },
+        { "name": "Evolució", "desc": "Observabilitat, evals, optimització de cost i ampliació a nous fluxos." }
+      ],
+      "outcomes": [
+        { "lbl": "PRIMER AGENT", "val": "2–4 setmanes" },
+        { "lbl": "RESPOSTES 24/7", "val": "sense ampliar plantilla" },
+        { "lbl": "TRAÇABILITAT", "val": "100% amb logs i citacions" }
+      ],
+      "faq": [
+        { "q": "Quina diferència hi ha entre un agent i un chatbot?", "a": "Un chatbot segueix guions o FAQs. Un agent raona amb context, accedeix a sistemes (CRM, ERP), pren decisions i executa accions. Si canvia l'entorn, s'hi adapta sense reescriure regles." },
+        { "q": "Quin model utilitzeu?", "a": "El que encaixi millor per cada cas. Triem entre LLMs frontier per a raonament complex, models multi-modals per a veu, i models més petits per a tasques de baix cost. Som agnòstics de proveïdor i de versió." },
+        { "q": "I si l'agent s'equivoca o al·lucina?", "a": "Dissenyem sistemes d'avaluació continus i punts de control humà per als casos crítics. Cada resposta queda registrada amb el raonament i les fonts, perquè puguis auditar i millorar." },
+        { "q": "On s'allotgen les dades?", "a": "Depèn de la sensibilitat. Oferim desplegaments a la UE, infraestructura pròpia o híbrid. Cap dada surt del perímetre si no cal i sempre amb el teu consentiment explícit." },
+        { "q": "Puc migrar l'agent si un dia marxo?", "a": "Sí. Codi, prompts, dades i configuració són teus des del dia 1. Acompanyem la migració si cal." }
+      ],
+      "ctaTitle": "Vols un agent que faci tota aquesta feina?"
+    },
+    "n8n": {
+      "name": "Automatitzacions n8n",
+      "tagline": ["Fluxos que connecten", "tot el teu stack."],
+      "sub": "Dissenyem i mantenim automatitzacions robustes que eliminen la feina repetitiva — des de sincronitzar CRM amb facturació fins a orquestrar fluxos d'IA complexos. Amb observabilitat i manteniment real.",
+      "stack": ["n8n", "Zapier", "Make", "Webhooks", "APIs REST", "Self-hosted"],
+      "whatTitle": "Automatitzacions productives, no prototips.",
+      "whatBody": "La majoria de fluxos no-code moren per manca de manteniment, logs o gestió d'errors. Construïm els nostres amb l'estàndard d'un equip de software: control de versions, entorns, monitoring i documentació. Aguanten el dilluns al matí.",
+      "forWhoTitle": "Les situacions típiques:",
+      "forWho": [
+        "El vostre equip copia dades entre eines cada setmana (CRM, ERP, eines de facturació, base de dades).",
+        "Teniu un procés que arrenca amb un correu, un formulari o un webhook i acaba en múltiples sistemes.",
+        "Voleu afegir passos d'IA (classificació, extracció, resum) a fluxos existents sense refer tota l'arquitectura.",
+        "Teniu fluxos fets amb Zapier o Make que es trenquen sovint i volem migrar-los a una infraestructura fiable."
+      ],
+      "capsTitle": "Patrons que implementem",
+      "capsLede": "Cada cas és únic, però hi ha arquetips que dominem especialment bé.",
+      "capabilities": [
+        { "name": "Sincronització de dades", "desc": "CRM ↔ ERP ↔ facturació ↔ data warehouse. Bidireccional, amb resolució de conflictes i reintents." },
+        { "name": "Processament de documents", "desc": "Extracció estructurada de factures, contractes i PDFs amb IA, amb validació i enrutament automàtic." },
+        { "name": "Orquestració d'IA", "desc": "Pipelines multietapa amb diversos models, RAG i agents dins d'un mateix flux reutilitzable." },
+        { "name": "Notificacions intel·ligents", "desc": "Alertes a Slack, WhatsApp o correu amb priorització per IA i resums contextuals." },
+        { "name": "Integracions a mida", "desc": "Connectors propis quan no hi ha node oficial — APIs internes, sistemes legacy, bases de dades." },
+        { "name": "Self-hosting n8n", "desc": "Desplegament propi a UE amb seguretat, backups i observabilitat de nivell empresa." }
+      ],
+      "delivery": [
+        { "name": "Auditoria de processos", "desc": "Mapejat de fluxos actuals, sistemes implicats, volums i punts de dolor." },
+        { "name": "Disseny d'arquitectura", "desc": "Definim l'estructura del flux, gestió d'errors, retries i monitoring." },
+        { "name": "Construcció & test", "desc": "Implementem en entorn aïllat amb casos de prova reals abans de tocar producció." },
+        { "name": "Llançament & cura", "desc": "Desplegament, formació i suport continuat — incloent evolució quan canvien les eines." }
+      ],
+      "outcomes": [
+        { "lbl": "HORES ESTALVIADES", "val": "20–80h/mes típic" },
+        { "lbl": "ERRORS", "val": "caiguda dràstica" },
+        { "lbl": "MANTENIMENT", "val": "inclòs 90 dies" }
+      ],
+      "faq": [
+        { "q": "Per què n8n i no Zapier?", "a": "n8n és open source, self-hostable, suporta JavaScript avançat i té un cost fix — escalable sense sorpreses. Per a volums alts o fluxos sensibles és superior. Per a coses simples, Zapier encara és una opció raonable i també el fem servir." },
+        { "q": "Podem hostatjar-ho nosaltres mateixos?", "a": "Sí. Desplegar n8n al teu propi núvol o infraestructura és sovint el nostre default per a empreses amb requisits de sobirania de dades." },
+        { "q": "I si una eina canvia la seva API?", "a": "Els fluxos vius cal mantenir-los. Oferim un contracte de manteniment mensual que cobreix canvis d'APIs, migracions i optimització." },
+        { "q": "Això substitueix al meu equip IT?", "a": "No. Complementa. IT manté infraestructura; nosaltres construïm i mantenim els fluxos d'automatització especialitzats que requereixen criteri d'IA o integració intensiva." },
+        { "q": "Quan veuré els primers resultats?", "a": "Un primer flux productiu en 1–2 setmanes. Projectes més grans s'entreguen per fases, sempre amb valor visible abans dels 30 dies." }
+      ],
+      "ctaTitle": "Vols eliminar la feina repetitiva?"
+    },
+    "consulting": {
+      "name": "Consultoria estratègica",
+      "tagline": ["On posar IA", "i on no posar-ne."],
+      "sub": "T'ajudem a decidir on l'IA aporta valor real i on és una distracció. Auditem el teu negoci, prioritzem oportunitats, validem casos d'ús i et lliurem un roadmap honest i executable.",
+      "stack": ["Auditories", "Roadmaps", "POCs", "Governança", "Cost models", "Risk assessment"],
+      "whatTitle": "Estratègia abans de tecnologia.",
+      "whatBody": "El soroll al voltant de la IA fa que moltes empreses comprin solucions abans d'entendre el problema. Nosaltres comencem pel revés: entenem el negoci, identifiquem on hi ha valor i només llavors recomanem què construir, comprar o ignorar.",
+      "forWhoTitle": "Quan té sentit:",
+      "forWho": [
+        "Estàs avaluant solucions d'IA i necessites una mirada tècnica independent abans de signar contractes.",
+        "Tens un comitè de direcció que vol una estratègia clara d'IA per a 12–18 mesos, no titulars.",
+        "Has invertit en eines i no veus retorn — vols entendre per què i què cal canviar.",
+        "Vols formar un equip d'IA intern i necessites criteri sobre perfils, eines i prioritats."
+      ],
+      "capsTitle": "Què lliurem",
+      "capsLede": "Documents accionables, no PowerPoints decoratius. Cada entrega serveix per prendre una decisió.",
+      "capabilities": [
+        { "name": "Auditoria d'IA", "desc": "Inventari del que ja teniu, anàlisi de qualitat de dades, riscos i oportunitats. Punt de partida net." },
+        { "name": "Roadmap d'IA", "desc": "Pla a 12–18 mesos amb fites, dependències, costos i ROI estimat per cada iniciativa." },
+        { "name": "Avaluació de proveïdors", "desc": "Anàlisi tècnica de solucions del mercat amb pros, contres i alternatives realistes." },
+        { "name": "Casos d'ús prioritzats", "desc": "Llista de casos amb impacte, esforç, riscos i criteris de validació concrets." },
+        { "name": "Governança & risc", "desc": "Polítiques d'ús, gestió de dades, compliance UE AI Act i criteris d'adopció responsable." },
+        { "name": "Acompanyament executiu", "desc": "Sessions periòdiques amb el teu comitè per pilotar la transformació amb criteri." }
+      ],
+      "delivery": [
+        { "name": "Diagnosi inicial", "desc": "Sessions amb stakeholders, anàlisi de processos i de l'stack actual." },
+        { "name": "Anàlisi & priorització", "desc": "Treball intern per modelar costos, riscos i impactes per cada cas." },
+        { "name": "Lliurable executiu", "desc": "Document final + presentació al comitè amb recomanacions concretes." },
+        { "name": "Acompanyament", "desc": "Seguiment opcional durant l'execució: revisions, ajustaments i suport en decisions clau." }
+      ],
+      "outcomes": [
+        { "lbl": "ABAST", "val": "2–6 setmanes" },
+        { "lbl": "ENTREGA", "val": "document + sessió executiva" },
+        { "lbl": "IMPACTE", "val": "decisions amb criteri tècnic" }
+      ],
+      "faq": [
+        { "q": "Sou agnòstics o veneu sempre la mateixa solució?", "a": "Som agnòstics. No tenim acords de comissió amb cap proveïdor. La nostra recomanació és sovint 'no compreu res nou, optimitzeu el que ja teniu'." },
+        { "q": "Què passa si la conclusió és que no us necessitem?", "a": "És un resultat vàlid i el direm. Hem tancat consultories recomanant a clients que no inverteixin en IA encara — perquè no era el moment. La integritat és el motiu pel qual ens truquen." },
+        { "q": "Ajudeu només o també executeu?", "a": "Tots dos. Si vols, executem nosaltres mateixos les recomanacions. Si tens equip intern, el formem i acompanyem. Sovint és una barreja." },
+        { "q": "Quant costa?", "a": "Depèn de l'abast. Una auditoria petita pot ser 4–6k€. Un acompanyament executiu trimestral, 2–3k€/mes. Sempre acordat per endavant, sense sorpreses." },
+        { "q": "Signeu NDA?", "a": "Per descomptat. Treballem amb informació sensible (financera, de clients, estratègica) i mantenim la confidencialitat com a base no negociable." }
+      ],
+      "ctaTitle": "Vols un roadmap honest abans d'invertir?"
+    },
+    "training": {
+      "name": "Formació & tallers",
+      "tagline": ["Equips que entenen,", "no que repeteixen."],
+      "sub": "Programes de formació sobre IA aplicada per a equips reals. Sense buzzwords, amb exercicis pràctics, eines del teu dia a dia i un acompanyament que dura més enllà del taller.",
+      "stack": ["Programes a mida", "Tallers in-company", "Mentoria", "Ruta d'aprenentatge", "Avaluació", "Materials"],
+      "whatTitle": "Formació pràctica, no acadèmica.",
+      "whatBody": "La majoria de cursos d'IA es queden a 'què és un LLM'. Nosaltres anem a 'com fer servir un LLM dins el teu Excel, el teu CRM o el teu procés de revisió de contractes'. Cada sessió acaba amb una eina o flux concret que el participant pot fer servir l'endemà.",
+      "forWhoTitle": "Per a qui:",
+      "forWho": [
+        "Equips de mànagers i directius que han de prendre decisions sobre IA i necessiten criteri.",
+        "Equips operatius (vendes, suport, finances, RRHH) que volen incorporar IA al seu dia a dia.",
+        "Equips tècnics o de dades que volen passar de 'jugar amb ChatGPT' a construir solucions productives.",
+        "Empreses que volen formar a tota la plantilla amb un estàndard comú i una narrativa coherent."
+      ],
+      "capsTitle": "Formats que oferim",
+      "capsLede": "Tots els programes són a mida. Aquests són els punts de partida més habituals.",
+      "capabilities": [
+        { "name": "IA per a directius", "desc": "1–2 sessions executives per donar criteri estratègic. Què comprar, què construir, què ignorar." },
+        { "name": "IA aplicada per equips", "desc": "Programa de 4–8 setmanes amb eines pràctiques per al rol concret (vendes, suport, operacions...)." },
+        { "name": "Bootcamp tècnic", "desc": "Formació intensiva per a equips de desenvolupament: prompting, agents, RAG, integració d'APIs." },
+        { "name": "Workshops puntuals", "desc": "Tallers d'un dia sobre temes específics: n8n, MCP, agents, ètica de la IA, prompting avançat." },
+        { "name": "Mentoria continuada", "desc": "Sessions periòdiques 1:1 o en petit grup per acompanyar la implementació real al lloc de treball." },
+        { "name": "Auditoria de capacitats", "desc": "Diagnòstic del nivell actual de l'equip i pla de capacitació mesurable." }
+      ],
+      "delivery": [
+        { "name": "Diagnosi de necessitats", "desc": "Entrevistes per entendre l'equip, els rols i els objectius reals d'aprenentatge." },
+        { "name": "Disseny del programa", "desc": "Currículum a mida amb objectius, exercicis i criteris d'èxit acordats." },
+        { "name": "Execució", "desc": "Sessions presencials o remotes amb materials, exercicis i suport entre sessions." },
+        { "name": "Continuïtat", "desc": "Mentoria opcional, materials de referència i seguiment per consolidar l'aprenentatge." }
+      ],
+      "outcomes": [
+        { "lbl": "FORMAT", "val": "presencial, remot o híbrid" },
+        { "lbl": "DURADA", "val": "1 dia – 12 setmanes" },
+        { "lbl": "IDIOMES", "val": "CA, ES, EN, FR" }
+      ],
+      "faq": [
+        { "q": "Feu cursos oberts o només in-company?", "a": "Sobretot in-company i a mida — perquè creiem que és l'única manera que la formació es tradueixi en canvi real. Ocasionalment fem sessions obertes; pregunta per la propera." },
+        { "q": "Treballem en remot. És un problema?", "a": "Cap. Hem entregat programes 100% remots a empreses europees amb resultats equivalents als presencials. Adaptem dinàmiques i durada de sessions." },
+        { "q": "Què cal saber prèviament?", "a": "Depèn del programa. Els cursos per a no-tècnics no requereixen res. Els tècnics demanen Python o JS bàsic. Sempre fem una sessió 0 per anivellar coneixements." },
+        { "q": "Lliureu certificat?", "a": "Sí, certificat de finalització i d'aprofitament si hi ha avaluació. No som una entitat acreditada — el valor del certificat és la nostra reputació tècnica, no un títol oficial." },
+        { "q": "Subvencions Fundae o similars?", "a": "Per a clients amb seu a Espanya, sí. Pots bonificar la formació via Fundae i nosaltres acompanyem la documentació." }
+      ],
+      "ctaTitle": "Vols un equip que sàpiga aplicar IA?"
+    },
+    "mcp": {
+      "name": "Servidors MCP",
+      "tagline": ["Connecta les teves eines", "al cervell de l'IA."],
+      "sub": "Construïm servidors Model Context Protocol perquè els assistents d'IA — Claude, Cursor, ChatGPT — accedeixin de manera segura a les vostres bases de dades, APIs i sistemes interns. La capa que falta entre IA i empresa.",
+      "stack": ["MCP", "Claude Desktop", "Cursor", "TypeScript", "Python", "OAuth"],
+      "whatTitle": "El protocol que connecta IA i empresa.",
+      "whatBody": "MCP és l'estàndard obert (creat per Anthropic) que permet que un model d'IA llegeixi documents, consulti bases de dades o executi accions dins el teu stack — amb permisos clars i traçabilitat. Construïm els servidors MCP que necessites per fer servir Claude o Cursor amb les teves dades, sense que aquestes surtin del teu perímetre.",
+      "forWhoTitle": "Quan és l'eina adequada:",
+      "forWho": [
+        "Vols que el teu equip pugui consultar dades internes (CRM, base de dades, wiki) directament des de Claude o Cursor.",
+        "Tens APIs internes que voldries exposar a un assistent d'IA sense reescriure-les com a 'tools' a cada projecte.",
+        "Necessites una capa de control entre IA i sistemes empresarials, amb auth, logs i revocació granular.",
+        "Estàs construint un producte que vol oferir integració amb Claude Desktop, Cursor o altres clients MCP."
+      ],
+      "capsTitle": "Què construïm",
+      "capsLede": "Servidors MCP a mida que connecten IA amb la realitat operativa de la teva empresa.",
+      "capabilities": [
+        { "name": "MCP per CRMs", "desc": "Servidors per Salesforce, HubSpot, Pipedrive — perquè l'IA llegeixi i actualitzi dades de clients amb permisos." },
+        { "name": "MCP per bases de dades", "desc": "Accés segur a Postgres, MySQL, BigQuery o data warehouses, amb queries restringides i auditoria." },
+        { "name": "MCP per APIs internes", "desc": "Wrappers de les vostres APIs perquè un model les pugui invocar com a tools, sense exposar credencials." },
+        { "name": "MCP de coneixement", "desc": "Servidors que indexen wikis, drives, Notion o Confluence amb permisos respectats per usuari." },
+        { "name": "MCP d'accions", "desc": "Servidors que permeten a l'IA executar accions: crear tiquets, enviar correus, actualitzar registres, amb confirmació." },
+        { "name": "Distribució & seguretat", "desc": "Empaquetatge, distribució (Smithery, npm, registres privats), auth amb OAuth i polítiques d'ús." }
+      ],
+      "delivery": [
+        { "name": "Anàlisi de cas", "desc": "Entenem què cal exposar, quins permisos calen i quins clients MCP s'utilitzaran." },
+        { "name": "Disseny del servidor", "desc": "Definim els tools, les resources, els prompts i les polítiques d'auth." },
+        { "name": "Construcció & test", "desc": "Implementem en TypeScript o Python, amb test de regressió i validació amb Claude/Cursor." },
+        { "name": "Llançament", "desc": "Desplegament al teu entorn, distribució als clients i documentació per al teu equip." }
+      ],
+      "outcomes": [
+        { "lbl": "ENTREGA", "val": "2–6 setmanes" },
+        { "lbl": "STACK", "val": "TypeScript / Python" },
+        { "lbl": "CLIENTS", "val": "Claude, Cursor, agents propis" }
+      ],
+      "faq": [
+        { "q": "Què és MCP exactament?", "a": "Model Context Protocol — un estàndard obert d'Anthropic perquè els models d'IA puguin parlar amb eines externes de manera uniforme. És com USB per a IA: en lloc de fer integracions a mida per cada model, fas un servidor MCP i el poden fer servir Claude, Cursor i qualsevol client compatible." },
+        { "q": "Per què no fer-ho amb function calling tradicional?", "a": "Function calling és per cada model i cada projecte. MCP és reutilitzable, té un protocol estandarditzat, suporta auth, streaming i múltiples clients alhora. Per a empreses és molt més net." },
+        { "q": "Suporta auth de manera seriosa?", "a": "Sí. MCP suporta OAuth, claus API, identitats per usuari i polítiques granulars. Els servidors que construïm sempre respecten els permisos de l'usuari final, no operen com a 'super-admin'." },
+        { "q": "On allotgem el servidor MCP?", "a": "Pots allotjar-lo localment, al teu núvol o en infraestructura compartida segons el cas. Per a clients amb dades sensibles, normalment recomanem self-hosting a la UE." },
+        { "q": "Quan té sentit MCP i quan no?", "a": "Té sentit quan vols exposar diversos sistemes a múltiples clients d'IA i mantenir auth i traçabilitat. Per a una sola integració trivial entre un agent i una API, function calling clàssic és més simple." }
+      ],
+      "ctaTitle": "Vols connectar la teva IA al teu stack?"
+    },
+    "web": {
+      "name": "Webs amb IA integrada",
+      "tagline": ["Webs vives, no targetes", "de visita estàtiques."],
+      "sub": "Construïm webs i productes digitals on la IA forma part del teixit — cercadors semàntics, assistents que entenen el catàleg, recomanadors, generació de contingut. Tot amb un disseny acurat i una arquitectura que aguanta.",
+      "stack": ["Next.js", "React", "TypeScript", "Astro", "Tailwind", "Vercel"],
+      "whatTitle": "Webs que pensen, no només decoren.",
+      "whatBody": "La majoria de webs corporatives són catàlegs estàtics. Nosaltres construïm webs on la IA aporta valor concret a cada visitant: assistents que coneixen el producte, cerca semàntica que entén intenció, generació personalitzada, recomanadors. Sempre amb performance i SEO sòlids.",
+      "forWhoTitle": "Quan té sentit:",
+      "forWho": [
+        "Tens un catàleg ampli (productes, articles, casos) i necessites una cerca que entengui llenguatge natural.",
+        "Vols que els visitants tinguin un assistent que respongui sobre la teva oferta, preus o casos abans de contactar.",
+        "Estàs construint un SaaS on la IA és part del producte i necessites integrar-la a la web pública i al producte.",
+        "Vols renovar la web amb un disseny modern i, de pas, incorporar capacitats d'IA on aportin valor real."
+      ],
+      "capsTitle": "Què construïm",
+      "capsLede": "Webs i productes amb IA integrada des del primer prototip, no com afegit posterior.",
+      "capabilities": [
+        { "name": "Webs corporatives", "desc": "Webs ràpides, accessibles i ben dissenyades. Performance 95+, SEO sòlid, contingut estructurat." },
+        { "name": "Cerca semàntica", "desc": "Cercadors que entenen intenció, no només paraules clau. Sobre productes, articles o documentació." },
+        { "name": "Assistents de producte", "desc": "Chats/agents integrats que coneixen el catàleg i ajuden a comprar, comparar o contactar." },
+        { "name": "Recomanadors", "desc": "Sistemes de recomanació amb embeddings o models entrenats sobre dades del client." },
+        { "name": "Generació de contingut", "desc": "Pàgines o seccions generades dinàmicament amb IA — landing pages, descripcions, resums." },
+        { "name": "Apps & SaaS", "desc": "Aplicacions web completes amb IA integrada, auth, base de dades i panell d'admin." }
+      ],
+      "delivery": [
+        { "name": "Discovery & arquitectura", "desc": "Definim usuaris, fluxos clau, integracions i quina IA aporta valor real." },
+        { "name": "Disseny", "desc": "Sistema de disseny propi o adaptat, prototips d'alta fidelitat i revisions iteratives." },
+        { "name": "Implementació", "desc": "Construcció amb stack modern, IA integrada des de l'inici, performance i SEO de sèrie." },
+        { "name": "Llançament & evolució", "desc": "Desplegament, mesura, optimització i evolució contínua basada en dades reals." }
+      ],
+      "outcomes": [
+        { "lbl": "ENTREGA", "val": "4–12 setmanes" },
+        { "lbl": "PERFORMANCE", "val": "Lighthouse 95+" },
+        { "lbl": "STACK", "val": "Next.js / React / Astro" }
+      ],
+      "faq": [
+        { "q": "Què passa amb les webs típiques en WordPress?", "a": "Per a webs molt simples, WordPress segueix sent vàlid. Per a webs on volem performance, IA integrada i bona experiència de desenvolupament, sortim cap a Next.js, Astro o equivalents. La decisió depèn del cas." },
+        { "q": "Feu disseny o només programació?", "a": "Tots dos. Si tens dissenyador, treballem amb el seu Figma. Si no, dissenyem nosaltres — som obsessius amb el detall i tenim un sistema propi que adaptem a la teva marca." },
+        { "q": "Com afecta la IA al SEO?", "a": "Bé, si està ben fet. Generem el contingut crític estàticament o amb SSR perquè Google l'indexi. La IA aporta personalització a sobre, no substitueix el contingut canònic." },
+        { "q": "Manteniu la web després?", "a": "Sí, en règim mensual. Cobreix actualitzacions, seguretat, evolució de funcionalitats i monitoring. Sense contracte de manteniment, oferim suport puntual." },
+        { "q": "Què passa amb les dades dels usuaris?", "a": "Tot el que captem està declarat al teu cookie banner i a la política de privacitat. Som curosos amb GDPR i no ens agraden els 'fingerprinting' agressius. Si hi ha personalització amb IA, és transparent i revocable." }
+      ],
+      "ctaTitle": "Vols una web que pensi amb tu?"
+    }
+  }
+}

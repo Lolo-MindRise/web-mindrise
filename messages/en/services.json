@@ -1,0 +1,289 @@
+{
+  "chrome": {
+    "breadcrumbHome": "Home",
+    "breadcrumbServices": "Services",
+    "eyebrowService": "SERVICE",
+    "eyebrowWhat": "WHAT IT IS",
+    "eyebrowFor": "WHO IT'S FOR",
+    "eyebrowCaps": "CAPABILITIES",
+    "eyebrowDelivery": "DELIVERY",
+    "deliveryTitle": "How we build it",
+    "deliveryLede": "The sequence of work. Timing adapts to the project's scope — always tailored.",
+    "eyebrowOutcomes": "OUTCOMES",
+    "outcomesTitle": "What you get",
+    "eyebrowFaq": "FAQ",
+    "faqTitle": "Frequently asked questions",
+    "eyebrowRelated": "WE ALSO OFFER",
+    "relatedTitle": "Other services",
+    "relatedLink": "View service",
+    "ctaSub": "Free first call. A clear answer in 20 minutes.",
+    "ctaPrimary": "Book a call",
+    "ctaEmail": "contact@mindrise-labs.com"
+  },
+  "items": {
+    "agents": {
+      "name": "AI Agents",
+      "tagline": ["Assistants that think,", "talk and act."],
+      "sub": "We build custom agents that talk to your customers, automate back-office work or execute tasks inside your stack. They reason with real context — not chatbots with FAQs.",
+      "stack": ["Frontier LLMs", "Multi-modal", "LangGraph", "Tool-use", "RAG", "Streaming"],
+      "whatTitle": "Agents, not chatbots.",
+      "whatBody": "An agent is a system that receives an instruction, plans the steps, consults tools (CRM, ERP, knowledge bases) and delivers an outcome or a decision. We design the full cycle — prompting, architecture, memory, evaluation — and integrate it into your daily operations.",
+      "forWhoTitle": "If you recognise any of these scenarios:",
+      "forWho": [
+        "You get hundreds of repetitive support queries and want a clean automated first tier with proper escalation.",
+        "You have internal processes (quoting, onboarding, triage) that depend on living rules and scattered documentation.",
+        "Your sales team loses hours filling in the CRM, sending follow-ups or qualifying leads.",
+        "You want to leverage internal knowledge bases (wikis, drives, tickets) with reliable, traceable answers."
+      ],
+      "capsTitle": "What we can build",
+      "capsLede": "An agent is born from a specific problem, not a technology. These are the patterns we excel at.",
+      "capabilities": [
+        { "name": "Support agents", "desc": "First-line support with access to your knowledge base, tickets and CRM. Resolves, classifies or escalates with context." },
+        { "name": "Sales agents", "desc": "They qualify leads, enrich data, send follow-ups and prep meetings. Integrated with your CRM." },
+        { "name": "Operational agents", "desc": "Automate internal processes: onboarding, KYC, triage, quoting. With human checkpoints." },
+        { "name": "Knowledge assistants", "desc": "RAG on your documents: wikis, manuals, contracts. Answers with verifiable citations." },
+        { "name": "Multi-agent", "desc": "Orchestration of multiple specialised agents collaborating on complex multi-step tasks." },
+        { "name": "Voice & phone", "desc": "Voice agents for smart IVRs, call screening and automated bookings." }
+      ],
+      "delivery": [
+        { "name": "Technical discovery", "desc": "Mapping the process, available data, systems to integrate and success criteria." },
+        { "name": "Functional prototype", "desc": "First operational agent for the priority use case, evaluated against real examples." },
+        { "name": "Integration & production", "desc": "Hook-up with CRM/ERP, auth, logs, rate limits and channels (web, Slack, WhatsApp)." },
+        { "name": "Evolution", "desc": "Observability, evals, cost optimisation and expansion to new flows." }
+      ],
+      "outcomes": [
+        { "lbl": "FIRST AGENT", "val": "2–4 weeks" },
+        { "lbl": "24/7 RESPONSES", "val": "without growing the team" },
+        { "lbl": "TRACEABILITY", "val": "100% with logs and citations" }
+      ],
+      "faq": [
+        { "q": "What's the difference between an agent and a chatbot?", "a": "A chatbot follows scripts or FAQs. An agent reasons with context, accesses systems (CRM, ERP), makes decisions and executes actions. When the environment changes, it adapts without rewriting rules." },
+        { "q": "Which model do you use?", "a": "Whatever fits best for each case. We pick between frontier LLMs for complex reasoning, multi-modal models for voice, and smaller models for low-cost tasks. We are vendor- and version-agnostic." },
+        { "q": "What if the agent makes mistakes or hallucinates?", "a": "We build continuous evaluation systems and human checkpoints for critical cases. Every response is logged with reasoning and sources so you can audit and improve." },
+        { "q": "Where is the data hosted?", "a": "It depends on sensitivity. We offer EU deployments, dedicated infrastructure or hybrid setups. No data leaves the perimeter unless necessary, always with your explicit consent." },
+        { "q": "Can I migrate the agent if I ever leave?", "a": "Yes. Code, prompts, data and configuration are yours from day one. We support the migration if needed." }
+      ],
+      "ctaTitle": "Want an agent that handles all this work?"
+    },
+    "n8n": {
+      "name": "n8n Automations",
+      "tagline": ["Workflows that connect", "your whole stack."],
+      "sub": "We design and maintain robust automations that remove repetitive work — from syncing CRM with billing to orchestrating complex AI pipelines. With real observability and maintenance.",
+      "stack": ["n8n", "Zapier", "Make", "Webhooks", "REST APIs", "Self-hosted"],
+      "whatTitle": "Productive automations, not prototypes.",
+      "whatBody": "Most no-code flows die for lack of maintenance, logging or error handling. We build ours with the standard of a software team: version control, environments, monitoring and documentation. They survive Monday morning.",
+      "forWhoTitle": "Typical situations:",
+      "forWho": [
+        "Your team copies data between tools every week (CRM, ERP, billing tools, database).",
+        "You have a process that starts with an email, a form or a webhook and ends across multiple systems.",
+        "You want to add AI steps (classification, extraction, summarisation) to existing flows without rebuilding the architecture.",
+        "You have Zapier or Make flows that break often and you want to migrate to reliable infrastructure."
+      ],
+      "capsTitle": "Patterns we implement",
+      "capsLede": "Every case is unique, but there are archetypes we excel at.",
+      "capabilities": [
+        { "name": "Data synchronisation", "desc": "CRM ↔ ERP ↔ billing ↔ data warehouse. Two-way, with conflict resolution and retries." },
+        { "name": "Document processing", "desc": "Structured extraction of invoices, contracts and PDFs with AI, plus validation and auto-routing." },
+        { "name": "AI orchestration", "desc": "Multi-stage pipelines with several models, RAG and agents inside a single reusable flow." },
+        { "name": "Smart notifications", "desc": "Alerts to Slack, WhatsApp or email with AI prioritisation and contextual summaries." },
+        { "name": "Custom integrations", "desc": "Proprietary connectors when no official node exists — internal APIs, legacy systems, databases." },
+        { "name": "Self-hosted n8n", "desc": "Your own EU deployment with security, backups and enterprise-grade observability." }
+      ],
+      "delivery": [
+        { "name": "Process audit", "desc": "Map current flows, systems involved, volumes and pain points." },
+        { "name": "Architecture design", "desc": "We define flow structure, error handling, retries and monitoring." },
+        { "name": "Build & test", "desc": "We implement in an isolated environment with real test cases before touching production." },
+        { "name": "Launch & care", "desc": "Deployment, training and continuous support — including evolution when tools change." }
+      ],
+      "outcomes": [
+        { "lbl": "HOURS SAVED", "val": "typically 20–80h/mo" },
+        { "lbl": "ERRORS", "val": "sharp drop" },
+        { "lbl": "MAINTENANCE", "val": "90 days included" }
+      ],
+      "faq": [
+        { "q": "Why n8n and not Zapier?", "a": "n8n is open-source, self-hostable, supports advanced JavaScript and has a fixed cost — it scales without surprises. For high volumes or sensitive flows, it's superior. For simple things, Zapier is still reasonable and we use it too." },
+        { "q": "Can we self-host it?", "a": "Yes. Deploying n8n on your own cloud or infrastructure is often our default for companies with data-sovereignty requirements." },
+        { "q": "What if a tool changes its API?", "a": "Live flows need maintenance. We offer a monthly maintenance contract covering API changes, migrations and optimisation." },
+        { "q": "Does this replace my IT team?", "a": "No. It complements them. IT maintains infrastructure; we build and maintain the specialised automation flows that require AI judgement or intensive integration." },
+        { "q": "When will I see first results?", "a": "A first production flow in 1–2 weeks. Larger projects ship in phases, always with visible value within 30 days." }
+      ],
+      "ctaTitle": "Want to remove repetitive work?"
+    },
+    "consulting": {
+      "name": "Strategic consulting",
+      "tagline": ["Where to put AI", "and where not to."],
+      "sub": "We help you decide where AI delivers real value and where it's a distraction. We audit your business, prioritise opportunities, validate use cases and hand over an honest, executable roadmap.",
+      "stack": ["Audits", "Roadmaps", "POCs", "Governance", "Cost models", "Risk assessment"],
+      "whatTitle": "Strategy before technology.",
+      "whatBody": "The noise around AI makes many companies buy solutions before understanding the problem. We start the other way around: we understand the business, identify where the value is, and only then recommend what to build, buy or ignore.",
+      "forWhoTitle": "When it makes sense:",
+      "forWho": [
+        "You're evaluating AI solutions and need an independent technical view before signing contracts.",
+        "You have a leadership team that wants a clear 12–18 month AI strategy, not headlines.",
+        "You've invested in tools and don't see returns — you want to understand why and what to change.",
+        "You want to build an internal AI team and need judgement on profiles, tools and priorities."
+      ],
+      "capsTitle": "What we deliver",
+      "capsLede": "Actionable documents, not decorative slide decks. Every deliverable supports a decision.",
+      "capabilities": [
+        { "name": "AI audit", "desc": "Inventory of what you already have, data-quality analysis, risks and opportunities. A clean starting point." },
+        { "name": "AI roadmap", "desc": "12–18 month plan with milestones, dependencies, costs and estimated ROI per initiative." },
+        { "name": "Vendor evaluation", "desc": "Technical analysis of market solutions with pros, cons and realistic alternatives." },
+        { "name": "Prioritised use cases", "desc": "List of cases with impact, effort, risks and concrete validation criteria." },
+        { "name": "Governance & risk", "desc": "Usage policies, data management, EU AI Act compliance and criteria for responsible adoption." },
+        { "name": "Executive guidance", "desc": "Regular sessions with your leadership team to steer the transformation with judgement." }
+      ],
+      "delivery": [
+        { "name": "Initial diagnosis", "desc": "Sessions with stakeholders, process analysis and current-stack review." },
+        { "name": "Analysis & priorities", "desc": "Internal work to model costs, risks and impact per case." },
+        { "name": "Executive deliverable", "desc": "Final document + leadership presentation with concrete recommendations." },
+        { "name": "Ongoing guidance", "desc": "Optional follow-up during execution: reviews, tweaks and support on key decisions." }
+      ],
+      "outcomes": [
+        { "lbl": "SCOPE", "val": "2–6 weeks" },
+        { "lbl": "DELIVERY", "val": "document + executive session" },
+        { "lbl": "IMPACT", "val": "decisions backed by technical judgement" }
+      ],
+      "faq": [
+        { "q": "Are you vendor-agnostic or do you sell the same thing every time?", "a": "We're vendor-agnostic. We have no commission deals with any provider. Our recommendation is often 'don't buy anything new — optimise what you already have'." },
+        { "q": "What if the conclusion is that you don't need us?", "a": "It's a valid result and we'll say so. We've closed consulting engagements recommending clients not invest in AI yet — because the timing wasn't right. Integrity is why people call us back." },
+        { "q": "Do you only advise or do you also execute?", "a": "Both. If you want, we execute the recommendations ourselves. If you have an internal team, we train and coach them. Often it's a mix." },
+        { "q": "How much does it cost?", "a": "Depends on scope. A small audit can be €4–6k. A quarterly executive engagement, €2–3k/month. Always agreed up front, no surprises." },
+        { "q": "Do you sign NDAs?", "a": "Of course. We work with sensitive information (financial, customer, strategic) and treat confidentiality as a non-negotiable baseline." }
+      ],
+      "ctaTitle": "Want an honest roadmap before investing?"
+    },
+    "training": {
+      "name": "Training & workshops",
+      "tagline": ["Teams that understand,", "not just parrot."],
+      "sub": "Training programmes on applied AI for real teams. No buzzwords — practical exercises, your everyday tools and follow-up that outlasts the workshop.",
+      "stack": ["Tailored programmes", "In-company workshops", "Mentoring", "Learning paths", "Assessment", "Materials"],
+      "whatTitle": "Practical training, not academic.",
+      "whatBody": "Most AI courses stop at 'what is an LLM'. We go to 'how to use an LLM inside your Excel, your CRM or your contract-review process'. Each session ends with a concrete tool or flow the participant can use the next day.",
+      "forWhoTitle": "Who it's for:",
+      "forWho": [
+        "Manager and executive teams that need to make AI decisions and want sound judgement.",
+        "Operational teams (sales, support, finance, HR) that want to embed AI into their daily work.",
+        "Technical or data teams that want to move from 'playing with ChatGPT' to building productive solutions.",
+        "Companies that want to train the whole organisation with a common standard and coherent narrative."
+      ],
+      "capsTitle": "Formats we offer",
+      "capsLede": "Every programme is tailored. These are the most common starting points.",
+      "capabilities": [
+        { "name": "AI for executives", "desc": "1–2 executive sessions delivering strategic judgement. What to buy, what to build, what to ignore." },
+        { "name": "Applied AI for teams", "desc": "4–8 week programme with practical tools for the specific role (sales, support, operations...)." },
+        { "name": "Technical bootcamp", "desc": "Intensive training for engineering teams: prompting, agents, RAG, API integration." },
+        { "name": "One-off workshops", "desc": "Day-long workshops on specific topics: n8n, MCP, agents, AI ethics, advanced prompting." },
+        { "name": "Continuous mentoring", "desc": "Recurring 1:1 or small-group sessions to support real implementation on the job." },
+        { "name": "Capability audit", "desc": "Diagnosis of the team's current level and a measurable upskilling plan." }
+      ],
+      "delivery": [
+        { "name": "Needs assessment", "desc": "Interviews to understand the team, the roles and the real learning goals." },
+        { "name": "Programme design", "desc": "Tailored curriculum with agreed objectives, exercises and success criteria." },
+        { "name": "Execution", "desc": "On-site or remote sessions with materials, exercises and inter-session support." },
+        { "name": "Continuity", "desc": "Optional mentoring, reference materials and follow-up to consolidate the learning." }
+      ],
+      "outcomes": [
+        { "lbl": "FORMAT", "val": "in-person, remote or hybrid" },
+        { "lbl": "DURATION", "val": "1 day – 12 weeks" },
+        { "lbl": "LANGUAGES", "val": "CA, ES, EN, FR" }
+      ],
+      "faq": [
+        { "q": "Do you run open courses or only in-company?", "a": "Mostly in-company and tailored — we believe it's the only way training translates into real change. Occasionally we run open sessions; ask about the next one." },
+        { "q": "We work remote. Is that a problem?", "a": "Not at all. We've delivered 100% remote programmes to European companies with results equivalent to in-person ones. We adapt dynamics and session length." },
+        { "q": "What do participants need to know in advance?", "a": "It depends on the programme. Courses for non-technical roles need nothing. Technical ones ask for basic Python or JS. We always run a 'session 0' to level the field." },
+        { "q": "Do you deliver certificates?", "a": "Yes, completion certificates and assessed certificates when there is evaluation. We're not an accredited body — the certificate's value is our technical reputation, not an official title." },
+        { "q": "Subsidies (Fundae and similar)?", "a": "For clients headquartered in Spain, yes. Training can be subsidised via Fundae and we support the paperwork." }
+      ],
+      "ctaTitle": "Want a team that can actually apply AI?"
+    },
+    "mcp": {
+      "name": "MCP servers",
+      "tagline": ["Connect your tools", "to the AI brain."],
+      "sub": "We build Model Context Protocol servers so AI assistants — Claude, Cursor, ChatGPT — can securely access your databases, APIs and internal systems. The missing layer between AI and the enterprise.",
+      "stack": ["MCP", "Claude Desktop", "Cursor", "TypeScript", "Python", "OAuth"],
+      "whatTitle": "The protocol that connects AI and the enterprise.",
+      "whatBody": "MCP is the open standard (created by Anthropic) that lets an AI model read documents, query databases or execute actions inside your stack — with clear permissions and traceability. We build the MCP servers you need to use Claude or Cursor with your data, without it leaving your perimeter.",
+      "forWhoTitle": "When it's the right tool:",
+      "forWho": [
+        "You want your team to query internal data (CRM, database, wiki) directly from Claude or Cursor.",
+        "You have internal APIs you'd like to expose to an AI assistant without rewriting them as 'tools' in every project.",
+        "You need a control layer between AI and enterprise systems, with auth, logs and granular revocation.",
+        "You're building a product that wants to offer integration with Claude Desktop, Cursor or other MCP clients."
+      ],
+      "capsTitle": "What we build",
+      "capsLede": "Custom MCP servers that connect AI to your company's operational reality.",
+      "capabilities": [
+        { "name": "MCP for CRMs", "desc": "Servers for Salesforce, HubSpot, Pipedrive — so AI can read and update customer data with permissions." },
+        { "name": "MCP for databases", "desc": "Secure access to Postgres, MySQL, BigQuery or data warehouses, with restricted queries and auditing." },
+        { "name": "MCP for internal APIs", "desc": "Wrappers around your APIs so a model can invoke them as tools, without exposing credentials." },
+        { "name": "Knowledge MCP", "desc": "Servers that index wikis, drives, Notion or Confluence with per-user permissions respected." },
+        { "name": "Action MCP", "desc": "Servers that let AI execute actions: create tickets, send emails, update records, with confirmation." },
+        { "name": "Distribution & security", "desc": "Packaging, distribution (Smithery, npm, private registries), OAuth auth and usage policies." }
+      ],
+      "delivery": [
+        { "name": "Case analysis", "desc": "We understand what needs to be exposed, what permissions are required and which MCP clients will use it." },
+        { "name": "Server design", "desc": "We define tools, resources, prompts and auth policies." },
+        { "name": "Build & test", "desc": "Implement in TypeScript or Python, with regression tests and validation against Claude/Cursor." },
+        { "name": "Launch", "desc": "Deployment in your environment, client distribution and documentation for your team." }
+      ],
+      "outcomes": [
+        { "lbl": "DELIVERY", "val": "2–6 weeks" },
+        { "lbl": "STACK", "val": "TypeScript / Python" },
+        { "lbl": "CLIENTS", "val": "Claude, Cursor, custom agents" }
+      ],
+      "faq": [
+        { "q": "What exactly is MCP?", "a": "Model Context Protocol — an open standard from Anthropic so AI models can talk to external tools uniformly. It's like USB for AI: instead of bespoke integrations per model, you build one MCP server and Claude, Cursor and any compatible client can use it." },
+        { "q": "Why not do it with traditional function calling?", "a": "Function calling is per model and per project. MCP is reusable, has a standard protocol, supports auth, streaming and multiple clients at once. For companies it's much cleaner." },
+        { "q": "Does it support auth seriously?", "a": "Yes. MCP supports OAuth, API keys, per-user identities and granular policies. The servers we build always respect end-user permissions and don't operate as 'super-admin'." },
+        { "q": "Where do we host the MCP server?", "a": "Locally, in your cloud or on shared infrastructure depending on the case. For clients with sensitive data, we usually recommend self-hosting in the EU." },
+        { "q": "When does MCP make sense and when not?", "a": "It makes sense when you want to expose several systems to multiple AI clients while maintaining auth and traceability. For a single trivial integration between an agent and an API, classic function calling is simpler." }
+      ],
+      "ctaTitle": "Want to connect your AI to your stack?"
+    },
+    "web": {
+      "name": "AI-native websites",
+      "tagline": ["Living sites, not static", "business cards."],
+      "sub": "We build websites and digital products where AI is part of the fabric — semantic search, assistants that understand the catalogue, recommenders, content generation. All with careful design and architecture that holds up.",
+      "stack": ["Next.js", "React", "TypeScript", "Astro", "Tailwind", "Vercel"],
+      "whatTitle": "Sites that think, not just decorate.",
+      "whatBody": "Most corporate sites are static catalogues. We build sites where AI delivers concrete value to each visitor: assistants that know the product, semantic search that understands intent, personalised generation, recommenders. Always with strong performance and SEO.",
+      "forWhoTitle": "When it makes sense:",
+      "forWho": [
+        "You have a wide catalogue (products, articles, case studies) and need search that understands natural language.",
+        "You want visitors to have an assistant that answers about your offer, pricing or cases before they contact you.",
+        "You're building a SaaS where AI is part of the product and you need to integrate it into the public site and the product.",
+        "You want to refresh the website with modern design and, in passing, embed AI capabilities where they bring real value."
+      ],
+      "capsTitle": "What we build",
+      "capsLede": "Sites and products with AI integrated from the first prototype — not bolted on afterwards.",
+      "capabilities": [
+        { "name": "Corporate sites", "desc": "Fast, accessible, well-designed sites. Performance 95+, solid SEO, structured content." },
+        { "name": "Semantic search", "desc": "Search that understands intent, not just keywords. Over products, articles or documentation." },
+        { "name": "Product assistants", "desc": "Embedded chats/agents that know the catalogue and help users buy, compare or contact." },
+        { "name": "Recommenders", "desc": "Recommendation systems with embeddings or models trained on the client's data." },
+        { "name": "Content generation", "desc": "Pages or sections dynamically generated with AI — landing pages, descriptions, summaries." },
+        { "name": "Apps & SaaS", "desc": "Full web applications with embedded AI, auth, database and admin dashboard." }
+      ],
+      "delivery": [
+        { "name": "Discovery & architecture", "desc": "We define users, key flows, integrations and where AI brings real value." },
+        { "name": "Design", "desc": "Our own or adapted design system, hi-fi prototypes and iterative reviews." },
+        { "name": "Implementation", "desc": "Build on a modern stack, AI integrated from the start, performance and SEO standard." },
+        { "name": "Launch & evolution", "desc": "Deployment, measurement, optimisation and continuous evolution based on real data." }
+      ],
+      "outcomes": [
+        { "lbl": "DELIVERY", "val": "4–12 weeks" },
+        { "lbl": "PERFORMANCE", "val": "Lighthouse 95+" },
+        { "lbl": "STACK", "val": "Next.js / React / Astro" }
+      ],
+      "faq": [
+        { "q": "What about typical WordPress sites?", "a": "For very simple sites, WordPress is still valid. When we want performance, embedded AI and a good developer experience, we move to Next.js, Astro or equivalents. The decision depends on the case." },
+        { "q": "Do you do design or just engineering?", "a": "Both. If you have a designer, we work with their Figma. If not, we design — we're obsessive about detail and have our own system that we adapt to your brand." },
+        { "q": "How does AI affect SEO?", "a": "Well, if done right. We render critical content statically or via SSR so Google indexes it. AI adds personalisation on top, it doesn't replace the canonical content." },
+        { "q": "Do you maintain the site afterwards?", "a": "Yes, on a monthly retainer. It covers updates, security, feature evolution and monitoring. Without a maintenance contract, we offer ad-hoc support." },
+        { "q": "What about user data?", "a": "Everything we capture is declared in your cookie banner and privacy policy. We care about GDPR and dislike aggressive fingerprinting. If there is AI personalisation, it's transparent and revocable." }
+      ],
+      "ctaTitle": "Want a website that thinks with you?"
+    }
+  }
+}

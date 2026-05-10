@@ -1,0 +1,113 @@
+{
+  "hero": {
+    "eyebrow": "AI AUTOMATION STUDIO · ANDORRA",
+    "title": ["Construïm la intel·ligència", "que fa créixer", "la teva empresa."],
+    "accent": "intel·ligència",
+    "sub": "Agents d'IA, automatitzacions i sistemes a mida per a empreses que volen escalar sense augmentar l'equip.",
+    "ctaPrimary": "Reserva una demo",
+    "ctaSecondary": "Descobreix els serveis"
+  },
+  "services": {
+    "eyebrow": "EL QUE FEM",
+    "title": "Sis capes d'intel·ligència connectades",
+    "lede": "Connectem serveis especialitzats per transformar el teu negoci. Tots construïts per durar.",
+    "items": [
+      { "id": "agents", "slug": "agents-ia", "name": "Agents d'IA", "desc": "Assistents intel·ligents que conversen, raonen i executen tasques pel teu equip.", "tags": ["LLMs frontier", "Multi-modal", "Telegram"] },
+      { "id": "n8n", "slug": "automatitzacions-n8n", "name": "Automatitzacions n8n", "desc": "Fluxos que connecten les teves eines i eliminen la feina repetitiva.", "tags": ["n8n", "Zapier", "Make"] },
+      { "id": "consulting", "slug": "consultoria-ia", "name": "Consultoria IA", "desc": "Analitzem el teu negoci i dissenyem l'estratègia d'implementació.", "tags": ["Auditoria", "Roadmap", "ROI"] },
+      { "id": "training", "slug": "formacio-a-mida", "name": "Formació a mida", "desc": "Formem el teu equip per treballar amb IA — generalista o sobre els nostres sistemes.", "tags": ["On-site", "Async", "Playbooks"] },
+      { "id": "mcp", "slug": "integracions-mcp", "name": "Integracions MCP / Claude Code", "desc": "Connectem Claude al teu stack amb el Model Context Protocol.", "tags": ["MCP", "Tool-use", "APIs"] },
+      { "id": "web", "slug": "disseny-web", "name": "Disseny web", "desc": "Webs ràpides, premium i optimitzades per convertir.", "tags": ["Next.js", "Framer", "SEO"] }
+    ],
+    "soon": { "id": "saas", "name": "SaaS a mida", "desc": "Construïm aplicacions SaaS especialitzades per al teu sector.", "badge": "Pròximament" },
+    "more": "Saber-ne més"
+  },
+  "process": {
+    "eyebrow": "PROCÉS",
+    "title": "Com ho fem",
+    "lede": "Cinc etapes. Una metodologia provada.",
+    "note": "El calendari és sempre a mida. Les fases que veus a continuació descriuen la seqüència de treball, no una durada fixa: cada projecte avança al ritme que necessita.",
+    "steps": [
+      { "n": "01", "name": "Descoberta", "desc": "Entenem el teu negoci a fons. Identifiquem processos de major impacte.", "phase": "Inici" },
+      { "n": "02", "name": "Disseny", "desc": "Arquitectem la solució a mida, amb mètriques i punts de control.", "phase": "Fase de planificació" },
+      { "n": "03", "name": "Construcció", "desc": "Desenvolupem, provem i iterem amb el teu equip de forma continuada.", "phase": "Fase de desenvolupament" },
+      { "n": "04", "name": "Desplegament", "desc": "Posada en marxa supervisada. Formació i handover complet.", "phase": "Llançament" },
+      { "n": "05", "name": "Evolució", "desc": "Manteniment, millora contínua i ampliació a nous processos sota pressupost.", "phase": "Continu" }
+    ]
+  },
+  "cases": {
+    "eyebrow": "RESULTATS REALS",
+    "title": "Casos d'èxit",
+    "lede": "Sistemes que ja estan funcionant i generant valor.",
+    "items": [
+      { "sector": "E-commerce · Atenció al client", "metric": "−70%", "metricLabel": "temps en tasques repetitives", "body": "Agent conversacional multicanal que resol el 68% de les consultes sense intervenció humana i escala al suport L1 només quan cal.", "stack": ["LLM", "n8n", "Supabase", "WhatsApp"] },
+      { "sector": "Fintech · Operacions", "metric": "24/7", "metricLabel": "atenció al client automatitzada", "body": "Pipeline de KYC + onboarding assistit per IA que prepara l'expedient en minuts i allibera hores setmanals a l'equip.", "stack": ["n8n", "LLM", "Notion", "Slack"] },
+      { "sector": "Hospitalitat · Back-office", "metric": "−42h/mes", "metricLabel": "en processament de factures", "body": "Extracció automàtica de factures de proveïdor i conciliació amb l'ERP. Zero errors humans, trazabilitat total.", "stack": ["LLM", "n8n", "Xero", "Telegram"] },
+      { "sector": "Serveis professionals · Revenue", "metric": "+38%", "metricLabel": "taxa de conversió de leads", "body": "Qualificació i resposta automatitzada de leads inbound amb priorització per IA. Cada lead rep una primera resposta personalitzada en menys d'un minut.", "stack": ["LLM", "HubSpot", "n8n", "Gmail"] },
+      { "sector": "Logística · Velocitat", "metric": "12×", "metricLabel": "més ràpid en preparar albarans", "body": "Sistema d'extracció i validació de documents de transport. El que abans trigava hores ara es completa en minuts, amb menys errors.", "stack": ["LLM", "MCP", "n8n", "Google Sheets"] }
+    ],
+    "ctaTitle": "Vols saber com ho vam fer?",
+    "cta": "Parlem-ne"
+  },
+  "about": {
+    "eyebrow": "SOBRE NOSALTRES",
+    "title": "Un equip petit, obsessionat amb el resultat.",
+    "body": "Som enginyers, estrategs i consultors que construïm sistemes d'IA per a empreses que volen resultats mesurables, no promeses. Treballem remot des d'Andorra i in-person quan cal.",
+    "cta": "Coneix-nos",
+    "href": "/sobre-nosaltres"
+  },
+  "why": {
+    "eyebrow": "PER QUÈ MINDRISE",
+    "title": "El que ens fa diferents",
+    "items": [
+      { "name": "Arquitectura pròpia", "desc": "No fem scripts d'una setmana. Construïm sistemes que aguanten en producció." },
+      { "name": "IA aplicada, no moda", "desc": "Cada implementació respon a un objectiu de negoci mesurable." },
+      { "name": "Acompanyament real", "desc": "No et deixem sol després del llançament. Continuïtat garantida." },
+      { "name": "Base a Andorra", "desc": "Entenem el context local i treballem amb empreses a tot Europa." },
+      { "name": "Stack agnòstic", "desc": "Escollim la tecnologia segons el problema, no segons moda ni partner comercial." },
+      { "name": "Transparència total", "desc": "Entregues visibles cada setmana. Codi, decisions i accessos sempre al teu abast." }
+    ],
+    "stats": [
+      { "n": 20, "suf": "+", "label": "projectes entregats" },
+      { "n": 15, "suf": "+", "label": "empreses confien" },
+      { "n": 4, "suf": "", "label": "idiomes de servei" },
+      { "n": 100, "suf": "%", "label": "projectes a mida" }
+    ],
+    "statsDisclaimer": "Dades acumulades de l'equip fundador."
+  },
+  "testimonial": {
+    "eyebrow": "TESTIMONIS",
+    "q": "El seu sistema de consulta legal ha canviat com treballo. Dedico menys temps a cercar i més a pensar, que és el que el client em paga. Van entendre la complexitat del dret andorrà abans d'escriure una sola línia de codi.",
+    "name": "E. B.",
+    "role": "Consultor",
+    "co": "Boné Consulting"
+  },
+  "blog": {
+    "eyebrow": "INSIGHTS",
+    "title": "Des del laboratori",
+    "categories": ["ARQUITECTURA", "CASES", "TÈCNIC", "ESTRATÈGIA", "NOVETATS"],
+    "items": [
+      { "slug": "agents-ia-no-son-chatbots", "cat": "ARQUITECTURA", "title": "Per què els agents d'IA no són chatbots (ni ho han de ser)", "date": "18 abr 2026", "excerpt": "La diferència entre un script i un sistema que raona: arquitectura, memòria i ferramentes." },
+      { "slug": "n8n-42h-mes", "cat": "CASES", "title": "Com un flux n8n va eliminar 42h/mes de feina manual", "date": "02 abr 2026", "excerpt": "Un cas real d'automatització de back-office a hospitalitat, pas a pas." },
+      { "slug": "mcp-claude-code", "cat": "TÈCNIC", "title": "MCP i Claude Code: un nou model d'integració", "date": "24 mar 2026", "excerpt": "El Model Context Protocol canvia com connectem l'IA amb les eines que ja fas servir." }
+    ],
+    "read": "Llegir",
+    "index": "Veure tots els articles"
+  },
+  "faq": {
+    "eyebrow": "DUBTES",
+    "title": "Preguntes freqüents",
+    "items": [
+      { "q": "Treballeu amb empreses fora d'Andorra?", "a": "Sí. Tenim clients actius a Espanya, França i altres països europeus. Operem remotament amb sessions in-person segons necessitat, i el català, castellà, anglès i francès són llengües de treball." },
+      { "q": "Com funcionen els pressupostos?", "a": "Treballem sempre a pressupost tancat, definit després d'una descoberta inicial curta. No cobrem per hora: cobrem pel resultat acordat. No publiquem llistes de preus perquè cada projecte és a mida." },
+      { "q": "Com definiu els terminis?", "a": "El calendari es defineix a la primera trucada, un cop entenem l'abast. No prometem durades abans de conèixer el problema. Fem entregues visibles de forma continuada perquè puguis validar cada pas." },
+      { "q": "Què és el Model Context Protocol (MCP)?", "a": "Un estàndard obert, impulsat per Anthropic, que permet connectar models d'IA amb eines i dades externes de forma segura i modular. L'utilitzem per connectar Claude al teu stack sense haver de reconstruir cada integració." },
+      { "q": "Oferiu manteniment després del llançament?", "a": "Sí. Cada projecte inclou un període de garantia i oferim plans de manteniment que cobreixen evolució, monitorització i suport prioritari. Ningú es queda sol després del deploy." },
+      { "q": "Les vostres solucions són segures i compleixen el GDPR?", "a": "Sí. Treballem amb proveïdors compatibles amb GDPR, apliquem minimització de dades per defecte i documentem els fluxos d'informació. Podem operar amb dades sensibles amb data processing agreements específics." },
+      { "q": "Qui és el propietari del que construïu? Qui té els accessos?", "a": "Tu. Tot el codi, configuracions, prompts, fluxos i credencials són teus des del primer dia. Fem el handover complet i documentat. No hi ha lock-in: si vols marxar, marxes." },
+      { "q": "I si el meu equip no té coneixements tècnics?", "a": "És el cas més habitual. Dissenyem les solucions perquè siguin operables per persones no-tècniques i incloem formació específica sobre els sistemes que construïm per al teu negoci." },
+      { "q": "Quines eines i models utilitzeu?", "a": "Escollim la tecnologia segons el problema: Claude (Anthropic), GPT (OpenAI), models open-source quan té sentit, n8n per a orquestració, Supabase / PostgreSQL per a dades, MCP per a integracions. Stack agnòstic, sense partners comercials que condicionin les decisions." },
+      { "q": "Com comencem un projecte junts?", "a": "Amb una trucada inicial. Entenem el context, identifiquem el procés de major impacte i t'enviem una proposta tancada amb abast, entregables i pressupost." }
+    ]
+  }
+}

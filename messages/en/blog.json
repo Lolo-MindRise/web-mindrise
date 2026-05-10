@@ -1,0 +1,35 @@
+{
+  "blogNav": "Blog",
+  "backHome": "Home",
+  "blogTitle": "From the lab",
+  "blogEyebrow": "INSIGHTS",
+  "blogSub": "Architecture, real cases and technical thinking on applied AI.",
+  "catsAll": "All",
+  "cats": ["ARCHITECTURE", "CASES", "TECHNICAL", "STRATEGY", "NEWS"],
+  "read": "Read",
+  "readMore": "Read article",
+  "pageOf": "Page {a} of {b}",
+  "prev": "Previous",
+  "next": "Next",
+  "none": "No articles in this category yet.",
+  "indexCta": {
+    "eye": "GOT A TECHNICAL QUESTION?",
+    "t": "Let's talk",
+    "p": "If you want to go deeper on any of these topics for your case, a short conversation usually resolves more than a white paper.",
+    "btn": "Let's talk"
+  },
+  "postEye": "ARTICLE",
+  "publishedOn": "Published",
+  "by": "by",
+  "author": "MindRise team",
+  "notAvailable": "This article is available in Catalan.",
+  "seeAllCa": "See all articles",
+  "backToBlog": "Back to blog",
+  "related": "Keep reading",
+  "postCta": {
+    "eye": "INTERESTED?",
+    "t": "Apply it to your case",
+    "p": "A first call is the best way to see whether this can be adapted to your business.",
+    "btn": "Book a call"
+  }
+}

@@ -1,0 +1,113 @@
+{
+  "hero": {
+    "eyebrow": "AI AUTOMATION STUDIO · ANDORRA",
+    "title": ["We build the intelligence", "that grows", "your business."],
+    "accent": "intelligence",
+    "sub": "AI agents, automations and tailor-made systems for companies that want to scale without growing the team.",
+    "ctaPrimary": "Book a demo",
+    "ctaSecondary": "Explore our services"
+  },
+  "services": {
+    "eyebrow": "WHAT WE DO",
+    "title": "Six connected layers of intelligence",
+    "lede": "Specialised services that work together to transform your business. All built to last.",
+    "items": [
+      { "id": "agents", "slug": "agents-ia", "name": "AI Agents", "desc": "Smart assistants that converse, reason and execute tasks for your team.", "tags": ["Frontier LLMs", "Multi-modal", "Telegram"] },
+      { "id": "n8n", "slug": "automatitzacions-n8n", "name": "n8n Automations", "desc": "Workflows that connect your tools and remove repetitive work.", "tags": ["n8n", "Zapier", "Make"] },
+      { "id": "consulting", "slug": "consultoria-ia", "name": "AI Consulting", "desc": "We analyse your business and design the implementation strategy.", "tags": ["Audit", "Roadmap", "ROI"] },
+      { "id": "training", "slug": "formacio-a-mida", "name": "Tailored Training", "desc": "We train your team to work with AI — generalist or on the systems we build for you.", "tags": ["On-site", "Async", "Playbooks"] },
+      { "id": "mcp", "slug": "integracions-mcp", "name": "MCP / Claude Code Integrations", "desc": "We connect Claude to your stack with the Model Context Protocol.", "tags": ["MCP", "Tool-use", "APIs"] },
+      { "id": "web", "slug": "disseny-web", "name": "Web design", "desc": "Fast, premium websites optimised to convert.", "tags": ["Next.js", "Framer", "SEO"] }
+    ],
+    "soon": { "id": "saas", "name": "Custom SaaS", "desc": "We build specialised SaaS applications for your industry.", "badge": "Coming soon" },
+    "more": "Learn more"
+  },
+  "process": {
+    "eyebrow": "PROCESS",
+    "title": "How we work",
+    "lede": "Five stages. A proven methodology.",
+    "note": "The schedule is always tailored. The phases below describe the sequence of work, not a fixed duration: every project advances at the pace it needs.",
+    "steps": [
+      { "n": "01", "name": "Discovery", "desc": "We understand your business deeply. We identify the highest-impact processes.", "phase": "Kick-off" },
+      { "n": "02", "name": "Design", "desc": "We architect the tailored solution, with metrics and checkpoints.", "phase": "Planning phase" },
+      { "n": "03", "name": "Build", "desc": "We develop, test and iterate with your team continuously.", "phase": "Development phase" },
+      { "n": "04", "name": "Deployment", "desc": "Supervised go-live. Training and complete handover.", "phase": "Launch" },
+      { "n": "05", "name": "Evolution", "desc": "Ongoing maintenance, continuous improvement and expansion to new processes under budget.", "phase": "Ongoing" }
+    ]
+  },
+  "cases": {
+    "eyebrow": "REAL OUTCOMES",
+    "title": "Case studies",
+    "lede": "Systems already running and creating value.",
+    "items": [
+      { "sector": "E-commerce · Customer support", "metric": "−70%", "metricLabel": "time in repetitive tasks", "body": "Multi-channel conversational agent that resolves 68% of queries without human intervention and escalates to L1 only when needed.", "stack": ["LLM", "n8n", "Supabase", "WhatsApp"] },
+      { "sector": "Fintech · Operations", "metric": "24/7", "metricLabel": "automated customer service", "body": "AI-assisted KYC + onboarding pipeline that prepares the file in minutes and frees up weekly hours for the team.", "stack": ["n8n", "LLM", "Notion", "Slack"] },
+      { "sector": "Hospitality · Back-office", "metric": "−42h/mo", "metricLabel": "in invoice processing", "body": "Automatic supplier-invoice extraction and reconciliation with the ERP. Zero human errors, full traceability.", "stack": ["LLM", "n8n", "Xero", "Telegram"] },
+      { "sector": "Professional services · Revenue", "metric": "+38%", "metricLabel": "lead conversion rate", "body": "Automated qualification and reply for inbound leads with AI-driven prioritisation. Every lead gets a personalised first reply in under a minute.", "stack": ["LLM", "HubSpot", "n8n", "Gmail"] },
+      { "sector": "Logistics · Speed", "metric": "12×", "metricLabel": "faster delivery-note prep", "body": "Extraction and validation system for transport documents. What used to take hours now completes in minutes, with fewer errors.", "stack": ["LLM", "MCP", "n8n", "Google Sheets"] }
+    ],
+    "ctaTitle": "Want to know how we did it?",
+    "cta": "Let's talk"
+  },
+  "about": {
+    "eyebrow": "ABOUT US",
+    "title": "A small team, obsessed with the outcome.",
+    "body": "We are engineers, strategists and consultants building AI systems for companies that want measurable results, not promises. We work remotely from Andorra and on-site when needed.",
+    "cta": "Get to know us",
+    "href": "/sobre-nosaltres"
+  },
+  "why": {
+    "eyebrow": "WHY MINDRISE",
+    "title": "What sets us apart",
+    "items": [
+      { "name": "In-house architecture", "desc": "We don't ship one-week scripts. We build systems that survive in production." },
+      { "name": "Applied AI, not hype", "desc": "Every implementation answers to a measurable business goal." },
+      { "name": "Real follow-through", "desc": "We don't leave you alone after launch. Continuity guaranteed." },
+      { "name": "Based in Andorra", "desc": "We understand the local context and work with companies across Europe." },
+      { "name": "Agnostic stack", "desc": "We pick technology by the problem, not by trend or commercial partnership." },
+      { "name": "Total transparency", "desc": "Visible deliveries every week. Code, decisions and access always within reach." }
+    ],
+    "stats": [
+      { "n": 20, "suf": "+", "label": "projects delivered" },
+      { "n": 15, "suf": "+", "label": "trusted by companies" },
+      { "n": 4, "suf": "", "label": "service languages" },
+      { "n": 100, "suf": "%", "label": "tailor-made projects" }
+    ],
+    "statsDisclaimer": "Cumulative figures from the founding team."
+  },
+  "testimonial": {
+    "eyebrow": "TESTIMONIALS",
+    "q": "Their legal research system has changed how I work. I spend less time searching and more time thinking, which is what clients actually pay me for. They understood the complexity of Andorran law before writing a single line of code.",
+    "name": "E. B.",
+    "role": "Consultant",
+    "co": "Boné Consulting"
+  },
+  "blog": {
+    "eyebrow": "INSIGHTS",
+    "title": "From the lab",
+    "categories": ["ARCHITECTURE", "CASES", "TECHNICAL", "STRATEGY", "NEWS"],
+    "items": [
+      { "slug": "agents-ia-no-son-chatbots", "cat": "ARCHITECTURE", "title": "Why AI agents are not chatbots (and shouldn't be)", "date": "18 Apr 2026", "excerpt": "The difference between a script and a system that reasons: architecture, memory and tools." },
+      { "slug": "n8n-42h-mes", "cat": "CASES", "title": "How an n8n flow eliminated 42h/month of manual work", "date": "02 Apr 2026", "excerpt": "A real back-office automation case in hospitality, step by step." },
+      { "slug": "mcp-claude-code", "cat": "TECHNICAL", "title": "MCP and Claude Code: a new integration model", "date": "24 Mar 2026", "excerpt": "The Model Context Protocol changes how we connect AI with the tools you already use." }
+    ],
+    "read": "Read",
+    "index": "See all articles"
+  },
+  "faq": {
+    "eyebrow": "FAQ",
+    "title": "Frequently asked questions",
+    "items": [
+      { "q": "Do you work with companies outside Andorra?", "a": "Yes. We have active clients in Spain, France and other European countries. We work remotely with on-site sessions as needed; Catalan, Spanish, English and French are working languages." },
+      { "q": "How do quotes work?", "a": "We always work on a fixed-price basis, defined after a short initial discovery. We don't bill by the hour: we bill for the agreed outcome. We don't publish price lists because every project is custom." },
+      { "q": "How do you set timelines?", "a": "The schedule is defined in the first call, once the scope is clear. We don't promise durations before knowing the problem. We make visible deliveries continuously so you can validate every step." },
+      { "q": "What is the Model Context Protocol (MCP)?", "a": "An open standard, driven by Anthropic, that allows AI models to connect with external tools and data securely and modularly. We use it to plug Claude into your stack without rebuilding every integration." },
+      { "q": "Do you offer post-launch maintenance?", "a": "Yes. Every project includes a guarantee period and we offer maintenance plans covering evolution, monitoring and priority support. No one gets left alone after the deploy." },
+      { "q": "Are your solutions secure and GDPR-compliant?", "a": "Yes. We work with GDPR-compatible providers, apply data minimisation by default and document information flows. We can operate with sensitive data under specific data processing agreements." },
+      { "q": "Who owns what you build? Who has the access?", "a": "You do. All code, configurations, prompts, flows and credentials are yours from day one. We do a complete, documented handover. No lock-in: if you want to leave, you leave." },
+      { "q": "What if my team isn't technical?", "a": "That's the most common case. We design solutions so they can be operated by non-technical people, and we include specific training on the systems we build for your business." },
+      { "q": "What tools and models do you use?", "a": "We pick technology by the problem: Claude (Anthropic), GPT (OpenAI), open-source models when it makes sense, n8n for orchestration, Supabase / PostgreSQL for data, MCP for integrations. Agnostic stack, no commercial partnerships steering decisions." },
+      { "q": "How do we start a project together?", "a": "With an initial call. We understand the context, identify the highest-impact process and send you a fixed proposal with scope, deliverables and budget." }
+    ]
+  }
+}

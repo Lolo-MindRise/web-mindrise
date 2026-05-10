@@ -1,0 +1,35 @@
+{
+  "blogNav": "Blog",
+  "backHome": "Inicio",
+  "blogTitle": "Desde el laboratorio",
+  "blogEyebrow": "INSIGHTS",
+  "blogSub": "Arquitectura, casos reales y pensamiento técnico sobre IA aplicada.",
+  "catsAll": "Todos",
+  "cats": ["ARQUITECTURA", "CASOS", "TÉCNICO", "ESTRATEGIA", "NOVEDADES"],
+  "read": "Leer",
+  "readMore": "Leer el artículo",
+  "pageOf": "Página {a} de {b}",
+  "prev": "Anterior",
+  "next": "Siguiente",
+  "none": "No hay artículos en esta categoría todavía.",
+  "indexCta": {
+    "eye": "¿TIENES UNA DUDA TÉCNICA?",
+    "t": "Hablemos",
+    "p": "Si quieres profundizar en alguno de estos temas para tu caso, una conversación corta suele resolver más que un white paper.",
+    "btn": "Hablemos"
+  },
+  "postEye": "ARTÍCULO",
+  "publishedOn": "Publicado el",
+  "by": "por",
+  "author": "Equipo MindRise",
+  "notAvailable": "Este artículo está disponible en catalán.",
+  "seeAllCa": "Ver todos los artículos",
+  "backToBlog": "Volver al blog",
+  "related": "Sigue leyendo",
+  "postCta": {
+    "eye": "¿TE INTERESA?",
+    "t": "Aplícalo a tu caso",
+    "p": "Una primera llamada es la mejor manera de entender si esto se puede adaptar a tu negocio.",
+    "btn": "Reserva una llamada"
+  }
+}

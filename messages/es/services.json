@@ -1,0 +1,289 @@
+{
+  "chrome": {
+    "breadcrumbHome": "Inicio",
+    "breadcrumbServices": "Servicios",
+    "eyebrowService": "SERVICIO",
+    "eyebrowWhat": "QUÉ ES",
+    "eyebrowFor": "PARA QUIÉN",
+    "eyebrowCaps": "CAPACIDADES",
+    "eyebrowDelivery": "ENTREGA",
+    "deliveryTitle": "Cómo lo construimos",
+    "deliveryLede": "La secuencia de trabajo. Los tiempos se ajustan al alcance del proyecto — siempre a medida.",
+    "eyebrowOutcomes": "RESULTADOS",
+    "outcomesTitle": "Lo que consigues",
+    "eyebrowFaq": "DUDAS",
+    "faqTitle": "Preguntas frecuentes",
+    "eyebrowRelated": "TAMBIÉN OFRECEMOS",
+    "relatedTitle": "Otros servicios",
+    "relatedLink": "Ver servicio",
+    "ctaSub": "Primera llamada gratuita. Una respuesta clara en 20 minutos.",
+    "ctaPrimary": "Reserva una llamada",
+    "ctaEmail": "contact@mindrise-labs.com"
+  },
+  "items": {
+    "agents": {
+      "name": "Agentes de IA",
+      "tagline": ["Asistentes que piensan,", "conversan y actúan."],
+      "sub": "Construimos agentes a medida que hablan con tus clientes, automatizan el back-office o ejecutan tareas dentro de tu stack. Razonan con contexto real; no son un chatbot con FAQs.",
+      "stack": ["Frontier LLMs", "Multi-modal", "LangGraph", "Tool-use", "RAG", "Streaming"],
+      "whatTitle": "Agentes, no chatbots.",
+      "whatBody": "Un agente es un sistema que recibe una instrucción, planifica pasos, consulta herramientas (CRM, ERP, bases de conocimiento) y entrega un resultado o una decisión. Nosotros diseñamos el ciclo completo — prompting, arquitectura, memoria, evaluación — y lo integramos en tu día a día.",
+      "forWhoTitle": "Si reconoces alguno de estos escenarios:",
+      "forWho": [
+        "Recibís cientos de consultas repetitivas en soporte y queréis un primer nivel automático con escalado limpio.",
+        "Tenéis procesos internos (cotizaciones, onboarding, triaje) que dependen de reglas vivas y documentación dispersa.",
+        "Vuestro equipo comercial pierde horas rellenando CRM, enviando seguimientos o cualificando leads.",
+        "Queréis explotar bases de conocimiento internas (wikis, drives, tickets) con respuestas fiables y trazables."
+      ],
+      "capsTitle": "Qué podemos construir",
+      "capsLede": "Un agente nace de un problema concreto, no de una tecnología. Estos son los patrones que dominamos.",
+      "capabilities": [
+        { "name": "Agentes de soporte", "desc": "Primer nivel de soporte con acceso a la base de conocimiento, tickets y CRM. Resuelve, clasifica o escala con contexto." },
+        { "name": "Agentes de ventas", "desc": "Cualifican leads, enriquecen datos, envían seguimientos y preparan reuniones. Integrados en tu CRM." },
+        { "name": "Agentes operacionales", "desc": "Automatizan procesos internos: onboarding, KYC, triaje, cotizaciones. Con puntos de control humano." },
+        { "name": "Asistentes de conocimiento", "desc": "RAG sobre tus documentos: wikis, manuales, contratos. Respuestas con citas verificables." },
+        { "name": "Multi-agente", "desc": "Orquestación de múltiples agentes especializados que cooperan en tareas complejas de varios pasos." },
+        { "name": "Voz y teléfono", "desc": "Agentes de voz para IVRs inteligentes, cribado de llamadas y reservas automatizadas." }
+      ],
+      "delivery": [
+        { "name": "Discovery técnico", "desc": "Mapeo del proceso, datos disponibles, sistemas a integrar y criterios de éxito." },
+        { "name": "Prototipo funcional", "desc": "Primer agente operativo con el caso de uso prioritario, evaluado contra ejemplos reales." },
+        { "name": "Integración & producción", "desc": "Conexión a CRM/ERP, auth, logs, límites y canales (web, Slack, WhatsApp)." },
+        { "name": "Evolución", "desc": "Observabilidad, evals, optimización de coste y ampliación a nuevos flujos." }
+      ],
+      "outcomes": [
+        { "lbl": "PRIMER AGENTE", "val": "2–4 semanas" },
+        { "lbl": "RESPUESTAS 24/7", "val": "sin ampliar plantilla" },
+        { "lbl": "TRAZABILIDAD", "val": "100% con logs y citas" }
+      ],
+      "faq": [
+        { "q": "¿Qué diferencia hay entre un agente y un chatbot?", "a": "Un chatbot sigue guiones o FAQs. Un agente razona con contexto, accede a sistemas (CRM, ERP), toma decisiones y ejecuta acciones. Si cambia el entorno, se adapta sin reescribir reglas." },
+        { "q": "¿Qué modelo usáis?", "a": "El que encaje mejor en cada caso. Elegimos entre LLMs frontier para razonamiento complejo, modelos multi-modales para voz, y modelos más pequeños para tareas de bajo coste. Somos agnósticos de proveedor y de versión." },
+        { "q": "¿Y si el agente se equivoca o alucina?", "a": "Diseñamos sistemas de evaluación continuos y puntos de control humano para los casos críticos. Cada respuesta queda registrada con el razonamiento y las fuentes, para que puedas auditar y mejorar." },
+        { "q": "¿Dónde se alojan los datos?", "a": "Depende de la sensibilidad. Ofrecemos despliegues en la UE, infraestructura propia o híbrida. Ningún dato sale del perímetro si no es necesario y siempre con tu consentimiento explícito." },
+        { "q": "¿Puedo migrar el agente si un día me voy?", "a": "Sí. Código, prompts, datos y configuración son tuyos desde el día 1. Acompañamos la migración si hace falta." }
+      ],
+      "ctaTitle": "¿Quieres un agente que haga todo este trabajo?"
+    },
+    "n8n": {
+      "name": "Automatizaciones n8n",
+      "tagline": ["Flujos que conectan", "todo tu stack."],
+      "sub": "Diseñamos y mantenemos automatizaciones robustas que eliminan el trabajo repetitivo — desde sincronizar CRM con facturación hasta orquestar flujos de IA complejos. Con observabilidad y mantenimiento real.",
+      "stack": ["n8n", "Zapier", "Make", "Webhooks", "APIs REST", "Self-hosted"],
+      "whatTitle": "Automatizaciones productivas, no prototipos.",
+      "whatBody": "La mayoría de flujos no-code mueren por falta de mantenimiento, logs o gestión de errores. Construimos los nuestros con el estándar de un equipo de software: control de versiones, entornos, monitoring y documentación. Aguantan el lunes por la mañana.",
+      "forWhoTitle": "Las situaciones típicas:",
+      "forWho": [
+        "Vuestro equipo copia datos entre herramientas cada semana (CRM, ERP, herramientas de facturación, base de datos).",
+        "Tenéis un proceso que arranca con un correo, un formulario o un webhook y termina en múltiples sistemas.",
+        "Queréis añadir pasos de IA (clasificación, extracción, resumen) a flujos existentes sin rehacer toda la arquitectura.",
+        "Tenéis flujos hechos con Zapier o Make que se rompen a menudo y queréis migrarlos a una infraestructura fiable."
+      ],
+      "capsTitle": "Patrones que implementamos",
+      "capsLede": "Cada caso es único, pero hay arquetipos que dominamos especialmente bien.",
+      "capabilities": [
+        { "name": "Sincronización de datos", "desc": "CRM ↔ ERP ↔ facturación ↔ data warehouse. Bidireccional, con resolución de conflictos y reintentos." },
+        { "name": "Procesamiento de documentos", "desc": "Extracción estructurada de facturas, contratos y PDFs con IA, con validación y enrutado automático." },
+        { "name": "Orquestación de IA", "desc": "Pipelines multietapa con varios modelos, RAG y agentes dentro de un mismo flujo reutilizable." },
+        { "name": "Notificaciones inteligentes", "desc": "Alertas a Slack, WhatsApp o email con priorización por IA y resúmenes contextuales." },
+        { "name": "Integraciones a medida", "desc": "Conectores propios cuando no hay nodo oficial — APIs internas, sistemas legacy, bases de datos." },
+        { "name": "Self-hosting n8n", "desc": "Despliegue propio en UE con seguridad, backups y observabilidad de nivel empresa." }
+      ],
+      "delivery": [
+        { "name": "Auditoría de procesos", "desc": "Mapeo de flujos actuales, sistemas implicados, volúmenes y puntos de dolor." },
+        { "name": "Diseño de arquitectura", "desc": "Definimos la estructura del flujo, gestión de errores, reintentos y monitoring." },
+        { "name": "Construcción & test", "desc": "Implementamos en entorno aislado con casos de prueba reales antes de tocar producción." },
+        { "name": "Lanzamiento & cuidado", "desc": "Despliegue, formación y soporte continuo — incluyendo evolución cuando cambian las herramientas." }
+      ],
+      "outcomes": [
+        { "lbl": "HORAS AHORRADAS", "val": "20–80h/mes típico" },
+        { "lbl": "ERRORES", "val": "caída drástica" },
+        { "lbl": "MANTENIMIENTO", "val": "incluido 90 días" }
+      ],
+      "faq": [
+        { "q": "¿Por qué n8n y no Zapier?", "a": "n8n es open source, self-hostable, soporta JavaScript avanzado y tiene un coste fijo — escalable sin sorpresas. Para volúmenes altos o flujos sensibles es superior. Para cosas simples, Zapier sigue siendo razonable y también lo usamos." },
+        { "q": "¿Podemos hospedarlo nosotros mismos?", "a": "Sí. Desplegar n8n en vuestra propia nube o infraestructura es a menudo nuestro default para empresas con requisitos de soberanía de datos." },
+        { "q": "¿Y si una herramienta cambia su API?", "a": "Los flujos vivos requieren mantenimiento. Ofrecemos un contrato mensual que cubre cambios de APIs, migraciones y optimización." },
+        { "q": "¿Esto sustituye a mi equipo de IT?", "a": "No. Lo complementa. IT mantiene infraestructura; nosotros construimos y mantenemos los flujos de automatización especializados que requieren criterio de IA o integración intensiva." },
+        { "q": "¿Cuándo veré los primeros resultados?", "a": "Un primer flujo productivo en 1–2 semanas. Proyectos más grandes se entregan por fases, siempre con valor visible antes de los 30 días." }
+      ],
+      "ctaTitle": "¿Quieres eliminar el trabajo repetitivo?"
+    },
+    "consulting": {
+      "name": "Consultoría estratégica",
+      "tagline": ["Dónde poner IA", "y dónde no."],
+      "sub": "Te ayudamos a decidir dónde la IA aporta valor real y dónde es una distracción. Auditamos tu negocio, priorizamos oportunidades, validamos casos de uso y te entregamos un roadmap honesto y ejecutable.",
+      "stack": ["Auditorías", "Roadmaps", "POCs", "Gobernanza", "Cost models", "Risk assessment"],
+      "whatTitle": "Estrategia antes que tecnología.",
+      "whatBody": "El ruido alrededor de la IA hace que muchas empresas compren soluciones antes de entender el problema. Nosotros empezamos al revés: entendemos el negocio, identificamos dónde hay valor y solo entonces recomendamos qué construir, comprar o ignorar.",
+      "forWhoTitle": "Cuándo tiene sentido:",
+      "forWho": [
+        "Estás evaluando soluciones de IA y necesitas una mirada técnica independiente antes de firmar contratos.",
+        "Tienes un comité de dirección que quiere una estrategia clara de IA a 12–18 meses, no titulares.",
+        "Has invertido en herramientas y no ves retorno — quieres entender por qué y qué cambiar.",
+        "Quieres formar un equipo de IA interno y necesitas criterio sobre perfiles, herramientas y prioridades."
+      ],
+      "capsTitle": "Qué entregamos",
+      "capsLede": "Documentos accionables, no PowerPoints decorativos. Cada entrega sirve para tomar una decisión.",
+      "capabilities": [
+        { "name": "Auditoría de IA", "desc": "Inventario de lo que ya tenéis, análisis de calidad de datos, riesgos y oportunidades. Punto de partida limpio." },
+        { "name": "Roadmap de IA", "desc": "Plan a 12–18 meses con hitos, dependencias, costes y ROI estimado por cada iniciativa." },
+        { "name": "Evaluación de proveedores", "desc": "Análisis técnico de soluciones del mercado con pros, contras y alternativas realistas." },
+        { "name": "Casos de uso priorizados", "desc": "Lista de casos con impacto, esfuerzo, riesgos y criterios de validación concretos." },
+        { "name": "Gobernanza & riesgo", "desc": "Políticas de uso, gestión de datos, compliance UE AI Act y criterios de adopción responsable." },
+        { "name": "Acompañamiento ejecutivo", "desc": "Sesiones periódicas con tu comité para pilotar la transformación con criterio." }
+      ],
+      "delivery": [
+        { "name": "Diagnóstico inicial", "desc": "Sesiones con stakeholders, análisis de procesos y del stack actual." },
+        { "name": "Análisis & priorización", "desc": "Trabajo interno para modelar costes, riesgos e impactos por cada caso." },
+        { "name": "Entregable ejecutivo", "desc": "Documento final + presentación al comité con recomendaciones concretas." },
+        { "name": "Acompañamiento", "desc": "Seguimiento opcional durante la ejecución: revisiones, ajustes y soporte en decisiones clave." }
+      ],
+      "outcomes": [
+        { "lbl": "ALCANCE", "val": "2–6 semanas" },
+        { "lbl": "ENTREGA", "val": "documento + sesión ejecutiva" },
+        { "lbl": "IMPACTO", "val": "decisiones con criterio técnico" }
+      ],
+      "faq": [
+        { "q": "¿Sois agnósticos o vendéis siempre lo mismo?", "a": "Somos agnósticos. No tenemos acuerdos de comisión con ningún proveedor. Nuestra recomendación es a menudo 'no compréis nada nuevo, optimizad lo que ya tenéis'." },
+        { "q": "¿Qué pasa si la conclusión es que no nos necesitáis?", "a": "Es un resultado válido y lo diremos. Hemos cerrado consultorías recomendando a clientes que no invirtieran en IA aún — porque no era el momento. La integridad es el motivo por el que nos llaman." },
+        { "q": "¿Ayudáis solo o también ejecutáis?", "a": "Ambos. Si quieres, ejecutamos nosotros mismos las recomendaciones. Si tienes equipo interno, lo formamos y acompañamos. A menudo es una mezcla." },
+        { "q": "¿Cuánto cuesta?", "a": "Depende del alcance. Una auditoría pequeña puede ser 4–6k€. Un acompañamiento ejecutivo trimestral, 2–3k€/mes. Siempre acordado por adelantado, sin sorpresas." },
+        { "q": "¿Firmáis NDA?", "a": "Por supuesto. Trabajamos con información sensible (financiera, de clientes, estratégica) y mantenemos la confidencialidad como base no negociable." }
+      ],
+      "ctaTitle": "¿Quieres un roadmap honesto antes de invertir?"
+    },
+    "training": {
+      "name": "Formación & talleres",
+      "tagline": ["Equipos que entienden,", "no que repiten."],
+      "sub": "Programas de formación sobre IA aplicada para equipos reales. Sin buzzwords, con ejercicios prácticos, herramientas de tu día a día y un acompañamiento que dura más allá del taller.",
+      "stack": ["Programas a medida", "Talleres in-company", "Mentoría", "Ruta de aprendizaje", "Evaluación", "Materiales"],
+      "whatTitle": "Formación práctica, no académica.",
+      "whatBody": "La mayoría de cursos de IA se quedan en 'qué es un LLM'. Nosotros vamos a 'cómo usar un LLM dentro de tu Excel, tu CRM o tu proceso de revisión de contratos'. Cada sesión termina con una herramienta o flujo concreto que el participante puede usar al día siguiente.",
+      "forWhoTitle": "Para quién:",
+      "forWho": [
+        "Equipos de mánagers y directivos que deben tomar decisiones sobre IA y necesitan criterio.",
+        "Equipos operativos (ventas, soporte, finanzas, RRHH) que quieren incorporar IA al día a día.",
+        "Equipos técnicos o de datos que quieren pasar de 'jugar con ChatGPT' a construir soluciones productivas.",
+        "Empresas que quieren formar a toda la plantilla con un estándar común y una narrativa coherente."
+      ],
+      "capsTitle": "Formatos que ofrecemos",
+      "capsLede": "Todos los programas son a medida. Estos son los puntos de partida más habituales.",
+      "capabilities": [
+        { "name": "IA para directivos", "desc": "1–2 sesiones ejecutivas para dar criterio estratégico. Qué comprar, qué construir, qué ignorar." },
+        { "name": "IA aplicada para equipos", "desc": "Programa de 4–8 semanas con herramientas prácticas para el rol concreto (ventas, soporte, operaciones...)." },
+        { "name": "Bootcamp técnico", "desc": "Formación intensiva para equipos de desarrollo: prompting, agentes, RAG, integración de APIs." },
+        { "name": "Workshops puntuales", "desc": "Talleres de un día sobre temas específicos: n8n, MCP, agentes, ética de la IA, prompting avanzado." },
+        { "name": "Mentoría continua", "desc": "Sesiones periódicas 1:1 o en pequeño grupo para acompañar la implementación real en el puesto de trabajo." },
+        { "name": "Auditoría de capacidades", "desc": "Diagnóstico del nivel actual del equipo y plan de capacitación medible." }
+      ],
+      "delivery": [
+        { "name": "Diagnóstico de necesidades", "desc": "Entrevistas para entender el equipo, los roles y los objetivos reales de aprendizaje." },
+        { "name": "Diseño del programa", "desc": "Currículum a medida con objetivos, ejercicios y criterios de éxito acordados." },
+        { "name": "Ejecución", "desc": "Sesiones presenciales o remotas con materiales, ejercicios y soporte entre sesiones." },
+        { "name": "Continuidad", "desc": "Mentoría opcional, materiales de referencia y seguimiento para consolidar el aprendizaje." }
+      ],
+      "outcomes": [
+        { "lbl": "FORMATO", "val": "presencial, remoto o híbrido" },
+        { "lbl": "DURACIÓN", "val": "1 día – 12 semanas" },
+        { "lbl": "IDIOMAS", "val": "CA, ES, EN, FR" }
+      ],
+      "faq": [
+        { "q": "¿Hacéis cursos abiertos o solo in-company?", "a": "Sobre todo in-company y a medida — porque creemos que es la única manera de que la formación se traduzca en cambio real. Ocasionalmente hacemos sesiones abiertas; pregunta por la próxima." },
+        { "q": "Trabajamos en remoto. ¿Es un problema?", "a": "Ninguno. Hemos entregado programas 100% remotos a empresas europeas con resultados equivalentes a los presenciales. Adaptamos dinámicas y duración de sesiones." },
+        { "q": "¿Qué hay que saber previamente?", "a": "Depende del programa. Los cursos para no-técnicos no requieren nada. Los técnicos piden Python o JS básico. Siempre hacemos una sesión 0 para nivelar conocimientos." },
+        { "q": "¿Entregáis certificado?", "a": "Sí, certificado de finalización y de aprovechamiento si hay evaluación. No somos una entidad acreditada — el valor del certificado es nuestra reputación técnica, no un título oficial." },
+        { "q": "¿Subvenciones Fundae o similares?", "a": "Para clientes con sede en España, sí. Puedes bonificar la formación vía Fundae y nosotros acompañamos la documentación." }
+      ],
+      "ctaTitle": "¿Quieres un equipo que sepa aplicar IA?"
+    },
+    "mcp": {
+      "name": "Servidores MCP",
+      "tagline": ["Conecta tus herramientas", "al cerebro de la IA."],
+      "sub": "Construimos servidores Model Context Protocol para que los asistentes de IA — Claude, Cursor, ChatGPT — accedan de forma segura a vuestras bases de datos, APIs y sistemas internos. La capa que falta entre IA y empresa.",
+      "stack": ["MCP", "Claude Desktop", "Cursor", "TypeScript", "Python", "OAuth"],
+      "whatTitle": "El protocolo que conecta IA y empresa.",
+      "whatBody": "MCP es el estándar abierto (creado por Anthropic) que permite que un modelo de IA lea documentos, consulte bases de datos o ejecute acciones dentro de tu stack — con permisos claros y trazabilidad. Construimos los servidores MCP que necesitas para usar Claude o Cursor con tus datos, sin que estos salgan de tu perímetro.",
+      "forWhoTitle": "Cuándo es la herramienta adecuada:",
+      "forWho": [
+        "Quieres que tu equipo pueda consultar datos internos (CRM, base de datos, wiki) directamente desde Claude o Cursor.",
+        "Tienes APIs internas que querrías exponer a un asistente de IA sin reescribirlas como 'tools' en cada proyecto.",
+        "Necesitas una capa de control entre IA y sistemas empresariales, con auth, logs y revocación granular.",
+        "Estás construyendo un producto que quiere ofrecer integración con Claude Desktop, Cursor u otros clientes MCP."
+      ],
+      "capsTitle": "Qué construimos",
+      "capsLede": "Servidores MCP a medida que conectan IA con la realidad operativa de tu empresa.",
+      "capabilities": [
+        { "name": "MCP para CRMs", "desc": "Servidores para Salesforce, HubSpot, Pipedrive — para que la IA lea y actualice datos de clientes con permisos." },
+        { "name": "MCP para bases de datos", "desc": "Acceso seguro a Postgres, MySQL, BigQuery o data warehouses, con queries restringidas y auditoría." },
+        { "name": "MCP para APIs internas", "desc": "Wrappers de vuestras APIs para que un modelo pueda invocarlas como tools, sin exponer credenciales." },
+        { "name": "MCP de conocimiento", "desc": "Servidores que indexan wikis, drives, Notion o Confluence con permisos respetados por usuario." },
+        { "name": "MCP de acciones", "desc": "Servidores que permiten a la IA ejecutar acciones: crear tickets, enviar correos, actualizar registros, con confirmación." },
+        { "name": "Distribución & seguridad", "desc": "Empaquetado, distribución (Smithery, npm, registros privados), auth con OAuth y políticas de uso." }
+      ],
+      "delivery": [
+        { "name": "Análisis del caso", "desc": "Entendemos qué hay que exponer, qué permisos hacen falta y qué clientes MCP se usarán." },
+        { "name": "Diseño del servidor", "desc": "Definimos los tools, las resources, los prompts y las políticas de auth." },
+        { "name": "Construcción & test", "desc": "Implementamos en TypeScript o Python, con test de regresión y validación con Claude/Cursor." },
+        { "name": "Lanzamiento", "desc": "Despliegue en tu entorno, distribución a los clientes y documentación para tu equipo." }
+      ],
+      "outcomes": [
+        { "lbl": "ENTREGA", "val": "2–6 semanas" },
+        { "lbl": "STACK", "val": "TypeScript / Python" },
+        { "lbl": "CLIENTES", "val": "Claude, Cursor, agentes propios" }
+      ],
+      "faq": [
+        { "q": "¿Qué es MCP exactamente?", "a": "Model Context Protocol — un estándar abierto de Anthropic para que los modelos de IA puedan hablar con herramientas externas de forma uniforme. Es como USB para IA: en vez de hacer integraciones a medida por cada modelo, haces un servidor MCP y lo pueden usar Claude, Cursor y cualquier cliente compatible." },
+        { "q": "¿Por qué no hacerlo con function calling tradicional?", "a": "Function calling es por cada modelo y cada proyecto. MCP es reutilizable, tiene un protocolo estandarizado, soporta auth, streaming y múltiples clientes a la vez. Para empresas es mucho más limpio." },
+        { "q": "¿Soporta auth de forma seria?", "a": "Sí. MCP soporta OAuth, claves API, identidades por usuario y políticas granulares. Los servidores que construimos siempre respetan los permisos del usuario final, no operan como 'super-admin'." },
+        { "q": "¿Dónde alojamos el servidor MCP?", "a": "Puedes alojarlo localmente, en tu nube o en infraestructura compartida según el caso. Para clientes con datos sensibles, normalmente recomendamos self-hosting en la UE." },
+        { "q": "¿Cuándo tiene sentido MCP y cuándo no?", "a": "Tiene sentido cuando quieres exponer varios sistemas a múltiples clientes de IA y mantener auth y trazabilidad. Para una sola integración trivial entre un agente y una API, function calling clásico es más simple." }
+      ],
+      "ctaTitle": "¿Quieres conectar tu IA a tu stack?"
+    },
+    "web": {
+      "name": "Webs con IA integrada",
+      "tagline": ["Webs vivas, no tarjetas", "de visita estáticas."],
+      "sub": "Construimos webs y productos digitales donde la IA forma parte del tejido — buscadores semánticos, asistentes que entienden el catálogo, recomendadores, generación de contenido. Todo con un diseño cuidado y una arquitectura que aguanta.",
+      "stack": ["Next.js", "React", "TypeScript", "Astro", "Tailwind", "Vercel"],
+      "whatTitle": "Webs que piensan, no solo decoran.",
+      "whatBody": "La mayoría de webs corporativas son catálogos estáticos. Nosotros construimos webs donde la IA aporta valor concreto a cada visitante: asistentes que conocen el producto, búsqueda semántica que entiende intención, generación personalizada, recomendadores. Siempre con performance y SEO sólidos.",
+      "forWhoTitle": "Cuándo tiene sentido:",
+      "forWho": [
+        "Tienes un catálogo amplio (productos, artículos, casos) y necesitas una búsqueda que entienda lenguaje natural.",
+        "Quieres que los visitantes tengan un asistente que responda sobre tu oferta, precios o casos antes de contactar.",
+        "Estás construyendo un SaaS donde la IA es parte del producto y necesitas integrarla en la web pública y en el producto.",
+        "Quieres renovar la web con un diseño moderno y, de paso, incorporar capacidades de IA donde aporten valor real."
+      ],
+      "capsTitle": "Qué construimos",
+      "capsLede": "Webs y productos con IA integrada desde el primer prototipo, no como añadido posterior.",
+      "capabilities": [
+        { "name": "Webs corporativas", "desc": "Webs rápidas, accesibles y bien diseñadas. Performance 95+, SEO sólido, contenido estructurado." },
+        { "name": "Búsqueda semántica", "desc": "Buscadores que entienden intención, no solo palabras clave. Sobre productos, artículos o documentación." },
+        { "name": "Asistentes de producto", "desc": "Chats/agentes integrados que conocen el catálogo y ayudan a comprar, comparar o contactar." },
+        { "name": "Recomendadores", "desc": "Sistemas de recomendación con embeddings o modelos entrenados sobre datos del cliente." },
+        { "name": "Generación de contenido", "desc": "Páginas o secciones generadas dinámicamente con IA — landing pages, descripciones, resúmenes." },
+        { "name": "Apps & SaaS", "desc": "Aplicaciones web completas con IA integrada, auth, base de datos y panel de admin." }
+      ],
+      "delivery": [
+        { "name": "Discovery & arquitectura", "desc": "Definimos usuarios, flujos clave, integraciones y qué IA aporta valor real." },
+        { "name": "Diseño", "desc": "Sistema de diseño propio o adaptado, prototipos de alta fidelidad y revisiones iterativas." },
+        { "name": "Implementación", "desc": "Construcción con stack moderno, IA integrada desde el inicio, performance y SEO de serie." },
+        { "name": "Lanzamiento & evolución", "desc": "Despliegue, medición, optimización y evolución continua basada en datos reales." }
+      ],
+      "outcomes": [
+        { "lbl": "ENTREGA", "val": "4–12 semanas" },
+        { "lbl": "PERFORMANCE", "val": "Lighthouse 95+" },
+        { "lbl": "STACK", "val": "Next.js / React / Astro" }
+      ],
+      "faq": [
+        { "q": "¿Qué pasa con las webs típicas en WordPress?", "a": "Para webs muy simples, WordPress sigue siendo válido. Para webs donde queremos performance, IA integrada y buena experiencia de desarrollo, salimos hacia Next.js, Astro o equivalentes. La decisión depende del caso." },
+        { "q": "¿Hacéis diseño o solo programación?", "a": "Ambos. Si tienes diseñador, trabajamos con su Figma. Si no, diseñamos nosotros — somos obsesivos con el detalle y tenemos un sistema propio que adaptamos a tu marca." },
+        { "q": "¿Cómo afecta la IA al SEO?", "a": "Bien, si está bien hecho. Generamos el contenido crítico estáticamente o con SSR para que Google lo indexe. La IA aporta personalización por encima, no sustituye el contenido canónico." },
+        { "q": "¿Mantenéis la web después?", "a": "Sí, en régimen mensual. Cubre actualizaciones, seguridad, evolución de funcionalidades y monitoring. Sin contrato de mantenimiento, ofrecemos soporte puntual." },
+        { "q": "¿Qué pasa con los datos de los usuarios?", "a": "Todo lo que capturamos está declarado en tu cookie banner y en la política de privacidad. Somos cuidadosos con GDPR y no nos gustan los 'fingerprinting' agresivos. Si hay personalización con IA, es transparente y revocable." }
+      ],
+      "ctaTitle": "¿Quieres una web que piense contigo?"
+    }
+  }
+}

@@ -1,0 +1,301 @@
+{
+  "common": {
+    "overline": "LEGAL",
+    "lastUpdate": "Última actualización: Abril 2026",
+    "entity": {
+      "title": "RESPONSABLE DEL TRATAMIENTO",
+      "rows": [
+        { "label": "Denominación social", "value": "MINDRISE LABS, SL" },
+        { "label": "NRT", "value": "L-721255-P" },
+        { "label": "Domicilio social", "value": "Carretera del Forn, Urbanització Ribagrossa, Edifici La Serrera, 2n 8a, Canillo, AD100 – Andorra" },
+        { "label": "Correo electrónico de contacto", "value": "contact@mindrise-labs.com" }
+      ]
+    },
+    "nav": {
+      "title": "Otros documentos",
+      "privacy": "Política de privacidad",
+      "cookies": "Política de cookies",
+      "legal": "Aviso legal",
+      "contact": "Contacto"
+    }
+  },
+  "privacy": {
+    "title": "Política de privacidad",
+    "sections": [
+      {
+        "n": "01",
+        "t": "Identidad del responsable del tratamiento",
+        "blocks": [
+          { "type": "p", "text": "En cumplimiento de la normativa vigente en materia de protección de datos personales, se informa a los usuarios que MINDRISE LABS, SL es el responsable del tratamiento de los datos personales que se recogen a través de este sitio web. Los datos identificativos y de contacto del responsable figuran al inicio de este documento." }
+        ]
+      },
+      {
+        "n": "02",
+        "t": "Normativa aplicable",
+        "blocks": [
+          { "type": "p", "text": "La presente política de privacidad se rige por:" },
+          { "type": "ul", "items": [
+            "Reglamento (UE) 2016/679, General de Protección de Datos (RGPD).",
+            "Llei 29/2021, de 28 de octubre, calificada de protección de datos personales del Principat d'Andorra (LQPD).",
+            "Reglamento de desarrollo de la LQPD y demás normativa aplicable."
+          ]}
+        ]
+      },
+      {
+        "n": "03",
+        "t": "Datos personales que se recogen",
+        "blocks": [
+          { "type": "p", "text": "A través del formulario de contacto y de otros canales del sitio web, podemos recoger:" },
+          { "type": "ul", "items": [
+            "Datos identificativos: nombre y apellidos.",
+            "Datos de contacto: correo electrónico, teléfono (si se facilita).",
+            "Datos profesionales: empresa, cargo.",
+            "Datos técnicos derivados de la navegación (dirección IP, navegador, sistema operativo).",
+            "Información facilitada voluntariamente en los formularios o en las comunicaciones por correo."
+          ]},
+          { "type": "p", "text": "No se recogen categorías especiales de datos (salud, ideología, etc.)." }
+        ]
+      },
+      {
+        "n": "04",
+        "t": "Finalidad del tratamiento",
+        "blocks": [
+          { "type": "p", "text": "Los datos personales del usuario se tratan con las siguientes finalidades:" },
+          { "type": "ul", "items": [
+            "Atender consultas, solicitudes de información o de contacto.",
+            "Prestar y gestionar los servicios ofrecidos por MINDRISE LABS, SL.",
+            "Gestionar relaciones contractuales y precontractuales.",
+            "Enviar comunicaciones profesionales relacionadas con nuestros servicios.",
+            "Mejorar la experiencia del usuario y la seguridad del sitio web."
+          ]}
+        ]
+      },
+      {
+        "n": "05",
+        "t": "Base legal del tratamiento",
+        "blocks": [
+          { "type": "p", "text": "El tratamiento de los datos se basa en:" },
+          { "type": "ul", "items": [
+            "El consentimiento expreso del interesado, otorgado al enviar formularios o comunicaciones.",
+            "La ejecución de un contrato o la aplicación de medidas precontractuales.",
+            "El interés legítimo del responsable para fines comerciales, operativos y de seguridad.",
+            "El cumplimiento de obligaciones legales."
+          ]}
+        ]
+      },
+      {
+        "n": "06",
+        "t": "Conservación de los datos",
+        "blocks": [
+          { "type": "p", "text": "Los datos personales se conservan durante el tiempo necesario para cumplir la finalidad para la que fueron recogidos, durante la vigencia de la relación contractual o comercial, durante los plazos legalmente exigidos y hasta que el interesado solicite su supresión, cuando sea legalmente posible." }
+        ]
+      },
+      {
+        "n": "07",
+        "t": "Destinatarios y encargados del tratamiento",
+        "blocks": [
+          { "type": "p", "text": "Los datos personales no se ceden a terceros, salvo obligación legal o para prestar el servicio. Los proveedores de servicios tecnológicos que accedan a ellos actúan como encargados del tratamiento bajo contratos que garantizan la confidencialidad y la seguridad de los datos." },
+          { "type": "p", "text": "Actualmente, el sitio web está alojado en Hostinger International Ltd. (proveedor de hosting), que actúa como encargado del tratamiento. No se realizan transferencias internacionales de datos sin las garantías legalmente exigidas." }
+        ]
+      },
+      {
+        "n": "08",
+        "t": "Derechos del usuario",
+        "blocks": [
+          { "type": "p", "text": "El usuario puede ejercer los siguientes derechos:" },
+          { "type": "ul", "items": [
+            "Derecho de acceso.",
+            "Derecho de rectificación.",
+            "Derecho de supresión.",
+            "Derecho de limitación del tratamiento.",
+            "Derecho de oposición.",
+            "Derecho de portabilidad.",
+            "Derecho a retirar el consentimiento en cualquier momento."
+          ]},
+          { "type": "p", "text": "Para ejercer estos derechos, el usuario puede enviar una solicitud a contact@mindrise-labs.com, indicando el derecho que desea ejercer y adjuntando un documento que acredite su identidad." }
+        ]
+      },
+      {
+        "n": "09",
+        "t": "Medidas de seguridad",
+        "blocks": [
+          { "type": "p", "text": "MINDRISE LABS, SL adopta las medidas técnicas y organizativas necesarias para garantizar la seguridad, confidencialidad e integridad de los datos personales y para evitar su pérdida, alteración o acceso no autorizado." }
+        ]
+      },
+      {
+        "n": "10",
+        "t": "Cookies",
+        "blocks": [
+          { "type": "p", "text": "Este sitio web utiliza únicamente cookies técnicas necesarias para su funcionamiento. Puede consultarse información detallada en la Política de Cookies." }
+        ]
+      },
+      {
+        "n": "11",
+        "t": "Modificaciones de esta política",
+        "blocks": [
+          { "type": "p", "text": "MINDRISE LABS, SL se reserva el derecho a modificar la presente política de privacidad para adaptarla a cambios legislativos o a la evolución de su actividad. Las modificaciones se publicarán en esta misma página." }
+        ]
+      },
+      {
+        "n": "12",
+        "t": "Autoridad de control",
+        "blocks": [
+          { "type": "p", "text": "En caso de considerar que el tratamiento de datos personales vulnera la normativa aplicable, el usuario puede presentar una reclamación ante la Agència Andorrana de Protecció de Dades (APDA) o, en su caso, ante la autoridad competente de la Unión Europea." }
+        ]
+      }
+    ]
+  },
+  "cookies": {
+    "title": "Política de cookies",
+    "sections": [
+      {
+        "n": "01",
+        "t": "¿Qué son las cookies?",
+        "blocks": [
+          { "type": "p", "text": "Las cookies son pequeños archivos de texto que se almacenan en el dispositivo del usuario cuando visita un sitio web. Permiten, entre otras cosas, reconocer al usuario, recordar sus preferencias y garantizar el correcto funcionamiento del sitio." }
+        ]
+      },
+      {
+        "n": "02",
+        "t": "Cookies que utiliza este sitio web",
+        "blocks": [
+          { "type": "p", "text": "Actualmente, este sitio web utiliza únicamente cookies técnicas necesarias para su funcionamiento básico. Estas cookies son imprescindibles para la navegación, la seguridad y la conservación de las preferencias de idioma." },
+          { "type": "p", "text": "Las cookies técnicas están exentas del consentimiento previo según la normativa vigente, ya que son necesarias para la prestación del servicio solicitado por el usuario." },
+          { "type": "p", "text": "Este sitio web no utiliza cookies analíticas, de personalización, de publicidad ni de terceros con fines de seguimiento. Si en el futuro se incorporaran, esta política se actualizará y se solicitará el consentimiento correspondiente." }
+        ]
+      },
+      {
+        "n": "03",
+        "t": "Base legal del tratamiento",
+        "blocks": [
+          { "type": "p", "text": "El uso de cookies técnicas se basa en el interés legítimo del responsable para prestar el servicio del sitio web. Las cookies técnicas no requieren el consentimiento previo del usuario." }
+        ]
+      },
+      {
+        "n": "04",
+        "t": "Gestión y configuración de las cookies",
+        "blocks": [
+          { "type": "p", "text": "El usuario puede permitir, bloquear o eliminar las cookies instaladas en su dispositivo a través de la configuración del navegador. A continuación se enumeran los principales navegadores en los que se puede gestionar la configuración de cookies:" },
+          { "type": "ul", "items": [
+            "Google Chrome",
+            "Mozilla Firefox",
+            "Safari",
+            "Microsoft Edge"
+          ]},
+          { "type": "p", "text": "La desactivación de las cookies técnicas puede afectar al correcto funcionamiento del sitio web." }
+        ]
+      },
+      {
+        "n": "05",
+        "t": "Conservación de las cookies",
+        "blocks": [
+          { "type": "p", "text": "Las cookies se conservan durante el tiempo estrictamente necesario para cumplir con su finalidad técnica y, en todo caso, durante los plazos máximos establecidos por la normativa vigente." }
+        ]
+      },
+      {
+        "n": "06",
+        "t": "Modificaciones de esta política",
+        "blocks": [
+          { "type": "p", "text": "MINDRISE LABS, SL se reserva el derecho a modificar la presente política de cookies para adaptarla a cambios normativos o técnicos. Las modificaciones se publicarán en esta misma página." }
+        ]
+      },
+      {
+        "n": "07",
+        "t": "Información adicional",
+        "blocks": [
+          { "type": "p", "text": "Para más información sobre el tratamiento de datos personales, puede consultarse la Política de Privacidad o contactar a través de contact@mindrise-labs.com." }
+        ]
+      }
+    ]
+  },
+  "legal": {
+    "title": "Aviso legal",
+    "sections": [
+      {
+        "n": "01",
+        "t": "Información general",
+        "blocks": [
+          { "type": "p", "text": "En cumplimiento de la normativa vigente, se informa a los usuarios que el presente sitio web es titularidad de MINDRISE LABS, SL. Los datos identificativos completos figuran al inicio de este documento." }
+        ]
+      },
+      {
+        "n": "02",
+        "t": "Objeto",
+        "blocks": [
+          { "type": "p", "text": "El presente aviso legal regula el acceso, la navegación y el uso del sitio web, así como las responsabilidades derivadas de la utilización de sus contenidos (textos, imágenes, diseños, software, código, etc.)." },
+          { "type": "p", "text": "El acceso al sitio web implica la aceptación expresa y sin reservas del presente aviso legal." }
+        ]
+      },
+      {
+        "n": "03",
+        "t": "Condiciones de uso",
+        "blocks": [
+          { "type": "p", "text": "El usuario se compromete a:" },
+          { "type": "ul", "items": [
+            "Utilizar el sitio web de forma lícita, diligente y conforme a la normativa vigente.",
+            "No realizar actividades que puedan dañar, sobrecargar o inutilizar el sitio web.",
+            "No utilizar los contenidos para fines ilícitos, fraudulentos o no autorizados."
+          ]},
+          { "type": "p", "text": "MINDRISE LABS, SL se reserva el derecho a denegar o retirar el acceso al sitio web a los usuarios que incumplan estas condiciones." }
+        ]
+      },
+      {
+        "n": "04",
+        "t": "Propiedad intelectual e industrial",
+        "blocks": [
+          { "type": "p", "text": "Todos los contenidos del sitio web son titularidad de MINDRISE LABS, SL o de terceros que han autorizado su uso, y están protegidos por la normativa vigente en materia de propiedad intelectual e industrial." },
+          { "type": "p", "text": "Queda expresamente prohibida la reproducción, distribución, comunicación pública, transformación o cualquier otro uso de los contenidos sin la autorización previa y expresa del titular de los derechos." }
+        ]
+      },
+      {
+        "n": "05",
+        "t": "Responsabilidad",
+        "blocks": [
+          { "type": "p", "text": "MINDRISE LABS, SL no se hace responsable de:" },
+          { "type": "ul", "items": [
+            "Errores u omisiones en los contenidos.",
+            "Interrupciones del servicio o fallos técnicos.",
+            "Daños derivados del uso del sitio web.",
+            "Contenidos o servicios de terceros accesibles mediante enlaces."
+          ]},
+          { "type": "p", "text": "El uso del sitio web se realiza bajo la exclusiva responsabilidad del usuario." }
+        ]
+      },
+      {
+        "n": "06",
+        "t": "Enlaces a terceros",
+        "blocks": [
+          { "type": "p", "text": "El sitio web puede contener enlaces a páginas web de terceros. MINDRISE LABS, SL no asume responsabilidad alguna sobre los contenidos, políticas o prácticas de dichos sitios externos." }
+        ]
+      },
+      {
+        "n": "07",
+        "t": "Protección de datos personales",
+        "blocks": [
+          { "type": "p", "text": "El tratamiento de los datos personales se rige por lo dispuesto en la Política de Privacidad, que el usuario puede consultar en el sitio web." }
+        ]
+      },
+      {
+        "n": "08",
+        "t": "Uso de cookies",
+        "blocks": [
+          { "type": "p", "text": "El uso de cookies se regula en la Política de Cookies correspondiente." }
+        ]
+      },
+      {
+        "n": "09",
+        "t": "Modificaciones",
+        "blocks": [
+          { "type": "p", "text": "MINDRISE LABS, SL se reserva el derecho a modificar el presente aviso legal en cualquier momento para adaptarlo a cambios normativos o a la evolución de su actividad. Las modificaciones se publicarán en esta misma página." }
+        ]
+      },
+      {
+        "n": "10",
+        "t": "Legislación aplicable y jurisdicción",
+        "blocks": [
+          { "type": "p", "text": "El presente aviso legal se rige por la legislación del Principat d'Andorra. Para la resolución de cualquier conflicto derivado del acceso o uso del sitio web, las partes se someten expresamente a los juzgados y tribunales de Andorra, salvo que la normativa aplicable disponga otra cosa." }
+        ]
+      }
+    ]
+  }
+}

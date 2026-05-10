@@ -1,0 +1,113 @@
+{
+  "hero": {
+    "eyebrow": "AI AUTOMATION STUDIO · ANDORRE",
+    "title": ["Nous bâtissons l'intelligence", "qui fait croître", "votre entreprise."],
+    "accent": "l'intelligence",
+    "sub": "Agents IA, automatisations et systèmes sur mesure pour les entreprises qui veulent grandir sans agrandir leurs équipes.",
+    "ctaPrimary": "Réservez une démo",
+    "ctaSecondary": "Découvrez nos services"
+  },
+  "services": {
+    "eyebrow": "CE QUE NOUS FAISONS",
+    "title": "Six couches d'intelligence connectées",
+    "lede": "Des services spécialisés qui travaillent ensemble pour transformer votre entreprise. Tous conçus pour durer.",
+    "items": [
+      { "id": "agents", "slug": "agents-ia", "name": "Agents IA", "desc": "Assistants intelligents qui dialoguent, raisonnent et exécutent des tâches pour votre équipe.", "tags": ["LLM frontiers", "Multi-modal", "Telegram"] },
+      { "id": "n8n", "slug": "automatitzacions-n8n", "name": "Automatisations n8n", "desc": "Des flux qui connectent vos outils et éliminent le travail répétitif.", "tags": ["n8n", "Zapier", "Make"] },
+      { "id": "consulting", "slug": "consultoria-ia", "name": "Conseil IA", "desc": "Nous analysons votre activité et concevons la stratégie de mise en œuvre.", "tags": ["Audit", "Roadmap", "ROI"] },
+      { "id": "training", "slug": "formacio-a-mida", "name": "Formation sur mesure", "desc": "Nous formons votre équipe à travailler avec l'IA — généraliste ou sur nos systèmes.", "tags": ["Sur site", "Async", "Playbooks"] },
+      { "id": "mcp", "slug": "integracions-mcp", "name": "Intégrations MCP / Claude Code", "desc": "Nous connectons Claude à votre stack avec le Model Context Protocol.", "tags": ["MCP", "Tool-use", "APIs"] },
+      { "id": "web", "slug": "disseny-web", "name": "Design web", "desc": "Sites web rapides, premium et optimisés pour convertir.", "tags": ["Next.js", "Framer", "SEO"] }
+    ],
+    "soon": { "id": "saas", "name": "SaaS sur mesure", "desc": "Nous construisons des applications SaaS spécialisées pour votre secteur.", "badge": "Bientôt" },
+    "more": "En savoir plus"
+  },
+  "process": {
+    "eyebrow": "PROCESSUS",
+    "title": "Comment nous travaillons",
+    "lede": "Cinq étapes. Une méthodologie éprouvée.",
+    "note": "Le calendrier est toujours sur mesure. Les phases ci-dessous décrivent la séquence de travail, pas une durée fixe : chaque projet avance au rythme dont il a besoin.",
+    "steps": [
+      { "n": "01", "name": "Découverte", "desc": "Nous comprenons votre activité en profondeur. Nous identifions les processus à plus fort impact.", "phase": "Démarrage" },
+      { "n": "02", "name": "Conception", "desc": "Nous architecturons la solution sur mesure, avec métriques et points de contrôle.", "phase": "Phase de planification" },
+      { "n": "03", "name": "Construction", "desc": "Nous développons, testons et itérons avec votre équipe en continu.", "phase": "Phase de développement" },
+      { "n": "04", "name": "Déploiement", "desc": "Mise en production supervisée. Formation et passation complète.", "phase": "Lancement" },
+      { "n": "05", "name": "Évolution", "desc": "Maintenance, amélioration continue et extension à de nouveaux processus sous budget.", "phase": "Continu" }
+    ]
+  },
+  "cases": {
+    "eyebrow": "RÉSULTATS RÉELS",
+    "title": "Études de cas",
+    "lede": "Des systèmes déjà en production qui créent de la valeur.",
+    "items": [
+      { "sector": "E-commerce · Service client", "metric": "−70%", "metricLabel": "de temps sur les tâches répétitives", "body": "Agent conversationnel multicanal qui résout 68% des demandes sans intervention humaine et n'escalade vers le support L1 que si nécessaire.", "stack": ["LLM", "n8n", "Supabase", "WhatsApp"] },
+      { "sector": "Fintech · Opérations", "metric": "24/7", "metricLabel": "service client automatisé", "body": "Pipeline KYC + onboarding assisté par IA qui prépare le dossier en quelques minutes et libère des heures hebdomadaires à l'équipe.", "stack": ["n8n", "LLM", "Notion", "Slack"] },
+      { "sector": "Hôtellerie · Back-office", "metric": "−42h/mois", "metricLabel": "sur le traitement de factures", "body": "Extraction automatique de factures fournisseurs et rapprochement avec l'ERP. Zéro erreur humaine, traçabilité totale.", "stack": ["LLM", "n8n", "Xero", "Telegram"] },
+      { "sector": "Services pro · Revenus", "metric": "+38%", "metricLabel": "de taux de conversion des leads", "body": "Qualification et réponse automatisées des leads entrants avec priorisation par IA. Chaque lead reçoit une première réponse personnalisée en moins d'une minute.", "stack": ["LLM", "HubSpot", "n8n", "Gmail"] },
+      { "sector": "Logistique · Vitesse", "metric": "12×", "metricLabel": "plus rapide pour les bons de livraison", "body": "Système d'extraction et de validation des documents de transport. Ce qui prenait des heures se fait en quelques minutes, avec moins d'erreurs.", "stack": ["LLM", "MCP", "n8n", "Google Sheets"] }
+    ],
+    "ctaTitle": "Vous voulez savoir comment nous l'avons fait ?",
+    "cta": "Discutons"
+  },
+  "about": {
+    "eyebrow": "À PROPOS",
+    "title": "Une petite équipe, obsédée par le résultat.",
+    "body": "Nous sommes ingénieurs, stratèges et consultants. Nous construisons des systèmes IA pour les entreprises qui veulent des résultats mesurables, pas des promesses. Nous travaillons à distance depuis l'Andorre et sur site quand il le faut.",
+    "cta": "Faites connaissance",
+    "href": "/sobre-nosaltres"
+  },
+  "why": {
+    "eyebrow": "POURQUOI MINDRISE",
+    "title": "Ce qui nous distingue",
+    "items": [
+      { "name": "Architecture maison", "desc": "Nous ne livrons pas des scripts d'une semaine. Nous construisons des systèmes qui tiennent en production." },
+      { "name": "IA appliquée, pas hype", "desc": "Chaque implémentation répond à un objectif business mesurable." },
+      { "name": "Vrai accompagnement", "desc": "Nous ne vous laissons pas seuls après le lancement. Continuité garantie." },
+      { "name": "Basés en Andorre", "desc": "Nous comprenons le contexte local et travaillons avec des entreprises dans toute l'Europe." },
+      { "name": "Stack agnostique", "desc": "Nous choisissons la technologie en fonction du problème, pas de la mode ni d'un partenariat commercial." },
+      { "name": "Transparence totale", "desc": "Livraisons visibles chaque semaine. Code, décisions et accès toujours à votre portée." }
+    ],
+    "stats": [
+      { "n": 20, "suf": "+", "label": "projets livrés" },
+      { "n": 15, "suf": "+", "label": "entreprises nous font confiance" },
+      { "n": 4, "suf": "", "label": "langues de service" },
+      { "n": 100, "suf": "%", "label": "projets sur mesure" }
+    ],
+    "statsDisclaimer": "Données cumulées de l'équipe fondatrice."
+  },
+  "testimonial": {
+    "eyebrow": "TÉMOIGNAGES",
+    "q": "Leur système de recherche juridique a transformé ma façon de travailler. Je passe moins de temps à chercher et plus de temps à réfléchir, ce pour quoi le client me rémunère. Ils ont compris la complexité du droit andorran avant d'écrire une seule ligne de code.",
+    "name": "E. B.",
+    "role": "Consultant",
+    "co": "Boné Consulting"
+  },
+  "blog": {
+    "eyebrow": "INSIGHTS",
+    "title": "Depuis le laboratoire",
+    "categories": ["ARCHITECTURE", "CAS", "TECHNIQUE", "STRATÉGIE", "ACTUALITÉS"],
+    "items": [
+      { "slug": "agents-ia-no-son-chatbots", "cat": "ARCHITECTURE", "title": "Pourquoi les agents IA ne sont pas des chatbots (et ne doivent pas l'être)", "date": "18 avr. 2026", "excerpt": "La différence entre un script et un système qui raisonne : architecture, mémoire et outils." },
+      { "slug": "n8n-42h-mes", "cat": "CAS", "title": "Comment un flux n8n a éliminé 42h/mois de travail manuel", "date": "02 avr. 2026", "excerpt": "Un cas réel d'automatisation back-office en hôtellerie, étape par étape." },
+      { "slug": "mcp-claude-code", "cat": "TECHNIQUE", "title": "MCP et Claude Code : un nouveau modèle d'intégration", "date": "24 mars 2026", "excerpt": "Le Model Context Protocol change la façon dont nous connectons l'IA aux outils que vous utilisez déjà." }
+    ],
+    "read": "Lire",
+    "index": "Voir tous les articles"
+  },
+  "faq": {
+    "eyebrow": "QUESTIONS",
+    "title": "Questions fréquentes",
+    "items": [
+      { "q": "Travaillez-vous avec des entreprises hors d'Andorre ?", "a": "Oui. Nous avons des clients actifs en Espagne, en France et dans d'autres pays européens. Nous travaillons à distance avec des sessions sur site selon les besoins ; le catalan, l'espagnol, l'anglais et le français sont nos langues de travail." },
+      { "q": "Comment fonctionnent les devis ?", "a": "Nous travaillons toujours au forfait, défini après une découverte initiale courte. Nous ne facturons pas à l'heure : nous facturons le résultat convenu. Nous ne publions pas de tarifs car chaque projet est sur mesure." },
+      { "q": "Comment définissez-vous les délais ?", "a": "Le calendrier est défini lors du premier appel, une fois le périmètre compris. Nous ne promettons pas de durées avant de connaître le problème. Nous livrons en continu pour que vous puissiez valider chaque étape." },
+      { "q": "Qu'est-ce que le Model Context Protocol (MCP) ?", "a": "Un standard ouvert, porté par Anthropic, qui permet de connecter les modèles d'IA à des outils et données externes de manière sécurisée et modulaire. Nous l'utilisons pour brancher Claude sur votre stack sans reconstruire chaque intégration." },
+      { "q": "Proposez-vous de la maintenance après le lancement ?", "a": "Oui. Chaque projet inclut une période de garantie et nous proposons des plans de maintenance qui couvrent l'évolution, le monitoring et le support prioritaire. Personne n'est laissé seul après la mise en production." },
+      { "q": "Vos solutions sont-elles sécurisées et conformes au RGPD ?", "a": "Oui. Nous travaillons avec des fournisseurs compatibles RGPD, appliquons la minimisation des données par défaut et documentons les flux d'information. Nous pouvons opérer sur des données sensibles avec des accords de traitement spécifiques." },
+      { "q": "À qui appartient ce que vous construisez ? Qui a les accès ?", "a": "À vous. Tout le code, les configurations, les prompts, les flux et les identifiants vous appartiennent dès le premier jour. Nous faisons une passation complète et documentée. Pas de lock-in : si vous voulez partir, vous partez." },
+      { "q": "Et si mon équipe n'est pas technique ?", "a": "C'est le cas le plus fréquent. Nous concevons les solutions pour qu'elles soient utilisables par des personnes non techniques, et nous incluons une formation spécifique sur les systèmes que nous construisons pour votre activité." },
+      { "q": "Quels outils et modèles utilisez-vous ?", "a": "Nous choisissons la technologie en fonction du problème : Claude (Anthropic), GPT (OpenAI), modèles open-source quand cela a du sens, n8n pour l'orchestration, Supabase / PostgreSQL pour les données, MCP pour les intégrations. Stack agnostique, sans partenariat commercial qui orienterait les décisions." },
+      { "q": "Comment démarrer un projet ensemble ?", "a": "Par un appel initial. Nous comprenons le contexte, identifions le processus à plus fort impact et vous envoyons une proposition forfaitaire avec périmètre, livrables et budget." }
+    ]
+  }
+}

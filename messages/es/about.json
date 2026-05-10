@@ -1,0 +1,54 @@
+{
+  "nav": "Sobre nosotros",
+  "eyebrow": "SOBRE NOSOTROS",
+  "title": ["Construimos IA.", "Sin humo, sin excusas."],
+  "sub": "Un equipo multidisciplinar con base en Andorra que ayuda a empresas de aquí y de España a aplicar IA real en su negocio.",
+  "whyTitle": "Por qué existimos",
+  "whyEyebrow": "MISIÓN",
+  "why": [
+    "Creemos que la inteligencia artificial es la transformación tecnológica más importante de nuestra generación, y que las empresas que sepan aplicarla bien tendrán una ventaja real. Esta convicción es la razón por la que existimos.",
+    "Queremos ser de los que construyen esta capa nueva, no de los que hablan de ella. Por eso MindRise Labs nace en 2025: para llevar IA aplicada, útil y sólida a empresas que la necesitan hoy, no dentro de tres años."
+  ],
+  "beliefsTitle": "Lo que creemos",
+  "beliefsEyebrow": "PRINCIPIOS",
+  "beliefs": [
+    { "t": "Honestidad antes que venta", "d": "Nunca recomendaremos un sistema, una herramienta o una plataforma que nosotros no usaríamos. Si no es lo mejor para tu caso, te lo decimos." },
+    { "t": "Resultados, no horas", "d": "Trabajamos por el impacto medible en tu negocio. Si no mejoramos nada, no estamos haciendo nuestro trabajo." },
+    { "t": "Stack agnóstico", "d": "No defendemos ninguna tecnología por inercia. Elegimos la que mejor resuelve cada caso y lo haremos siempre así." },
+    { "t": "Transparencia total", "d": "Documentamos cada decisión, cada flujo y cada coste. Tu equipo entiende lo que hacemos y puede continuar sin nosotros." }
+  ],
+  "andorraTitle": "Por qué Andorra",
+  "andorraEyebrow": "BASE",
+  "andorra": "Somos de aquí, y vemos el potencial empresarial que Andorra está acumulando: un ecosistema vivo, ambicioso y con talento llegando de todas partes. Andorra es un mercado exigente. Las empresas que aquí funcionan lo hacen porque entregan. Operamos en ese estándar porque es el único que conocemos, y lo llevamos a cada proyecto que hacemos.",
+  "howTitle": "Cómo trabajamos",
+  "howEyebrow": "MÉTODO",
+  "how": [
+    { "t": "Exploramos a nuestro riesgo", "d": "Probamos herramientas, modelos y arquitecturas nuevas internamente. El cliente solo recibe lo que ya hemos validado que funciona." },
+    { "t": "Entregas frecuentes", "d": "No hay una gran entrega final. Entregas parciales cada poco tiempo para que valides el progreso y no haya sorpresas." },
+    { "t": "Handover real", "d": "Cuando acaba el proyecto, tu equipo tiene el código, la documentación y el conocimiento para continuar. Sin dependencias ocultas." }
+  ],
+  "teamTitle": "El equipo",
+  "teamEyebrow": "EQUIPO",
+  "teamBody": "Somos un equipo de cuatro personas, multidisciplinar, con perfiles complementarios de estrategia, construcción técnica y consultoría. Preferimos ser un equipo compacto que hace pocas cosas muy bien, en lugar de un equipo grande que hace muchas a medias.",
+  "teamRoles": [
+    { "t": "Estrategia", "d": "Definimos qué construir, cuándo y por qué." },
+    { "t": "Construcción", "d": "Implementamos sistemas que aguantan producción." },
+    { "t": "Consultoría", "d": "Acompañamos la decisión y el handover." }
+  ],
+  "factsTitle": "Datos clave",
+  "factsEyebrow": "DATOS",
+  "facts": [
+    { "lbl": "FUNDADO", "val": "2025" },
+    { "lbl": "BASE", "val": "Andorra" },
+    { "lbl": "EQUIPO", "val": "4 personas · multidisciplinar" },
+    { "lbl": "IDIOMAS", "val": "CA · ES · EN · FR" },
+    { "lbl": "ALCANCE", "val": "Andorra y España" },
+    { "lbl": "MODO", "val": "Remoto prioritario" }
+  ],
+  "capsTitle": "Lo que ofrecemos",
+  "ctaEyebrow": "¿TRABAJAMOS JUNTOS?",
+  "ctaTitle": ["¿Trabajamos", "juntos?"],
+  "ctaSub": "Una primera conversación es la mejor manera de ver si encajamos.",
+  "ctaPrimary": "Reserva una llamada",
+  "ctaSecondary": "Ver nuestros servicios"
+}

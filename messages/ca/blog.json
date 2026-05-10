@@ -1,0 +1,35 @@
+{
+  "blogNav": "Blog",
+  "backHome": "Inici",
+  "blogTitle": "Des del laboratori",
+  "blogEyebrow": "INSIGHTS",
+  "blogSub": "Arquitectura, casos reals i pensament tècnic sobre IA aplicada.",
+  "catsAll": "Tots",
+  "cats": ["ARQUITECTURA", "CASES", "TÈCNIC", "ESTRATÈGIA", "NOVETATS"],
+  "read": "Llegir",
+  "readMore": "Llegir l'article",
+  "pageOf": "Pàgina {a} de {b}",
+  "prev": "Anterior",
+  "next": "Següent",
+  "none": "No hi ha articles en aquesta categoria encara.",
+  "indexCta": {
+    "eye": "TENS UN DUBTE TÈCNIC?",
+    "t": "Parlem-ne",
+    "p": "Si vols aprofundir en algun d'aquests temes per al teu cas, una conversa curta sol resoldre més que un white paper.",
+    "btn": "Parlem-ne"
+  },
+  "postEye": "ARTICLE",
+  "publishedOn": "Publicat el",
+  "by": "per",
+  "author": "Equip MindRise",
+  "notAvailable": "Aquest article està disponible en català.",
+  "seeAllCa": "Veure tots els articles",
+  "backToBlog": "Tornar al blog",
+  "related": "Continua llegint",
+  "postCta": {
+    "eye": "T'INTERESSA?",
+    "t": "Aplica-ho al teu cas",
+    "p": "Una primera trucada és la millor manera d'entendre si això es pot adaptar al teu negoci.",
+    "btn": "Reserva una trucada"
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "nav": "À propos",
+  "eyebrow": "À PROPOS",
+  "title": ["Nous construisons l'IA.", "Sans bruit, sans excuses."],
+  "sub": "Une équipe pluridisciplinaire basée en Andorre qui aide des entreprises d'ici et d'Espagne à appliquer une IA réelle à leur activité.",
+  "whyTitle": "Pourquoi nous existons",
+  "whyEyebrow": "MISSION",
+  "why": [
+    "Nous pensons que l'intelligence artificielle est la transformation technologique la plus importante de notre génération, et que les entreprises qui sauront bien l'appliquer auront un avantage réel. Cette conviction est la raison pour laquelle nous existons.",
+    "Nous voulons être de ceux qui construisent cette nouvelle couche, pas de ceux qui en parlent. C'est pour cela que MindRise Labs naît en 2025 : pour apporter une IA appliquée, utile et solide aux entreprises qui en ont besoin aujourd'hui, pas dans trois ans."
+  ],
+  "beliefsTitle": "Ce que nous croyons",
+  "beliefsEyebrow": "PRINCIPES",
+  "beliefs": [
+    { "t": "L'honnêteté avant la vente", "d": "Nous ne recommanderons jamais un système, un outil ou une plateforme que nous n'utiliserions pas nous-mêmes. Si ce n'est pas le mieux pour votre cas, nous vous le disons." },
+    { "t": "Des résultats, pas des heures", "d": "Nous travaillons pour l'impact mesurable sur votre activité. Si nous n'améliorons rien, nous ne faisons pas notre travail." },
+    { "t": "Stack agnostique", "d": "Nous ne défendons aucune technologie par inertie. Nous choisissons celle qui résout le mieux chaque cas, et nous le ferons toujours ainsi." },
+    { "t": "Transparence totale", "d": "Nous documentons chaque décision, chaque flux et chaque coût. Votre équipe comprend ce que nous faisons et peut continuer sans nous." }
+  ],
+  "andorraTitle": "Pourquoi l'Andorre",
+  "andorraEyebrow": "BASE",
+  "andorra": "Nous sommes d'ici, et nous voyons le potentiel entrepreneurial que l'Andorre est en train d'accumuler : un écosystème vivant, ambitieux, avec du talent qui arrive de partout. L'Andorre est un marché exigeant. Les entreprises qui fonctionnent ici le font parce qu'elles livrent. Nous opérons à ce niveau parce que c'est le seul que nous connaissons, et nous le portons à chaque projet que nous menons.",
+  "howTitle": "Comment nous travaillons",
+  "howEyebrow": "MÉTHODE",
+  "how": [
+    { "t": "Nous explorons à nos risques", "d": "Nous testons en interne de nouveaux outils, modèles et architectures. Le client ne reçoit que ce que nous avons déjà validé." },
+    { "t": "Livraisons fréquentes", "d": "Pas de grande livraison finale. Des livraisons partielles régulières pour que vous validiez les progrès et qu'il n'y ait pas de surprise." },
+    { "t": "Handover réel", "d": "Quand le projet se termine, votre équipe dispose du code, de la documentation et de la connaissance pour continuer. Sans dépendances cachées." }
+  ],
+  "teamTitle": "L'équipe",
+  "teamEyebrow": "ÉQUIPE",
+  "teamBody": "Nous sommes une équipe de quatre personnes, pluridisciplinaire, avec des profils complémentaires en stratégie, construction technique et conseil. Nous préférons être une équipe compacte qui fait peu de choses très bien, plutôt qu'une grande équipe qui en fait beaucoup à moitié.",
+  "teamRoles": [
+    { "t": "Stratégie", "d": "Nous définissons quoi construire, quand et pourquoi." },
+    { "t": "Construction", "d": "Nous livrons des systèmes qui tiennent en production." },
+    { "t": "Conseil", "d": "Nous accompagnons la décision et le handover." }
+  ],
+  "factsTitle": "Données clés",
+  "factsEyebrow": "DONNÉES",
+  "facts": [
+    { "lbl": "FONDÉ", "val": "2025" },
+    { "lbl": "BASE", "val": "Andorre" },
+    { "lbl": "ÉQUIPE", "val": "4 personnes · pluridisciplinaire" },
+    { "lbl": "LANGUES", "val": "CA · ES · EN · FR" },
+    { "lbl": "PORTÉE", "val": "Andorre et Espagne" },
+    { "lbl": "MODE", "val": "Remote prioritaire" }
+  ],
+  "capsTitle": "Ce que nous proposons",
+  "ctaEyebrow": "ON TRAVAILLE ENSEMBLE ?",
+  "ctaTitle": ["On travaille", "ensemble ?"],
+  "ctaSub": "Une première conversation est la meilleure manière de voir si nous nous accordons.",
+  "ctaPrimary": "Réserver un appel",
+  "ctaSecondary": "Voir nos services"
+}

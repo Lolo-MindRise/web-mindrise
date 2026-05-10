@@ -1,0 +1,54 @@
+{
+  "nav": "About",
+  "eyebrow": "ABOUT US",
+  "title": ["We build AI.", "No hype, no excuses."],
+  "sub": "A multidisciplinary team based in Andorra helping companies here and in Spain apply real AI to their business.",
+  "whyTitle": "Why we exist",
+  "whyEyebrow": "MISSION",
+  "why": [
+    "We believe artificial intelligence is the most important technological transformation of our generation, and that companies that know how to apply it well will gain a real advantage. That conviction is the reason we exist.",
+    "We want to be among those who build this new layer, not among those who talk about it. That's why MindRise Labs was founded in 2025: to bring applied, useful, solid AI to companies that need it today, not three years from now."
+  ],
+  "beliefsTitle": "What we believe",
+  "beliefsEyebrow": "PRINCIPLES",
+  "beliefs": [
+    { "t": "Honesty before sales", "d": "We will never recommend a system, tool or platform we wouldn't use ourselves. If it's not the best for your case, we tell you." },
+    { "t": "Results, not hours", "d": "We work for measurable impact on your business. If we don't improve anything, we're not doing our job." },
+    { "t": "Stack-agnostic", "d": "We don't defend any technology out of inertia. We pick the one that best solves each case, and we'll always do it that way." },
+    { "t": "Full transparency", "d": "We document every decision, every flow and every cost. Your team understands what we do and can continue without us." }
+  ],
+  "andorraTitle": "Why Andorra",
+  "andorraEyebrow": "HOME",
+  "andorra": "We're from here, and we see the business potential Andorra is building up: a living, ambitious ecosystem with talent arriving from everywhere. Andorra is a demanding market. The companies that work here do so because they deliver. We operate to that standard because it's the only one we know, and we bring it to every project we take on.",
+  "howTitle": "How we work",
+  "howEyebrow": "METHOD",
+  "how": [
+    { "t": "We explore at our own risk", "d": "We test new tools, models and architectures internally. The client only gets what we've already validated works." },
+    { "t": "Frequent deliveries", "d": "There's no single big final delivery. Partial deliveries every few weeks so you can validate progress and there are no surprises." },
+    { "t": "Real handover", "d": "When the project ends, your team has the code, the documentation and the knowledge to continue. No hidden dependencies." }
+  ],
+  "teamTitle": "The team",
+  "teamEyebrow": "TEAM",
+  "teamBody": "We're a team of four people, multidisciplinary, with complementary profiles in strategy, technical build and consulting. We'd rather be a compact team doing few things very well than a large team doing many things halfway.",
+  "teamRoles": [
+    { "t": "Strategy", "d": "We define what to build, when and why." },
+    { "t": "Build", "d": "We ship systems that hold up in production." },
+    { "t": "Consulting", "d": "We support the decision and the handover." }
+  ],
+  "factsTitle": "Key facts",
+  "factsEyebrow": "FACTS",
+  "facts": [
+    { "lbl": "FOUNDED", "val": "2025" },
+    { "lbl": "BASE", "val": "Andorra" },
+    { "lbl": "TEAM", "val": "4 people · multidisciplinary" },
+    { "lbl": "LANGUAGES", "val": "CA · ES · EN · FR" },
+    { "lbl": "REACH", "val": "Andorra & Spain" },
+    { "lbl": "MODE", "val": "Remote-first" }
+  ],
+  "capsTitle": "What we offer",
+  "ctaEyebrow": "SHALL WE WORK TOGETHER?",
+  "ctaTitle": ["Shall we work", "together?"],
+  "ctaSub": "A first conversation is the best way to see if we're a fit.",
+  "ctaPrimary": "Book a call",
+  "ctaSecondary": "See our services"
+}

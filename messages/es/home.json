@@ -1,0 +1,113 @@
+{
+  "hero": {
+    "eyebrow": "AI AUTOMATION STUDIO · ANDORRA",
+    "title": ["Construimos la inteligencia", "que hace crecer", "tu empresa."],
+    "accent": "inteligencia",
+    "sub": "Agentes de IA, automatizaciones y sistemas a medida para empresas que quieren escalar sin ampliar plantilla.",
+    "ctaPrimary": "Reserva una demo",
+    "ctaSecondary": "Descubre los servicios"
+  },
+  "services": {
+    "eyebrow": "LO QUE HACEMOS",
+    "title": "Seis capas de inteligencia conectadas",
+    "lede": "Conectamos servicios especializados para transformar tu negocio. Todos construidos para durar.",
+    "items": [
+      { "id": "agents", "slug": "agents-ia", "name": "Agentes de IA", "desc": "Asistentes inteligentes que conversan, razonan y ejecutan tareas por tu equipo.", "tags": ["LLMs frontier", "Multi-modal", "Telegram"] },
+      { "id": "n8n", "slug": "automatitzacions-n8n", "name": "Automatizaciones n8n", "desc": "Flujos que conectan tus herramientas y eliminan el trabajo repetitivo.", "tags": ["n8n", "Zapier", "Make"] },
+      { "id": "consulting", "slug": "consultoria-ia", "name": "Consultoría IA", "desc": "Analizamos tu negocio y diseñamos la estrategia de implementación.", "tags": ["Auditoría", "Roadmap", "ROI"] },
+      { "id": "training", "slug": "formacio-a-mida", "name": "Formación a medida", "desc": "Formamos a tu equipo para trabajar con IA — generalista o sobre nuestros sistemas.", "tags": ["On-site", "Async", "Playbooks"] },
+      { "id": "mcp", "slug": "integracions-mcp", "name": "Integraciones MCP / Claude Code", "desc": "Conectamos Claude a tu stack con el Model Context Protocol.", "tags": ["MCP", "Tool-use", "APIs"] },
+      { "id": "web", "slug": "disseny-web", "name": "Diseño web", "desc": "Webs rápidas, premium y optimizadas para convertir.", "tags": ["Next.js", "Framer", "SEO"] }
+    ],
+    "soon": { "id": "saas", "name": "SaaS a medida", "desc": "Construimos aplicaciones SaaS especializadas para tu sector.", "badge": "Próximamente" },
+    "more": "Saber más"
+  },
+  "process": {
+    "eyebrow": "PROCESO",
+    "title": "Cómo lo hacemos",
+    "lede": "Cinco etapas. Una metodología probada.",
+    "note": "El calendario es siempre a medida. Las fases que ves a continuación describen la secuencia de trabajo, no una duración fija: cada proyecto avanza al ritmo que necesita.",
+    "steps": [
+      { "n": "01", "name": "Descubrimiento", "desc": "Entendemos tu negocio a fondo. Identificamos procesos de mayor impacto.", "phase": "Inicio" },
+      { "n": "02", "name": "Diseño", "desc": "Arquitectamos la solución a medida, con métricas y puntos de control.", "phase": "Fase de planificación" },
+      { "n": "03", "name": "Construcción", "desc": "Desarrollamos, probamos e iteramos con tu equipo de forma continua.", "phase": "Fase de desarrollo" },
+      { "n": "04", "name": "Despliegue", "desc": "Puesta en marcha supervisada. Formación y handover completo.", "phase": "Lanzamiento" },
+      { "n": "05", "name": "Evolución", "desc": "Mantenimiento, mejora continua y ampliación a nuevos procesos bajo presupuesto.", "phase": "Continuo" }
+    ]
+  },
+  "cases": {
+    "eyebrow": "RESULTADOS REALES",
+    "title": "Casos de éxito",
+    "lede": "Sistemas que ya están funcionando y generando valor.",
+    "items": [
+      { "sector": "E-commerce · Atención al cliente", "metric": "−70%", "metricLabel": "tiempo en tareas repetitivas", "body": "Agente conversacional multicanal que resuelve el 68% de las consultas sin intervención humana y escala al soporte L1 solo cuando hace falta.", "stack": ["LLM", "n8n", "Supabase", "WhatsApp"] },
+      { "sector": "Fintech · Operaciones", "metric": "24/7", "metricLabel": "atención al cliente automatizada", "body": "Pipeline de KYC + onboarding asistido por IA que prepara el expediente en minutos y libera horas semanales al equipo.", "stack": ["n8n", "LLM", "Notion", "Slack"] },
+      { "sector": "Hostelería · Back-office", "metric": "−42h/mes", "metricLabel": "en procesamiento de facturas", "body": "Extracción automática de facturas de proveedor y conciliación con el ERP. Cero errores humanos, trazabilidad total.", "stack": ["LLM", "n8n", "Xero", "Telegram"] },
+      { "sector": "Servicios profesionales · Revenue", "metric": "+38%", "metricLabel": "tasa de conversión de leads", "body": "Cualificación y respuesta automatizada de leads inbound con priorización por IA. Cada lead recibe una primera respuesta personalizada en menos de un minuto.", "stack": ["LLM", "HubSpot", "n8n", "Gmail"] },
+      { "sector": "Logística · Velocidad", "metric": "12×", "metricLabel": "más rápido al preparar albaranes", "body": "Sistema de extracción y validación de documentos de transporte. Lo que antes tardaba horas ahora se completa en minutos, con menos errores.", "stack": ["LLM", "MCP", "n8n", "Google Sheets"] }
+    ],
+    "ctaTitle": "¿Quieres saber cómo lo hicimos?",
+    "cta": "Hablemos"
+  },
+  "about": {
+    "eyebrow": "SOBRE NOSOTROS",
+    "title": "Un equipo pequeño, obsesionado con el resultado.",
+    "body": "Somos ingenieros, estrategas y consultores que construimos sistemas de IA para empresas que quieren resultados medibles, no promesas. Trabajamos remoto desde Andorra y presencial cuando hace falta.",
+    "cta": "Conócenos",
+    "href": "/sobre-nosaltres"
+  },
+  "why": {
+    "eyebrow": "POR QUÉ MINDRISE",
+    "title": "Lo que nos hace diferentes",
+    "items": [
+      { "name": "Arquitectura propia", "desc": "No hacemos scripts de una semana. Construimos sistemas que aguantan en producción." },
+      { "name": "IA aplicada, no moda", "desc": "Cada implementación responde a un objetivo de negocio medible." },
+      { "name": "Acompañamiento real", "desc": "No te dejamos solo tras el lanzamiento. Continuidad garantizada." },
+      { "name": "Base en Andorra", "desc": "Entendemos el contexto local y trabajamos con empresas en toda Europa." },
+      { "name": "Stack agnóstico", "desc": "Elegimos la tecnología según el problema, no según la moda ni el partner comercial." },
+      { "name": "Transparencia total", "desc": "Entregas visibles cada semana. Código, decisiones y accesos siempre a tu alcance." }
+    ],
+    "stats": [
+      { "n": 20, "suf": "+", "label": "proyectos entregados" },
+      { "n": 15, "suf": "+", "label": "empresas confían" },
+      { "n": 4, "suf": "", "label": "idiomas de servicio" },
+      { "n": 100, "suf": "%", "label": "proyectos a medida" }
+    ],
+    "statsDisclaimer": "Datos acumulados del equipo fundador."
+  },
+  "testimonial": {
+    "eyebrow": "TESTIMONIOS",
+    "q": "Su sistema de consulta legal ha cambiado cómo trabajo. Dedico menos tiempo a buscar y más a pensar, que es por lo que me paga el cliente. Entendieron la complejidad del derecho andorrano antes de escribir una sola línea de código.",
+    "name": "E. B.",
+    "role": "Consultor",
+    "co": "Boné Consulting"
+  },
+  "blog": {
+    "eyebrow": "INSIGHTS",
+    "title": "Desde el laboratorio",
+    "categories": ["ARQUITECTURA", "CASOS", "TÉCNICO", "ESTRATEGIA", "NOVEDADES"],
+    "items": [
+      { "slug": "agents-ia-no-son-chatbots", "cat": "ARQUITECTURA", "title": "Por qué los agentes de IA no son chatbots (ni deben serlo)", "date": "18 abr 2026", "excerpt": "La diferencia entre un script y un sistema que razona: arquitectura, memoria y herramientas." },
+      { "slug": "n8n-42h-mes", "cat": "CASOS", "title": "Cómo un flujo n8n eliminó 42h/mes de trabajo manual", "date": "02 abr 2026", "excerpt": "Un caso real de automatización de back-office en hostelería, paso a paso." },
+      { "slug": "mcp-claude-code", "cat": "TÉCNICO", "title": "MCP y Claude Code: un nuevo modelo de integración", "date": "24 mar 2026", "excerpt": "El Model Context Protocol cambia cómo conectamos la IA con las herramientas que ya usas." }
+    ],
+    "read": "Leer",
+    "index": "Ver todos los artículos"
+  },
+  "faq": {
+    "eyebrow": "DUDAS",
+    "title": "Preguntas frecuentes",
+    "items": [
+      { "q": "¿Trabajáis con empresas fuera de Andorra?", "a": "Sí. Tenemos clientes activos en España, Francia y otros países europeos. Operamos remotamente con sesiones presenciales según necesidad, y el catalán, castellano, inglés y francés son lenguas de trabajo." },
+      { "q": "¿Cómo funcionan los presupuestos?", "a": "Trabajamos siempre a presupuesto cerrado, definido tras un descubrimiento inicial corto. No cobramos por hora: cobramos por el resultado acordado. No publicamos listas de precios porque cada proyecto es a medida." },
+      { "q": "¿Cómo definís los plazos?", "a": "El calendario se define en la primera llamada, una vez entendido el alcance. No prometemos duraciones antes de conocer el problema. Hacemos entregas visibles de forma continua para que puedas validar cada paso." },
+      { "q": "¿Qué es el Model Context Protocol (MCP)?", "a": "Un estándar abierto, impulsado por Anthropic, que permite conectar modelos de IA con herramientas y datos externos de forma segura y modular. Lo usamos para conectar Claude a tu stack sin tener que reconstruir cada integración." },
+      { "q": "¿Ofrecéis mantenimiento tras el lanzamiento?", "a": "Sí. Cada proyecto incluye un período de garantía y ofrecemos planes de mantenimiento que cubren evolución, monitorización y soporte prioritario. Nadie se queda solo tras el deploy." },
+      { "q": "¿Vuestras soluciones son seguras y cumplen el GDPR?", "a": "Sí. Trabajamos con proveedores compatibles con GDPR, aplicamos minimización de datos por defecto y documentamos los flujos de información. Podemos operar con datos sensibles con data processing agreements específicos." },
+      { "q": "¿Quién es el propietario de lo que construís? ¿Quién tiene los accesos?", "a": "Tú. Todo el código, configuraciones, prompts, flujos y credenciales son tuyos desde el primer día. Hacemos el handover completo y documentado. No hay lock-in: si quieres irte, te vas." },
+      { "q": "¿Y si mi equipo no tiene conocimientos técnicos?", "a": "Es el caso más habitual. Diseñamos las soluciones para que sean operables por personas no-técnicas e incluimos formación específica sobre los sistemas que construimos para tu negocio." },
+      { "q": "¿Qué herramientas y modelos usáis?", "a": "Elegimos la tecnología según el problema: Claude (Anthropic), GPT (OpenAI), modelos open-source cuando tiene sentido, n8n para orquestación, Supabase / PostgreSQL para datos, MCP para integraciones. Stack agnóstico, sin partners comerciales que condicionen las decisiones." },
+      { "q": "¿Cómo empezamos un proyecto juntos?", "a": "Con una llamada inicial. Entendemos el contexto, identificamos el proceso de mayor impacto y te enviamos una propuesta cerrada con alcance, entregables y presupuesto." }
+    ]
+  }
+}

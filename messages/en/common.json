@@ -1,0 +1,83 @@
+{
+  "nav": {
+    "links": ["Services", "Process", "Cases", "About", "Blog", "Contact"],
+    "anchors": ["services", "process", "cases", "about-teaser", "blog", "contact"],
+    "hrefs": ["/#services", "/#process", "/#cases", "/sobre-nosaltres", "/blog", "/#contact"],
+    "cta": "Book a demo"
+  },
+  "footer": {
+    "tagline": "We build the intelligence that grows your business.",
+    "made": "Made with ♥ in Andorra",
+    "col1": {
+      "title": "Services",
+      "items": [
+        { "label": "AI Agents", "href": "/serveis/agents-ia" },
+        { "label": "n8n Automations", "href": "/serveis/automatitzacions-n8n" },
+        { "label": "AI Consulting", "href": "/serveis/consultoria-ia" },
+        { "label": "Tailored Training", "href": "/serveis/formacio-a-mida" },
+        { "label": "MCP Integrations", "href": "/serveis/integracions-mcp" },
+        { "label": "Web design", "href": "/serveis/disseny-web" }
+      ]
+    },
+    "col2": {
+      "title": "Company",
+      "items": [
+        { "label": "About", "href": "/sobre-nosaltres" },
+        { "label": "Blog", "href": "/blog" },
+        { "label": "Contact", "href": "/#contact" }
+      ]
+    },
+    "col3": {
+      "title": "Legal",
+      "items": [
+        { "label": "Privacy policy", "href": "/politica-de-privacitat" },
+        { "label": "Cookie policy", "href": "/politica-de-cookies" },
+        { "label": "Legal notice", "href": "/avis-legal" }
+      ]
+    },
+    "rights": "© 2026 MindRise Labs. All rights reserved."
+  },
+  "lang": { "ca": "Català", "es": "Español", "en": "English", "fr": "Français" },
+  "contact": {
+    "eyebrow": "CONTACT",
+    "title": "Let's talk about your project",
+    "lede": "We reply in under 24 business hours.",
+    "formFields": {
+      "name": "Name",
+      "company": "Company",
+      "email": "Email",
+      "phone": "Phone",
+      "projectType": "Project type",
+      "message": "Message",
+      "source": "How did you hear about us?",
+      "consent": "I accept the privacy policy",
+      "submit": "Send message",
+      "sent": "Message sent. We'll get back to you soon.",
+      "errorGeneric": "We couldn't send your message. Please try again later or email us directly at contact@mindrise-labs.com."
+    },
+    "projectTypes": ["AI Agent", "Automation", "Consulting", "Training", "MCP integration", "Web design", "Other"],
+    "sources": ["Google", "LinkedIn", "Instagram", "Referral", "Other"],
+    "direct": {
+      "email": "contact@mindrise-labs.com",
+      "phoneLabel": "Phone / WhatsApp",
+      "phone": "+376 648 807",
+      "phoneHref": "tel:+376648807",
+      "waHref": "https://wa.me/376648807",
+      "linkedin": "https://www.linkedin.com/company/mindrise-labs/",
+      "linkedinLabel": "/mindrise-labs",
+      "instagram": "https://www.instagram.com/mindrise_labs",
+      "instagramLabel": "@mindrise_labs",
+      "location": "Based in Andorra"
+    }
+  },
+  "cta": {
+    "title": "Ready to grow your business with AI?",
+    "sub": "A short conversation can change how your company works.",
+    "primary": "Book a free demo",
+    "secondary": "contact@mindrise-labs.com"
+  },
+  "metaSite": {
+    "title": "MindRise Labs — AI Automation Studio · Andorra",
+    "description": "AI agents, automations and tailor-made systems for companies that want to scale without growing the team. AI studio in Andorra for SMEs across Europe."
+  }
+}
