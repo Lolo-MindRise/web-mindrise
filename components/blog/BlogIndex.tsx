@@ -78,7 +78,7 @@ export function BlogIndex({ posts, t }: { posts: Post[]; t: BlogT }) {
           ) : (
             <div className="blog-index">
               {visible.map((p, i) => (
-                <div key={p.slug} className="reveal" style={{ transitionDelay: `${i * 35}ms` }}>
+                <div key={p.slug} className="reveal is-in" style={{ transitionDelay: `${i * 35}ms` }}>
                   <Link href={`/blog/${p.slug}` as never} className="post" data-hot>
                     <div className="post__cover">
                       <BlogCover variant={p.variant} />

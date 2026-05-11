@@ -30,7 +30,7 @@ export default async function BlogIndexPage({ params }: { params: Promise<{ loca
     catsAll: t('catsAll'),
     cats,
     read: t('read'),
-    pageOf: t('pageOf'),
+    pageOf: t.raw('pageOf') as string,
     prev: t('prev'),
     next: t('next'),
     none: t('none'),

@@ -110,7 +110,7 @@ export function ContactForm({ f, projectTypes, sources, lede }: Props) {
   }
 
   return (
-    <form className="contact__form reveal" onSubmit={submit} noValidate>
+    <form className="contact__form reveal is-in" onSubmit={submit} noValidate>
       <div className="fld-row">
         <div className="fld">
           <label>{f.name}</label>
