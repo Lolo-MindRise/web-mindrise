@@ -109,5 +109,11 @@
       { "q": "What tools and models do you use?", "a": "We pick technology by the problem: Claude (Anthropic), GPT (OpenAI), open-source models when it makes sense, n8n for orchestration, Supabase / PostgreSQL for data, MCP for integrations. Agnostic stack, no commercial partnerships steering decisions." },
       { "q": "How do we start a project together?", "a": "With an initial call. We understand the context, identify the highest-impact process and send you a fixed proposal with scope, deliverables and budget." }
     ]
+  },
+  "cta": {
+    "title": "Ready to grow your business with AI?",
+    "sub": "A short conversation can change how your company works.",
+    "primary": "Book a free demo",
+    "secondary": "contact@mindrise-labs.com"
   }
 }

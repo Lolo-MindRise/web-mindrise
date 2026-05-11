@@ -109,5 +109,11 @@
       { "q": "Quines eines i models utilitzeu?", "a": "Escollim la tecnologia segons el problema: Claude (Anthropic), GPT (OpenAI), models open-source quan té sentit, n8n per a orquestració, Supabase / PostgreSQL per a dades, MCP per a integracions. Stack agnòstic, sense partners comercials que condicionin les decisions." },
       { "q": "Com comencem un projecte junts?", "a": "Amb una trucada inicial. Entenem el context, identifiquem el procés de major impacte i t'enviem una proposta tancada amb abast, entregables i pressupost." }
     ]
+  },
+  "cta": {
+    "title": "Llest per fer créixer el teu negoci amb IA?",
+    "sub": "Una conversa curta pot canviar com treballa la teva empresa.",
+    "primary": "Reserva una demo gratuïta",
+    "secondary": "contact@mindrise-labs.com"
   }
 }
