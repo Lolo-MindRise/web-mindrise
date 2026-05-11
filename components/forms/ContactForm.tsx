@@ -14,6 +14,7 @@ type FormFields = {
   consent: string;
   submit: string;
   sent: string;
+  sendAnother: string;
   errorGeneric: string;
 };
 
@@ -84,9 +85,16 @@ export function ContactForm({ f, projectTypes, sources, lede }: Props) {
     }
   };
 
+  const reset = () => {
+    setForm({ name: '', company: '', email: '', phone: '', type: '', source: '', message: '', consent: false });
+    setErrors({});
+    setSubmitError(null);
+    setSent(false);
+  };
+
   if (sent) {
     return (
-      <div className="contact__form contact__sent reveal">
+      <div className="contact__form contact__sent reveal is-in">
         <div className="ok">
           <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
             <path d="M5 12 L10 17 L19 7" />
@@ -94,6 +102,9 @@ export function ContactForm({ f, projectTypes, sources, lede }: Props) {
         </div>
         <h3>{f.sent}</h3>
         <p>{lede}</p>
+        <button type="button" className="btn btn--ghost" onClick={reset} data-hot>
+          {f.sendAnother}
+        </button>
       </div>
     );
   }

@@ -58,6 +58,7 @@
       "consent": "Accepto la política de privacitat",
       "submit": "Envia el missatge",
       "sent": "Missatge enviat. Et responem aviat.",
+      "sendAnother": "Enviar una altra consulta",
       "errorGeneric": "No s'ha pogut enviar el missatge. Torna-ho a provar més tard o escriu-nos directament a contact@mindrise-labs.com."
     },
     "projectTypes": ["Agent d'IA", "Automatització", "Consultoria", "Formació", "Integració MCP", "Disseny web", "Altres"],

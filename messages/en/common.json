@@ -53,6 +53,7 @@
       "consent": "I accept the privacy policy",
       "submit": "Send message",
       "sent": "Message sent. We'll get back to you soon.",
+      "sendAnother": "Send another message",
       "errorGeneric": "We couldn't send your message. Please try again later or email us directly at contact@mindrise-labs.com."
     },
     "projectTypes": ["AI Agent", "Automation", "Consulting", "Training", "MCP integration", "Web design", "Other"],

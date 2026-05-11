@@ -51,6 +51,7 @@ type FormFields = {
   consent: string;
   submit: string;
   sent: string;
+  sendAnother: string;
   errorGeneric: string;
 };
 
