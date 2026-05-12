@@ -21,19 +21,24 @@ export type Post = {
 };
 
 export const POSTS_META: PostMeta[] = [
-  { slug: 'agents-ia-no-son-chatbots', variant: 0, cat: 0, dateISO: '2026-05-13' },
-  { slug: 'n8n-42h-mes', variant: 1, cat: 1, dateISO: '2026-04-02' },
-  { slug: 'mcp-claude-code', variant: 2, cat: 2, dateISO: '2026-03-24' },
-  { slug: 'rag-empresa-mitjana', variant: 3, cat: 0, dateISO: '2026-03-10' },
   { slug: 'ia-on-no', variant: 4, cat: 3, dateISO: '2026-05-12' },
-  { slug: 'evals-produccio', variant: 5, cat: 2, dateISO: '2026-02-12' },
-  { slug: 'claude-haiku-cost', variant: 0, cat: 4, dateISO: '2026-01-28' },
-  { slug: 'handover-tecnic', variant: 1, cat: 3, dateISO: '2026-01-14' },
-  { slug: 'boutique-restaurant', variant: 2, cat: 1, dateISO: '2025-12-18' },
-  { slug: 'supabase-pgvector', variant: 3, cat: 2, dateISO: '2025-12-04' },
-  { slug: 'agent-multitool', variant: 4, cat: 0, dateISO: '2025-11-20' },
-  { slug: 'anthropic-2025-recap', variant: 5, cat: 4, dateISO: '2025-11-06' },
+  { slug: 'agents-ia-no-son-chatbots', variant: 0, cat: 0, dateISO: '2026-05-12' },
+  { slug: 'n8n-42h-mes', variant: 1, cat: 1, dateISO: '2026-05-14' },
+  { slug: 'handover-tecnic', variant: 1, cat: 3, dateISO: '2026-05-15' },
+  { slug: 'rag-empresa-mitjana', variant: 3, cat: 0, dateISO: '2026-05-16' },
+  { slug: 'mcp-claude-code', variant: 2, cat: 2, dateISO: '2026-05-17' },
+  { slug: 'boutique-restaurant', variant: 2, cat: 1, dateISO: '2026-05-18' },
+  { slug: 'evals-produccio', variant: 5, cat: 2, dateISO: '2026-05-19' },
+  { slug: 'agent-multitool', variant: 4, cat: 0, dateISO: '2026-05-20' },
+  { slug: 'supabase-pgvector', variant: 3, cat: 2, dateISO: '2026-05-21' },
+  { slug: 'claude-haiku-cost', variant: 0, cat: 4, dateISO: '2026-05-22' },
+  { slug: 'anthropic-2025-recap', variant: 5, cat: 4, dateISO: '2026-05-23' },
 ];
+
+export function isPublished(dateISO: string, now: Date = new Date()): boolean {
+  const today = now.toISOString().slice(0, 10);
+  return dateISO <= today;
+}
 
 const LOREM: Record<Locale, string> = {
   ca: [
@@ -527,7 +532,7 @@ export function buildCatalog(locale: Locale, cats: string[]): Post[] {
   const months = MONTH_SHORT[locale];
   const fallbackBody = LOREM[locale];
   const author = AUTHOR[locale];
-  return POSTS_META.map((m) => {
+  return POSTS_META.filter((m) => isPublished(m.dateISO)).map((m) => {
     const c = content[m.slug] ?? { title: m.slug, excerpt: '' };
     const [yyyy, mm, dd] = m.dateISO.split('-');
     const date = `${parseInt(dd, 10)} ${months[mm]} ${yyyy}`;

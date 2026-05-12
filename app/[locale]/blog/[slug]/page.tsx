@@ -3,11 +3,13 @@ import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { locales, type Locale } from '@/lib/i18n/routing';
 import { notFound } from 'next/navigation';
 import { PostPageView, type PostT } from '@/components/blog/PostPage';
-import { buildCatalog, POSTS_META } from '@/lib/blog/posts';
+import { buildCatalog, POSTS_META, isPublished } from '@/lib/blog/posts';
+
+export const revalidate = 3600;
 
 export function generateStaticParams() {
   return locales.flatMap((locale) =>
-    POSTS_META.map((p) => ({ locale, slug: p.slug }))
+    POSTS_META.filter((p) => isPublished(p.dateISO)).map((p) => ({ locale, slug: p.slug }))
   );
 }
 
@@ -39,6 +41,7 @@ export default async function PostPage({
   const posts = buildCatalog(locale as Locale, cats);
   const post = posts.find((p) => p.slug === slug);
   if (!post) notFound();
+  if (!isPublished(post.dateISO)) notFound();
 
   const sameCat = posts.filter((p) => p.slug !== post.slug && p.catIdx === post.catIdx);
   const others = posts.filter((p) => p.slug !== post.slug && p.catIdx !== post.catIdx);
