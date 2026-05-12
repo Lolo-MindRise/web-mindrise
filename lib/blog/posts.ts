@@ -814,6 +814,222 @@ Ce projet est un cas relativement typique de ce que nous faisons chez MindRise :
 
 Si vous avez un cas similaire —tâches opérationnelles répétitives, multilingue, intégration avec des systèmes externes—, écrivez-nous. Nous vous donnerons une évaluation honnête avant de proposer quoi que ce soit. Parfois le cas justifie un système comme celui-ci. D'autres fois une solution plus simple résout déjà le problème. La différence entre les deux réponses, nous la connaissons après avoir regardé les données réelles, pas avant.`;
 
+const HANDOVER_CA = `No hem hagut de rescatar encara cap client d'un projecte d'IA mal lliurat. Hem vist sistemes mal documentats en altres contextos, sabem el cost real que té heretar-los, i per això tractem cada entrega com si el client hagués de continuar amb un altre proveïdor demà, encara que no sigui així.
+
+Aquesta forma de pensar canvia com es dissenya el projecte des del principi. No s'escriu codi pensant "ja documentarem al final", no es deixen credencials en arxius personals, no s'utilitzen serveis que només una persona del nostre equip sap configurar. Cada decisió tècnica passa per un filtre senzill: si demà el client volgués portar-se aquest sistema a casa, podria fer-ho?
+
+Aquest article explica per què els handovers en projectes d'IA són més complexos que en altres sistemes, què hauria d'incloure una entrega ben feta, i quines són les senyals d'alerta abans de signar amb qualsevol proveïdor que prometi "sistemes intel·ligents".
+
+## Per què un handover d'IA és més complex que un altre
+
+En un projecte web tradicional, un handover ben fet implica codi documentat, accessos i un README clar. La gran majoria del coneixement està en el codi: si una persona nova el llegeix, en pot deduir què fa el sistema i com mantenir-lo.
+
+En un projecte d'IA, això no és suficient. **El comportament del sistema no està només al codi**: està en els prompts, en les configuracions del model, en les eines connectades, en els fluxos d'orquestració, en els evals que defineixen què és una resposta correcta i en les decisions arquitectòniques que sovint només es justifiquen amb el context del cas concret. Un nou equip pot llegir el codi i entendre què fa cada funció, però sense documentació addicional no entendrà per què es va decidir aquell prompt, aquell model o aquella seqüència d'accions.
+
+A això s'hi suma un altre factor: els sistemes d'IA són **sistemes vius**, no estàtics. Calen evals periòdiques, ajustos quan el comportament deriva, decisions sobre quan actualitzar models. Sense traspàs adequat d'aquesta capa operativa, el sistema funcionarà el primer mes i començarà a degradar-se lentament el segon o tercer, sense que el client sàpiga per què.
+
+Un handover de qualitat ha de cobrir totes aquestes capes, no només el codi.
+
+## Els sis elements d'un handover ben fet
+
+A partir de la nostra experiència construint sistemes d'IA i de la pràctica de tractar cada projecte com si fos lliurable demà, aquests són els sis elements que considerem imprescindibles en una entrega tècnica seriosa:
+
+**1. Documentació tècnica completa.** No és un README de tres línies. És un conjunt estructurat que inclou: arquitectura del sistema (què hi ha, què fa cada part, com es comuniquen), decisions tècniques rellevants (per què aquest model, per què aquesta base de dades, per què aquesta orquestració), runbooks operatius (què fer quan falla X, com diagnosticar Y), i diagrames quan són útils. Si un enginyer sènior pot llegir-ho i entendre el sistema en una tarda, està ben fet.
+
+**2. Accés total a credencials i comptes.** Tots els comptes, APIs, tokens, repositoris i serveis han d'estar en propietat del client, no del proveïdor. Sembla obvi però és el primer punt on molts handovers fallen: el compte de l'API està a nom del proveïdor, el repositori està al seu GitHub personal, el monitor està a un servei que el proveïdor paga. Quan el client vol marxar, té un sistema però no en té control. Un handover ben fet inverteix aquesta situació: el client té tot, el proveïdor només té accés mentre dura la relació.
+
+**3. Tests automatitzats i sistema d'evals.** En IA, els evals són tan importants com els tests unitaris en software tradicional. Permeten validar que el sistema continua prenent decisions correctes quan algú toca el codi, canvia un model o ajusta un prompt. Sense evals, qualsevol modificació al sistema és un acte de fe. Un handover ben fet inclou una bateria d'evals executable amb un sol comando, datasets de test pròpies del cas i criteris clars d'èxit.
+
+**4. Sessió de transferència presencial o per videoconferència.** La documentació és necessària però no suficient. Una sessió de 2-3 hores amb l'equip tècnic del client, on s'explica el sistema, es fan demostracions reals i es resolen dubtes, val per cinquanta pàgines de documentació. És on es transfereix el coneixement tàcit: aquelles coses que ningú escriu però que tothom necessita saber per operar el sistema.
+
+**5. Període d'acompanyament posterior.** Un sistema mai es lliura "tancat". Sempre apareixen dubtes, comportaments inesperats o necessitats noves en els primers mesos. Un handover ben fet inclou un període de suport posterior —típicament entre 1 i 3 mesos— on l'equip que va construir el sistema queda disponible per a consultes. No és un servei premium amagat: és part de la responsabilitat del proveïdor que va construir el sistema.
+
+**6. Pla de manteniment documentat.** Què cal fer cada setmana, cada mes, cada trimestre per mantenir el sistema saludable: revisar evals, mirar logs d'errors, comprovar costos, actualitzar dependències crítiques. Un pla de manteniment clar permet al client decidir si vol portar-ho internament o contractar manteniment a algú —al mateix proveïdor o a un altre—. La clau és que pugui escollir amb informació, no amb desconeixement.
+
+## Senyals d'alerta abans de signar amb un proveïdor
+
+Si estàs avaluant proveïdors per a un projecte d'IA, aquí van quatre senyals d'alerta que indiquen que probablement no rebràs un handover decent:
+
+**Senyal 1: el proveïdor parla només de la demo i no de com es manté en producció.** Si en les reunions comercials es dediquen 90% del temps a ensenyar què bonic queda el sistema funcionant i 10% (o menys) a explicar com s'opera, com es mesura i com es manté, és senyal que la seva mentalitat és "lliurar i marxar", no construir alguna cosa que duri.
+
+**Senyal 2: al pressupost no hi ha cap partida de documentació, transferència o període d'acompanyament.** Si el pressupost inclou només desenvolupament i res més, vol dir que el proveïdor està pensant en mínim viable per cobrar i marxar. Un proveïdor seriós considera la documentació i la transferència com una part integral del projecte, no com un servei addicional.
+
+**Senyal 3: et demanen signar un contracte on només ells tenen accés al codi o a infraestructura.** Si la propietat intel·lectual no queda clarament al client, o si els comptes principals queden a nom del proveïdor, t'estan creant dependència estructural des del minut zero. Un proveïdor seriós insisteix que tot quedi a nom del client des de l'inici.
+
+**Senyal 4: t'ofereixen un manteniment mensual obligatori sense opció de sortir o canviar de mans.** Hi ha proveïdors que estructuren els contractes perquè el client quedi atrapat: només ells poden mantenir el sistema, només ells tenen accés, només ells coneixen com funciona. Aquesta no és una relació comercial, és una hipoteca tècnica. Un proveïdor seriós ofereix manteniment com una opció més, no com una necessitat imposada per disseny.
+
+## Per què escrivim sobre això sense haver hagut de rescatar ningú
+
+Reconeixem que aquest article no es basa en l'experiència d'haver rescatat clients de proveïdors anteriors. Es basa en el criteri tècnic acumulat construint sistemes que volem que sobrevisquin a la nostra relació amb el client. Cada decisió que prenem en un projecte passa per la pregunta: si demà aquest client volgués portar-se el sistema, podria? La resposta ha de ser sempre sí.
+
+Aquest enfocament té un cost. Significa més temps en documentació, més temps en sessions de transferència, més rigor en com es gestionen accessos i comptes. Però el cost val la pena: és el que diferencia un proveïdor que tracta cada projecte com una venda d'algú que el tracta com una relació professional.
+
+Si estàs avaluant proveïdors per a un projecte d'IA, fes-los aquestes preguntes abans de signar: com seria un handover si demà decidíssim canviar de proveïdor? Quina documentació rebríem? Quins accessos? Hi ha període d'acompanyament inclòs? Si les respostes són vagues o defensives, ja saps el que cal saber.
+
+Si vols parlar amb nosaltres d'un projecte concret —el teu o un que estàs avaluant—, escriu-nos. Tinguis o no tinguis intenció d'acabar treballant amb MindRise, una valoració honesta del plantejament pot estalviar-te problemes importants més endavant.`;
+
+const HANDOVER_ES = `Aún no hemos tenido que rescatar a ningún cliente de un proyecto de IA mal entregado. Hemos visto sistemas mal documentados en otros contextos, sabemos el coste real que tiene heredarlos, y por eso tratamos cada entrega como si el cliente fuera a continuar con otro proveedor mañana, aunque no sea así.
+
+Esta forma de pensar cambia cómo se diseña el proyecto desde el principio. No se escribe código pensando "ya documentaremos al final", no se dejan credenciales en archivos personales, no se utilizan servicios que solo una persona de nuestro equipo sabe configurar. Cada decisión técnica pasa por un filtro sencillo: si mañana el cliente quisiera llevarse este sistema a casa, ¿podría hacerlo?
+
+Este artículo explica por qué los handovers en proyectos de IA son más complejos que en otros sistemas, qué debería incluir una entrega bien hecha, y cuáles son las señales de alerta antes de firmar con cualquier proveedor que prometa "sistemas inteligentes".
+
+## Por qué un handover de IA es más complejo que otro
+
+En un proyecto web tradicional, un handover bien hecho implica código documentado, accesos y un README claro. La gran mayoría del conocimiento está en el código: si una persona nueva lo lee, puede deducir qué hace el sistema y cómo mantenerlo.
+
+En un proyecto de IA, eso no es suficiente. **El comportamiento del sistema no está solo en el código**: está en los prompts, en las configuraciones del modelo, en las herramientas conectadas, en los flujos de orquestación, en los evals que definen qué es una respuesta correcta y en las decisiones arquitectónicas que a menudo solo se justifican con el contexto del caso concreto. Un nuevo equipo puede leer el código y entender qué hace cada función, pero sin documentación adicional no entenderá por qué se decidió aquel prompt, aquel modelo o aquella secuencia de acciones.
+
+A esto se le suma otro factor: los sistemas de IA son **sistemas vivos**, no estáticos. Hacen falta evals periódicos, ajustes cuando el comportamiento deriva, decisiones sobre cuándo actualizar modelos. Sin traspaso adecuado de esta capa operativa, el sistema funcionará el primer mes y empezará a degradarse lentamente el segundo o tercero, sin que el cliente sepa por qué.
+
+Un handover de calidad debe cubrir todas estas capas, no solo el código.
+
+## Los seis elementos de un handover bien hecho
+
+A partir de nuestra experiencia construyendo sistemas de IA y de la práctica de tratar cada proyecto como si fuera entregable mañana, estos son los seis elementos que consideramos imprescindibles en una entrega técnica seria:
+
+**1. Documentación técnica completa.** No es un README de tres líneas. Es un conjunto estructurado que incluye: arquitectura del sistema (qué hay, qué hace cada parte, cómo se comunican), decisiones técnicas relevantes (por qué este modelo, por qué esta base de datos, por qué esta orquestación), runbooks operativos (qué hacer cuando falla X, cómo diagnosticar Y), y diagramas cuando son útiles. Si un ingeniero senior puede leerlo y entender el sistema en una tarde, está bien hecho.
+
+**2. Acceso total a credenciales y cuentas.** Todas las cuentas, APIs, tokens, repositorios y servicios deben estar en propiedad del cliente, no del proveedor. Parece obvio pero es el primer punto donde muchos handovers fallan: la cuenta de la API está a nombre del proveedor, el repositorio está en su GitHub personal, el monitor está en un servicio que el proveedor paga. Cuando el cliente quiere marcharse, tiene un sistema pero no tiene control sobre él. Un handover bien hecho invierte esta situación: el cliente lo tiene todo, el proveedor solo tiene acceso mientras dura la relación.
+
+**3. Tests automatizados y sistema de evals.** En IA, los evals son tan importantes como los tests unitarios en software tradicional. Permiten validar que el sistema sigue tomando decisiones correctas cuando alguien toca el código, cambia un modelo o ajusta un prompt. Sin evals, cualquier modificación al sistema es un acto de fe. Un handover bien hecho incluye una batería de evals ejecutable con un solo comando, datasets de test propios del caso y criterios claros de éxito.
+
+**4. Sesión de transferencia presencial o por videoconferencia.** La documentación es necesaria pero no suficiente. Una sesión de 2-3 horas con el equipo técnico del cliente, donde se explica el sistema, se hacen demostraciones reales y se resuelven dudas, vale por cincuenta páginas de documentación. Es donde se transfiere el conocimiento tácito: aquellas cosas que nadie escribe pero que todo el mundo necesita saber para operar el sistema.
+
+**5. Periodo de acompañamiento posterior.** Un sistema nunca se entrega "cerrado". Siempre aparecen dudas, comportamientos inesperados o necesidades nuevas en los primeros meses. Un handover bien hecho incluye un periodo de soporte posterior —típicamente entre 1 y 3 meses— donde el equipo que construyó el sistema queda disponible para consultas. No es un servicio premium escondido: es parte de la responsabilidad del proveedor que construyó el sistema.
+
+**6. Plan de mantenimiento documentado.** Qué hay que hacer cada semana, cada mes, cada trimestre para mantener el sistema saludable: revisar evals, mirar logs de errores, comprobar costes, actualizar dependencias críticas. Un plan de mantenimiento claro permite al cliente decidir si quiere llevarlo internamente o contratar mantenimiento a alguien —al mismo proveedor o a otro—. La clave es que pueda escoger con información, no con desconocimiento.
+
+## Señales de alerta antes de firmar con un proveedor
+
+Si estás evaluando proveedores para un proyecto de IA, aquí van cuatro señales de alerta que indican que probablemente no recibirás un handover decente:
+
+**Señal 1: el proveedor habla solo de la demo y no de cómo se mantiene en producción.** Si en las reuniones comerciales se dedican 90% del tiempo a enseñar lo bonito que queda el sistema funcionando y 10% (o menos) a explicar cómo se opera, cómo se mide y cómo se mantiene, es señal de que su mentalidad es "entregar y marcharse", no construir algo que dure.
+
+**Señal 2: en el presupuesto no hay ninguna partida de documentación, transferencia o periodo de acompañamiento.** Si el presupuesto incluye solo desarrollo y nada más, significa que el proveedor está pensando en mínimo viable para cobrar y marcharse. Un proveedor serio considera la documentación y la transferencia como parte integral del proyecto, no como un servicio adicional.
+
+**Señal 3: te piden firmar un contrato donde solo ellos tienen acceso al código o a la infraestructura.** Si la propiedad intelectual no queda claramente en el cliente, o si las cuentas principales quedan a nombre del proveedor, te están creando dependencia estructural desde el minuto cero. Un proveedor serio insiste en que todo quede a nombre del cliente desde el inicio.
+
+**Señal 4: te ofrecen un mantenimiento mensual obligatorio sin opción de salir o cambiar de manos.** Hay proveedores que estructuran los contratos para que el cliente quede atrapado: solo ellos pueden mantener el sistema, solo ellos tienen acceso, solo ellos conocen cómo funciona. Esto no es una relación comercial, es una hipoteca técnica. Un proveedor serio ofrece mantenimiento como una opción más, no como una necesidad impuesta por diseño.
+
+## Por qué escribimos sobre esto sin haber tenido que rescatar a nadie
+
+Reconocemos que este artículo no se basa en la experiencia de haber rescatado clientes de proveedores anteriores. Se basa en el criterio técnico acumulado construyendo sistemas que queremos que sobrevivan a nuestra relación con el cliente. Cada decisión que tomamos en un proyecto pasa por la pregunta: si mañana este cliente quisiera llevarse el sistema, ¿podría? La respuesta siempre debe ser sí.
+
+Este enfoque tiene un coste. Significa más tiempo en documentación, más tiempo en sesiones de transferencia, más rigor en cómo se gestionan accesos y cuentas. Pero el coste vale la pena: es lo que diferencia a un proveedor que trata cada proyecto como una venta de alguien que lo trata como una relación profesional.
+
+Si estás evaluando proveedores para un proyecto de IA, hazles estas preguntas antes de firmar: ¿cómo sería un handover si mañana decidiéramos cambiar de proveedor? ¿Qué documentación recibiríamos? ¿Qué accesos? ¿Hay periodo de acompañamiento incluido? Si las respuestas son vagas o defensivas, ya sabes lo que necesitas saber.
+
+Si quieres hablar con nosotros de un proyecto concreto —el tuyo o uno que estás evaluando—, escríbenos. Tengas o no tengas intención de acabar trabajando con MindRise, una valoración honesta del planteamiento puede ahorrarte problemas importantes más adelante.`;
+
+const HANDOVER_EN = `We haven't yet had to rescue a client from a poorly delivered AI project. We've seen badly documented systems in other contexts, we know the real cost of inheriting them, and that's why we treat every delivery as if the client would be continuing with another vendor tomorrow, even when that's not the case.
+
+This way of thinking changes how the project is designed from the start. You don't write code thinking "we'll document at the end", you don't leave credentials in personal files, you don't use services that only one person on our team knows how to configure. Every technical decision passes through a simple filter: if tomorrow the client wanted to take this system home, could they?
+
+This article explains why handovers in AI projects are more complex than in other systems, what a well-done delivery should include, and what the warning signs are before signing with any vendor promising "intelligent systems".
+
+## Why an AI handover is more complex than others
+
+In a traditional web project, a well-done handover involves documented code, access credentials and a clear README. Most knowledge is in the code: if a new person reads it, they can deduce what the system does and how to maintain it.
+
+In an AI project, that isn't enough. **The system's behaviour isn't only in the code**: it's in the prompts, in the model configurations, in the connected tools, in the orchestration flows, in the evals that define what a correct response looks like and in the architectural decisions that often only make sense with the context of the specific case. A new team can read the code and understand what each function does, but without additional documentation they won't understand why this prompt, this model or this sequence of actions was chosen.
+
+On top of that, there's another factor: AI systems are **living systems**, not static. They need periodic evals, adjustments when behaviour drifts, decisions about when to update models. Without proper handover of this operational layer, the system will work the first month and start degrading slowly the second or third, without the client knowing why.
+
+A quality handover must cover all of these layers, not just the code.
+
+## The six elements of a well-done handover
+
+Based on our experience building AI systems and the practice of treating every project as if it were deliverable tomorrow, these are the six elements we consider essential in a serious technical delivery:
+
+**1. Complete technical documentation.** It's not a three-line README. It's a structured collection that includes: system architecture (what exists, what each part does, how they communicate), relevant technical decisions (why this model, why this database, why this orchestration), operational runbooks (what to do when X fails, how to diagnose Y), and diagrams where useful. If a senior engineer can read it and understand the system in an afternoon, it's well done.
+
+**2. Full access to credentials and accounts.** All accounts, APIs, tokens, repositories and services must belong to the client, not the vendor. It sounds obvious but it's the first point where many handovers fail: the API account is under the vendor's name, the repository is on their personal GitHub, the monitor is on a service the vendor pays for. When the client wants to leave, they have a system but no control over it. A well-done handover reverses this: the client has everything, the vendor only has access while the relationship lasts.
+
+**3. Automated tests and evals system.** In AI, evals are as important as unit tests in traditional software. They let you validate that the system keeps making correct decisions when someone touches the code, changes a model or adjusts a prompt. Without evals, any modification to the system is an act of faith. A well-done handover includes an eval suite runnable with a single command, test datasets specific to the case, and clear success criteria.
+
+**4. In-person or video transfer session.** Documentation is necessary but not sufficient. A 2-3 hour session with the client's technical team, where the system is explained, real demonstrations are made and questions are answered, is worth fifty pages of documentation. It's where tacit knowledge is transferred: those things no one writes down but everyone needs to know to operate the system.
+
+**5. Post-delivery support period.** A system is never delivered "closed". Questions, unexpected behaviours or new needs always appear in the first few months. A well-done handover includes a post-delivery support period —typically between 1 and 3 months— during which the team that built the system remains available for queries. It's not a hidden premium service: it's part of the responsibility of the vendor who built the system.
+
+**6. Documented maintenance plan.** What needs to be done weekly, monthly, quarterly to keep the system healthy: review evals, check error logs, monitor costs, update critical dependencies. A clear maintenance plan lets the client decide whether to handle it internally or hire maintenance from someone —the same vendor or another. The key is being able to choose with information, not with ignorance.
+
+## Warning signs before signing with a vendor
+
+If you're evaluating vendors for an AI project, here are four warning signs that indicate you probably won't receive a decent handover:
+
+**Sign 1: the vendor talks only about the demo and not about how it's maintained in production.** If in commercial meetings 90% of the time is spent showing how beautiful the system looks running and 10% (or less) explaining how it's operated, measured and maintained, that's a sign their mindset is "deliver and leave", not build something that lasts.
+
+**Sign 2: the budget has no line for documentation, transfer or post-delivery support.** If the budget only includes development and nothing else, it means the vendor is thinking minimum viable to charge and leave. A serious vendor considers documentation and transfer as integral parts of the project, not as additional services.
+
+**Sign 3: they ask you to sign a contract where only they have access to the code or infrastructure.** If intellectual property doesn't clearly stay with the client, or if main accounts remain under the vendor's name, they're creating structural dependence from minute zero. A serious vendor insists that everything stays under the client's name from the start.
+
+**Sign 4: they offer mandatory monthly maintenance with no option to exit or switch hands.** There are vendors who structure contracts so the client stays trapped: only they can maintain the system, only they have access, only they know how it works. This isn't a commercial relationship, it's a technical mortgage. A serious vendor offers maintenance as one option among others, not as a need imposed by design.
+
+## Why we write about this without having had to rescue anyone
+
+We acknowledge that this article isn't based on the experience of having rescued clients from previous vendors. It's based on the technical judgement accumulated building systems that we want to survive our relationship with the client. Every decision we make in a project passes through the question: if tomorrow this client wanted to take the system, could they? The answer must always be yes.
+
+This approach has a cost. It means more time in documentation, more time in transfer sessions, more rigour in how accesses and accounts are managed. But the cost is worth it: it's what distinguishes a vendor who treats each project as a sale from one who treats it as a professional relationship.
+
+If you're evaluating vendors for an AI project, ask them these questions before signing: what would a handover look like if tomorrow we decided to change vendors? What documentation would we receive? What access? Is a post-delivery support period included? If the answers are vague or defensive, you already know what you need to know.
+
+If you want to talk to us about a specific project —yours or one you're evaluating—, get in touch. Whether or not you end up working with MindRise, an honest assessment of the approach can save you significant problems down the road.`;
+
+const HANDOVER_FR = `Nous n'avons pas encore eu à sauver un client d'un projet d'IA mal livré. Nous avons vu des systèmes mal documentés dans d'autres contextes, nous connaissons le coût réel d'en hériter, et c'est pourquoi nous traitons chaque livraison comme si le client devait continuer avec un autre fournisseur demain, même si ce n'est pas le cas.
+
+Cette façon de penser change la conception du projet dès le départ. On n'écrit pas du code en se disant « on documentera à la fin », on ne laisse pas les credentials dans des fichiers personnels, on n'utilise pas des services que seule une personne de notre équipe sait configurer. Chaque décision technique passe par un filtre simple : si demain le client voulait emporter ce système chez lui, pourrait-il le faire ?
+
+Cet article explique pourquoi les handovers dans des projets d'IA sont plus complexes que dans d'autres systèmes, ce que devrait inclure une livraison bien faite, et quels sont les signaux d'alerte avant de signer avec n'importe quel fournisseur qui promet des « systèmes intelligents ».
+
+## Pourquoi un handover d'IA est plus complexe qu'un autre
+
+Dans un projet web traditionnel, un handover bien fait implique du code documenté, des accès et un README clair. La grande majorité des connaissances se trouve dans le code : si une nouvelle personne le lit, elle peut en déduire ce que fait le système et comment le maintenir.
+
+Dans un projet d'IA, cela ne suffit pas. **Le comportement du système ne se trouve pas seulement dans le code** : il se trouve dans les prompts, dans les configurations du modèle, dans les outils connectés, dans les flux d'orchestration, dans les évaluations qui définissent ce qu'est une bonne réponse et dans les décisions architecturales qui ne se justifient souvent qu'avec le contexte du cas concret. Une nouvelle équipe peut lire le code et comprendre ce que fait chaque fonction, mais sans documentation supplémentaire elle ne comprendra pas pourquoi ce prompt, ce modèle ou cette séquence d'actions ont été choisis.
+
+À cela s'ajoute un autre facteur : les systèmes d'IA sont **des systèmes vivants**, pas statiques. Il faut des évaluations périodiques, des ajustements quand le comportement dérive, des décisions sur quand mettre à jour les modèles. Sans transmission adéquate de cette couche opérationnelle, le système fonctionnera le premier mois et commencera à se dégrader lentement le deuxième ou le troisième, sans que le client sache pourquoi.
+
+Un handover de qualité doit couvrir toutes ces couches, pas seulement le code.
+
+## Les six éléments d'un handover bien fait
+
+À partir de notre expérience à construire des systèmes d'IA et de la pratique de traiter chaque projet comme s'il était livrable demain, voici les six éléments que nous considérons indispensables dans une livraison technique sérieuse :
+
+**1. Documentation technique complète.** Ce n'est pas un README de trois lignes. C'est un ensemble structuré qui inclut : l'architecture du système (ce qu'il y a, ce que fait chaque partie, comment elles communiquent), les décisions techniques pertinentes (pourquoi ce modèle, pourquoi cette base de données, pourquoi cette orchestration), les runbooks opérationnels (que faire quand X échoue, comment diagnostiquer Y), et des schémas quand ils sont utiles. Si un ingénieur senior peut le lire et comprendre le système en un après-midi, c'est bien fait.
+
+**2. Accès total aux credentials et aux comptes.** Tous les comptes, APIs, tokens, dépôts et services doivent appartenir au client, pas au fournisseur. Cela semble évident mais c'est le premier point où de nombreux handovers échouent : le compte de l'API est au nom du fournisseur, le dépôt est sur son GitHub personnel, le monitoring est sur un service que le fournisseur paie. Quand le client veut partir, il a un système mais n'en a pas le contrôle. Un handover bien fait inverse cette situation : le client a tout, le fournisseur n'a accès que pendant que dure la relation.
+
+**3. Tests automatisés et système d'évaluations.** En IA, les évaluations sont aussi importantes que les tests unitaires en logiciel traditionnel. Elles permettent de valider que le système continue à prendre des décisions correctes quand quelqu'un touche au code, change un modèle ou ajuste un prompt. Sans évaluations, toute modification du système est un acte de foi. Un handover bien fait inclut une suite d'évaluations exécutable avec une seule commande, des datasets de test propres au cas et des critères clairs de succès.
+
+**4. Session de transfert en présentiel ou par visioconférence.** La documentation est nécessaire mais pas suffisante. Une session de 2-3 heures avec l'équipe technique du client, où on explique le système, on fait des démonstrations réelles et on répond aux questions, vaut cinquante pages de documentation. C'est là que se transfère le savoir tacite : ces choses que personne n'écrit mais que tout le monde doit savoir pour opérer le système.
+
+**5. Période d'accompagnement post-livraison.** Un système ne se livre jamais « fermé ». Il y a toujours des questions, des comportements inattendus ou des nouveaux besoins dans les premiers mois. Un handover bien fait inclut une période de support post-livraison —typiquement entre 1 et 3 mois— où l'équipe qui a construit le système reste disponible pour les questions. Ce n'est pas un service premium caché : c'est une partie de la responsabilité du fournisseur qui a construit le système.
+
+**6. Plan de maintenance documenté.** Ce qu'il faut faire chaque semaine, chaque mois, chaque trimestre pour maintenir le système en bonne santé : réviser les évaluations, regarder les logs d'erreurs, vérifier les coûts, mettre à jour les dépendances critiques. Un plan de maintenance clair permet au client de décider s'il veut le porter en interne ou contracter la maintenance auprès de quelqu'un —le même fournisseur ou un autre. L'essentiel est qu'il puisse choisir avec information, pas avec ignorance.
+
+## Signaux d'alerte avant de signer avec un fournisseur
+
+Si vous évaluez des fournisseurs pour un projet d'IA, voici quatre signaux d'alerte qui indiquent que vous ne recevrez probablement pas un handover décent :
+
+**Signal 1 : le fournisseur parle seulement de la démo et pas de comment elle se maintient en production.** Si dans les réunions commerciales on consacre 90 % du temps à montrer comme c'est beau de voir le système fonctionner et 10 % (ou moins) à expliquer comment on l'opère, comment on le mesure et comment on le maintient, c'est le signe que sa mentalité est « livrer et partir », pas construire quelque chose qui dure.
+
+**Signal 2 : dans le budget il n'y a aucune ligne de documentation, de transfert ou de période d'accompagnement.** Si le budget inclut seulement du développement et rien d'autre, cela signifie que le fournisseur pense au minimum viable pour facturer et partir. Un fournisseur sérieux considère la documentation et le transfert comme une partie intégrante du projet, pas comme un service supplémentaire.
+
+**Signal 3 : ils vous demandent de signer un contrat où seuls eux ont accès au code ou à l'infrastructure.** Si la propriété intellectuelle ne reste pas clairement au client, ou si les comptes principaux restent au nom du fournisseur, ils créent une dépendance structurelle dès la minute zéro. Un fournisseur sérieux insiste pour que tout reste au nom du client dès le début.
+
+**Signal 4 : ils vous offrent une maintenance mensuelle obligatoire sans option de sortir ou de changer de mains.** Il y a des fournisseurs qui structurent les contrats pour que le client reste piégé : seuls eux peuvent maintenir le système, seuls eux ont accès, seuls eux savent comment ça fonctionne. Ce n'est pas une relation commerciale, c'est une hypothèque technique. Un fournisseur sérieux offre la maintenance comme une option parmi d'autres, pas comme un besoin imposé par conception.
+
+## Pourquoi nous écrivons à ce sujet sans avoir eu à sauver personne
+
+Nous reconnaissons que cet article ne se base pas sur l'expérience d'avoir sauvé des clients de fournisseurs antérieurs. Il se base sur le critère technique accumulé en construisant des systèmes que nous voulons voir survivre à notre relation avec le client. Chaque décision que nous prenons dans un projet passe par la question : si demain ce client voulait emporter le système, pourrait-il le faire ? La réponse doit toujours être oui.
+
+Cette approche a un coût. Elle signifie plus de temps en documentation, plus de temps en sessions de transfert, plus de rigueur dans la gestion des accès et des comptes. Mais le coût en vaut la peine : c'est ce qui différencie un fournisseur qui traite chaque projet comme une vente de quelqu'un qui le traite comme une relation professionnelle.
+
+Si vous évaluez des fournisseurs pour un projet d'IA, posez-leur ces questions avant de signer : à quoi ressemblerait un handover si demain nous décidions de changer de fournisseur ? Quelle documentation recevrions-nous ? Quels accès ? Y a-t-il une période d'accompagnement incluse ? Si les réponses sont vagues ou défensives, vous savez déjà ce que vous devez savoir.
+
+Si vous voulez nous parler d'un projet concret —le vôtre ou un que vous évaluez—, écrivez-nous. Que vous ayez ou non l'intention de finir par travailler avec MindRise, une évaluation honnête de l'approche peut vous éviter des problèmes importants par la suite.`;
+
 const BODIES: Record<string, Record<Locale, string>> = {
   'ia-on-no': {
     ca: IA_ON_NO_CA,
@@ -832,6 +1048,12 @@ const BODIES: Record<string, Record<Locale, string>> = {
     es: N8N_42H_ES,
     en: N8N_42H_EN,
     fr: N8N_42H_FR,
+  },
+  'handover-tecnic': {
+    ca: HANDOVER_CA,
+    es: HANDOVER_ES,
+    en: HANDOVER_EN,
+    fr: HANDOVER_FR,
   },
 };
 
