@@ -498,6 +498,322 @@ Chez MindRise, avant de proposer une architecture d'agent à un client, nous nou
 
 La bonne question n'est pas « est-ce que je veux un chatbot ou un agent ? ». C'est « quel type de système mon problème nécessite-t-il vraiment ? ». Si cela vous aide à décider, écrivez-nous. Nous vous donnerons une évaluation honnête avant de proposer quoi que ce soit. Parfois le meilleur conseil consiste à confirmer qu'un chatbot vous suffit ; d'autres fois, c'est de vous expliquer pourquoi vous avez un problème d'agent même sans en connaître le nom.`;
 
+const N8N_42H_CA = `Un dels nostres clients d'hostaleria —un hotel boutique d'unes 50 habitacions en zona turística alpina europea— va arribar a MindRise amb un problema que es nota poc però que pesa molt en el dia a dia: el personal de recepció dedicava unes 2-3 hores diàries a contestar les mateixes consultes una vegada darrere l'altra. Horaris de l'spa, recomanacions de restaurants, com arribar al telecadira més proper, què hi ha de meteorologia per als propers dies, com reservar una taula al restaurant de l'hotel. Multiplicat per quatre idiomes —espanyol, anglès, francès i català— i per una temporada alta de cinc mesos a l'any.
+
+El càlcul net, fet amb el director de l'hotel, sortia a unes **42 hores al mes** de temps real de personal qualificat dedicat a tasques repetitives. Temps que no es podia destinar a check-ins, a atenció presencial, a problemes reals dels hostes ni a coordinar equips. La direcció ho havia identificat com un punt clar de millora però no sabia per on començar.
+
+Aquest article explica el cas pas a pas: què trobàrem al diagnòstic, per què la solució òbvia (un chatbot) no era suficient, com vam dissenyar la solució que finalment es va implantar i quins resultats vam mesurar als tres mesos d'estar en producció.
+
+## El problema en concret
+
+Quan analitzem un cas, sempre comencem demanant una mostra del flux real d'una setmana. En aquest hotel, la mostra incloïa:
+
+- 87 consultes per WhatsApp en una setmana, en quatre idiomes diferents
+- 34 consultes a recepció presencial sobre temes que es podrien resoldre per missatge
+- 12 trucades telefòniques amb la mateixa naturalesa
+- Una distribució del temps mitjana de **8-12 minuts per consulta** (incloent cerca d'informació, redacció de la resposta, possible seguiment)
+
+El patró era predictible: el 70% de les consultes es repetia setmana rere setmana. Recomanacions de restaurants a 10 minuts a peu. Horari del telecadira més proper. Si l'spa estava obert els diumenges. Si calia reservar el sopar al restaurant de l'hotel. Quina previsió hi havia de neu per als propers tres dies.
+
+Aquest perfil de consultes té dues característiques: són **fàcilment automatitzables** (resposta amb informació estructurada) i, alhora, **requereixen context actualitzat** (meteorologia avui, esdeveniments locals aquest cap de setmana, horaris que canvien per temporada). No és el típic FAQ estàtic. Necessitàvem una solució que combinés base de coneixement pròpia amb accés a dades en temps real.
+
+## Per què un chatbot estàndard no servia
+
+Aquí entra una distinció que sempre intentem explicar als clients abans de proposar res. Un chatbot tradicional —del tipus que es desplega en una plataforma estàndard amb tres prompts— hauria resolt el 30-40% de les consultes. Hauria estat capaç de respondre horaris fixos i preguntes estàtiques. Però hauria fallat en el 60% restant: les consultes que requereixen accés a sistemes externs (meteorologia, esdeveniments, disponibilitat), les que necessiten redacció multidioma fluida, i les que han de redirigir a una persona quan la cosa es complica.
+
+L'altra opció extrema —construir un agent complex amb arquitectura de planificació— hauria estat sobreingeniería per aquest cas. No calia que el sistema "raonés" sobre seqüències llargues d'accions. Calia que respongués bé, en quatre idiomes, amb context fresc, i que sabés quan derivar a recepció.
+
+La conclusió després del diagnòstic va ser clara: necessitàvem una **arquitectura intermèdia**. Un sistema amb capacitats d'agent per fer consultes externes en temps real, però amb un disseny més simple que un agent generalista. El que tècnicament anomenem un sistema híbrid, però que al client li expliquem com "un assistent que sap el que sap del teu hotel, busca el que no sap quan ho necessita, i sap quan callar i avisar al teu equip".
+
+## La solució que vam dissenyar
+
+L'arquitectura final va combinar set components clau, cadascun amb una funció específica:
+
+**WhatsApp Business API** com a canal principal. És on els hostes ja escriuen, així que no calia educar-los en una nova interfície. Es va connectar mitjançant l'API oficial de Meta, no a través de tercers, perquè volíem control complet sobre el flux de dades i complint amb requisits de privacitat de l'hotel.
+
+**Kapso** com a capa d'orquestració de la conversa. S'encarrega de mantenir el context d'una conversa al llarg del temps (un mateix hoste pot escriure dimecres a la nit i continuar la conversa dijous al matí), gestionar el flux de torns, i decidir quan derivar a un humà.
+
+**n8n self-hosted** com a motor d'integracions. Aquí és on passen totes les coses: connexió amb la base de coneixement de l'hotel, consultes a serveis externs, lectura i escriptura a Google Sheets per a registre operatiu, gestió de fallbacks. Self-hosted perquè les dades dels hostes mai surten de la infraestructura del client.
+
+**GPT-4.1-mini** com a model principal de generació. Era la millor relació qualitat-cost-velocitat per al cas. Models més potents oferien marginalment millor resposta a un cost molt superior; models més petits no mantenien la qualitat multilingüe que requeríem.
+
+**Perplexity** com a font d'informació actualitzada en temps real. Quan un hoste pregunta per la previsió meteorològica, els esdeveniments d'aquest cap de setmana o el preu de les forfaits avui, Perplexity respon amb informació al dia, no amb dades obsoletes del training del model.
+
+**Redis** per a la gestió de sessions i memòria a curt termini de cada conversa.
+
+**PostgreSQL** per al registre persistent de totes les interaccions, sense incloure dades personals identificables. Imprescindible per a auditoria, millora contínua i compliance.
+
+Tot el sistema opera en quatre idiomes amb detecció automàtica del primer missatge. Si un hoste comença en francès, tota la conversa segueix en francès tret que canviï explícitament. La detecció va ser un dels punts més delicats: els primers missatges curts ("Hola") són ambigus entre català i castellà, així que vam haver d'afinar el sistema amb regles de fallback intel·ligent.
+
+## Resultats mesurables als 3 mesos
+
+Tres mesos després de la posada en producció, vam fer la mesura objectiva amb el director de l'hotel. Els resultats:
+
+**Reducció de càrrega de personal: 42 hores/mes** alliberades del personal de recepció en consultes repetitives. Equivalent a unes 1,4 hores de personal qualificat per dia.
+
+**Cobertura de consultes: el 73%** de les consultes entrants es resolen completament pel sistema sense intervenció humana. El 27% restant es deriva a recepció amb context complet, no com a "missatge nou": l'equip sap què s'ha demanat, què s'ha respost ja i per què s'està derivant.
+
+**Temps de resposta: 4-8 segons** de mitjana per al 73% automatitzat. Abans, els missatges fora d'hores podien quedar sense resposta durant 2-6 hores. Ara la primera resposta és immediata 24/7.
+
+**Multidioma efectiu: 4 idiomes** en producció amb detecció automàtica. La distribució real va ser un 38% castellà, 27% francès, 21% anglès, 14% català. Sense el sistema, l'hotel només garantia atenció fluida en dos idiomes a recepció en hores diürnes.
+
+**Cost operatiu: aproximadament 80€/mes** de costos d'IA (models + Perplexity + infraestructura compartida). Comparat amb el cost de personal alliberat, el retorn d'inversió va ser positiu des del primer mes.
+
+Aquests no són números teòrics: són mesurats amb dades reals durant tres mesos de producció.
+
+## Què vam aprendre
+
+Tres lliçons clau d'aquest projecte que apliquem ara a cassos similars:
+
+**1. La detecció d'idioma val la pena treballar-la bé.** Els primers missatges són curts i ambigus. Vam tenir un bug inicial en el qual el sistema queia per defecte a un idioma equivocat quan la sessió de Redis encara no s'havia creat. Va ser un dia de debug, però una vegada arreglat, la fiabilitat del sistema multilingüe va saltar significativament.
+
+**2. La integració amb el personal humà és tan important com l'automatització.** El 27% de consultes que es deriven no són "fracassos" del sistema. Són exactament el que volíem: el sistema sap quan no està a l'alçada i ho passa a humans amb context. Aquest disseny —el "saber callar"— va ser una de les decisions de producte més importants, no una concessió.
+
+**3. El model més car no sempre és el millor.** Vam fer evaluacions amb GPT-4o, Claude Sonnet i GPT-4.1-mini. La diferència de qualitat percebuda pels hostes va ser mínima; la diferència de cost era 3-5x. Per a aquest cas concret, mini era la decisió correcta. Per a un cas de banca o legal, probablement hauria estat al revés.
+
+## Conclusió
+
+Aquest projecte és un cas relativament típic del que fem a MindRise: un problema operatiu real, un disseny acotat a la complexitat necessària, una arquitectura agnòstica de cap eina concreta i resultats mesurables. No és un piloto que mai surt de proves; és un sistema en producció que continua funcionant cada dia.
+
+Si tens un cas similar —tasques operatives repetitives, multidioma, integració amb sistemes externs—, escriu-nos. Et donarem una valoració honesta abans de plantejar res. A vegades el caso justifica un sistema com aquest. Altres vegades una solució més simple ja resol el problema. La diferència entre les dues respostes la sabem després de mirar les dades reals, no abans.`;
+
+const N8N_42H_ES = `Uno de nuestros clientes del sector hostelero —un hotel boutique de unas 50 habitaciones en zona turística alpina europea— llegó a MindRise con un problema que se nota poco pero que pesa mucho en el día a día: el personal de recepción dedicaba unas 2-3 horas diarias a contestar las mismas consultas una y otra vez. Horarios del spa, recomendaciones de restaurantes, cómo llegar al telesilla más cercano, qué hay de meteorología para los próximos días, cómo reservar mesa en el restaurante del hotel. Multiplicado por cuatro idiomas —español, inglés, francés y catalán— y por una temporada alta de cinco meses al año.
+
+El cálculo neto, hecho con el director del hotel, salía a unas **42 horas al mes** de tiempo real de personal cualificado dedicado a tareas repetitivas. Tiempo que no podía destinarse a check-ins, a atención presencial, a problemas reales de los huéspedes ni a coordinar equipos. La dirección lo había identificado como un punto claro de mejora pero no sabía por dónde empezar.
+
+Este artículo explica el caso paso a paso: qué encontramos en el diagnóstico, por qué la solución obvia (un chatbot) no era suficiente, cómo diseñamos la solución que finalmente se implantó y qué resultados medimos a los tres meses de estar en producción.
+
+## El problema en concreto
+
+Cuando analizamos un caso, siempre empezamos pidiendo una muestra del flujo real de una semana. En este hotel, la muestra incluía:
+
+- 87 consultas por WhatsApp en una semana, en cuatro idiomas distintos
+- 34 consultas en recepción presencial sobre temas que podían resolverse por mensaje
+- 12 llamadas telefónicas de la misma naturaleza
+- Una distribución del tiempo media de **8-12 minutos por consulta** (incluyendo búsqueda de información, redacción de la respuesta, posible seguimiento)
+
+El patrón era predecible: el 70% de las consultas se repetía semana tras semana. Recomendaciones de restaurantes a 10 minutos a pie. Horario del telesilla más cercano. Si el spa estaba abierto los domingos. Si había que reservar la cena en el restaurante del hotel. Qué previsión había de nieve para los próximos tres días.
+
+Este perfil de consultas tiene dos características: son **fácilmente automatizables** (respuesta con información estructurada) y, al mismo tiempo, **requieren contexto actualizado** (meteorología de hoy, eventos locales de este fin de semana, horarios que cambian por temporada). No es el típico FAQ estático. Necesitábamos una solución que combinase base de conocimiento propia con acceso a datos en tiempo real.
+
+## Por qué un chatbot estándar no servía
+
+Aquí entra una distinción que siempre intentamos explicar a los clientes antes de proponer nada. Un chatbot tradicional —del tipo que se despliega en una plataforma estándar con tres prompts— habría resuelto el 30-40% de las consultas. Habría sido capaz de responder horarios fijos y preguntas estáticas. Pero habría fallado en el 60% restante: las consultas que requieren acceso a sistemas externos (meteorología, eventos, disponibilidad), las que necesitan redacción multidioma fluida, y las que tienen que derivar a una persona cuando la cosa se complica.
+
+La otra opción extrema —construir un agente complejo con arquitectura de planificación— habría sido sobreingeniería para este caso. No hacía falta que el sistema "razonase" sobre secuencias largas de acciones. Hacía falta que respondiese bien, en cuatro idiomas, con contexto fresco, y que supiese cuándo derivar a recepción.
+
+La conclusión tras el diagnóstico fue clara: necesitábamos una **arquitectura intermedia**. Un sistema con capacidades de agente para hacer consultas externas en tiempo real, pero con un diseño más simple que un agente generalista. Lo que técnicamente llamamos un sistema híbrido, pero que al cliente le explicamos como "un asistente que sabe lo que sabe de tu hotel, busca lo que no sabe cuando lo necesita, y sabe cuándo callar y avisar a tu equipo".
+
+## La solución que diseñamos
+
+La arquitectura final combinó siete componentes clave, cada uno con una función específica:
+
+**WhatsApp Business API** como canal principal. Es donde los huéspedes ya escriben, así que no había que educarlos en una nueva interfaz. Se conectó mediante la API oficial de Meta, no a través de terceros, porque queríamos control completo sobre el flujo de datos y cumpliendo con requisitos de privacidad del hotel.
+
+**Kapso** como capa de orquestación de la conversación. Se encarga de mantener el contexto de una conversación a lo largo del tiempo (un mismo huésped puede escribir el miércoles por la noche y continuar la conversación el jueves por la mañana), gestionar el flujo de turnos, y decidir cuándo derivar a un humano.
+
+**n8n self-hosted** como motor de integraciones. Aquí es donde pasan todas las cosas: conexión con la base de conocimiento del hotel, consultas a servicios externos, lectura y escritura en Google Sheets para registro operativo, gestión de fallbacks. Self-hosted porque los datos de los huéspedes nunca salen de la infraestructura del cliente.
+
+**GPT-4.1-mini** como modelo principal de generación. Era la mejor relación calidad-coste-velocidad para el caso. Modelos más potentes ofrecían marginalmente mejor respuesta a un coste muy superior; modelos más pequeños no mantenían la calidad multilingüe que requeríamos.
+
+**Perplexity** como fuente de información actualizada en tiempo real. Cuando un huésped pregunta por la previsión meteorológica, los eventos de este fin de semana o el precio de los forfaits hoy, Perplexity responde con información al día, no con datos obsoletos del training del modelo.
+
+**Redis** para la gestión de sesiones y memoria a corto plazo de cada conversación.
+
+**PostgreSQL** para el registro persistente de todas las interacciones, sin incluir datos personales identificables. Imprescindible para auditoría, mejora continua y compliance.
+
+Todo el sistema opera en cuatro idiomas con detección automática del primer mensaje. Si un huésped empieza en francés, toda la conversación sigue en francés salvo que cambie explícitamente. La detección fue uno de los puntos más delicados: los primeros mensajes cortos ("Hola") son ambiguos entre catalán y castellano, así que tuvimos que afinar el sistema con reglas de fallback inteligente.
+
+## Resultados medibles a los 3 meses
+
+Tres meses después de la puesta en producción, hicimos la medición objetiva con el director del hotel. Los resultados:
+
+**Reducción de carga de personal: 42 horas/mes** liberadas del personal de recepción en consultas repetitivas. Equivalente a unas 1,4 horas de personal cualificado por día.
+
+**Cobertura de consultas: el 73%** de las consultas entrantes se resuelven completamente por el sistema sin intervención humana. El 27% restante se deriva a recepción con contexto completo, no como "mensaje nuevo": el equipo sabe qué se ha pedido, qué se ha respondido ya y por qué se está derivando.
+
+**Tiempo de respuesta: 4-8 segundos** de media para el 73% automatizado. Antes, los mensajes fuera de horario podían quedar sin respuesta durante 2-6 horas. Ahora la primera respuesta es inmediata 24/7.
+
+**Multidioma efectivo: 4 idiomas** en producción con detección automática. La distribución real fue un 38% castellano, 27% francés, 21% inglés, 14% catalán. Sin el sistema, el hotel solo garantizaba atención fluida en dos idiomas en recepción en horas diurnas.
+
+**Coste operativo: aproximadamente 80€/mes** de costes de IA (modelos + Perplexity + infraestructura compartida). Comparado con el coste de personal liberado, el retorno de inversión fue positivo desde el primer mes.
+
+Estos no son números teóricos: están medidos con datos reales durante tres meses de producción.
+
+## Qué aprendimos
+
+Tres lecciones clave de este proyecto que aplicamos ahora a casos similares:
+
+**1. La detección de idioma vale la pena trabajarla bien.** Los primeros mensajes son cortos y ambiguos. Tuvimos un bug inicial en el que el sistema caía por defecto a un idioma equivocado cuando la sesión de Redis aún no se había creado. Fue un día de debug, pero una vez arreglado, la fiabilidad del sistema multilingüe saltó significativamente.
+
+**2. La integración con el personal humano es tan importante como la automatización.** El 27% de consultas que se derivan no son "fracasos" del sistema. Son exactamente lo que queríamos: el sistema sabe cuándo no está a la altura y lo pasa a humanos con contexto. Este diseño —el "saber callarse"— fue una de las decisiones de producto más importantes, no una concesión.
+
+**3. El modelo más caro no siempre es el mejor.** Hicimos evaluaciones con GPT-4o, Claude Sonnet y GPT-4.1-mini. La diferencia de calidad percibida por los huéspedes fue mínima; la diferencia de coste era 3-5x. Para este caso concreto, mini era la decisión correcta. Para un caso de banca o legal, probablemente habría sido al revés.
+
+## Conclusión
+
+Este proyecto es un caso relativamente típico de lo que hacemos en MindRise: un problema operativo real, un diseño acotado a la complejidad necesaria, una arquitectura agnóstica de cualquier herramienta concreta y resultados medibles. No es un piloto que nunca sale de pruebas; es un sistema en producción que sigue funcionando cada día.
+
+Si tienes un caso similar —tareas operativas repetitivas, multidioma, integración con sistemas externos—, escríbenos. Te daremos una valoración honesta antes de plantear nada. A veces el caso justifica un sistema como este. Otras veces una solución más simple ya resuelve el problema. La diferencia entre las dos respuestas la sabemos después de mirar los datos reales, no antes.`;
+
+const N8N_42H_EN = `One of our hospitality clients —a boutique hotel of around 50 rooms in a European alpine tourist area— came to MindRise with a problem that's barely noticeable but weighs heavily on day-to-day operations: the reception staff spent around 2-3 hours daily answering the same queries over and over again. Spa opening hours, restaurant recommendations, how to get to the nearest chairlift, weather forecasts for the coming days, how to book a table at the hotel restaurant. Multiplied across four languages —Spanish, English, French and Catalan— and across a high season of five months a year.
+
+The net calculation, done with the hotel director, came to around **42 hours per month** of qualified staff time spent on repetitive tasks. Time that couldn't be allocated to check-ins, in-person attention, real guest problems or team coordination. Management had identified it as a clear improvement point but didn't know where to start.
+
+This article explains the case step by step: what we found in the diagnosis, why the obvious solution (a chatbot) wasn't enough, how we designed the solution that was finally implemented and what results we measured three months into production.
+
+## The problem in detail
+
+When we analyse a case, we always start by asking for a sample of a real week's flow. In this hotel, the sample included:
+
+- 87 WhatsApp queries in a week, across four different languages
+- 34 in-person reception queries about topics that could be solved by message
+- 12 phone calls of the same nature
+- An average time distribution of **8-12 minutes per query** (including information lookup, response drafting, possible follow-up)
+
+The pattern was predictable: 70% of queries repeated week after week. Restaurant recommendations 10 minutes' walk away. The nearest chairlift's schedule. Whether the spa was open on Sundays. Whether dinner at the hotel restaurant needed to be reserved. The snow forecast for the next three days.
+
+This query profile has two characteristics: they are **easily automatable** (response with structured information) and, at the same time, **require updated context** (today's weather, this weekend's local events, schedules that change by season). It's not the typical static FAQ. We needed a solution that combined an in-house knowledge base with access to real-time data.
+
+## Why a standard chatbot wouldn't do
+
+This is where a distinction we always try to explain to clients before proposing anything comes in. A traditional chatbot —the kind that gets deployed on a standard platform with three prompts— would have solved 30-40% of queries. It would have been capable of answering fixed schedules and static questions. But it would have failed on the remaining 60%: queries requiring access to external systems (weather, events, availability), those needing fluid multilingual drafting, and those that have to escalate to a person when things get complicated.
+
+The other extreme option —building a complex agent with planning architecture— would have been overengineering for this case. We didn't need the system to "reason" about long sequences of actions. We needed it to respond well, in four languages, with fresh context, and to know when to hand off to reception.
+
+The conclusion after the diagnosis was clear: we needed an **intermediate architecture**. A system with agent capabilities to make external queries in real time, but with a simpler design than a general-purpose agent. What we technically call a hybrid system, but explain to the client as "an assistant that knows what it knows about your hotel, searches for what it doesn't when it needs to, and knows when to keep quiet and alert your team".
+
+## The solution we designed
+
+The final architecture combined seven key components, each with a specific function:
+
+**WhatsApp Business API** as the main channel. It's where guests already write, so there was no need to educate them on a new interface. Connected via Meta's official API, not through third parties, because we wanted complete control over data flow and to meet the hotel's privacy requirements.
+
+**Kapso** as the conversation orchestration layer. It handles maintaining the context of a conversation over time (the same guest can write Wednesday night and continue the conversation Thursday morning), managing turn flow, and deciding when to hand off to a human.
+
+**n8n self-hosted** as the integrations engine. This is where everything happens: connection with the hotel's knowledge base, queries to external services, reading and writing to Google Sheets for operational logging, fallback management. Self-hosted because guest data never leaves the client's infrastructure.
+
+**GPT-4.1-mini** as the main generation model. It was the best quality-cost-speed ratio for the case. More powerful models offered marginally better responses at a much higher cost; smaller models didn't maintain the multilingual quality we required.
+
+**Perplexity** as the source of real-time updated information. When a guest asks about the weather forecast, this weekend's events or today's ski pass price, Perplexity responds with up-to-date information, not stale data from the model's training.
+
+**Redis** for session management and short-term memory of each conversation.
+
+**PostgreSQL** for persistent logging of all interactions, without including personally identifiable data. Essential for audit, continuous improvement and compliance.
+
+The whole system operates in four languages with automatic detection from the first message. If a guest starts in French, the entire conversation continues in French unless they explicitly switch. Detection was one of the trickiest points: short opening messages ("Hi") are ambiguous between Catalan and Spanish, so we had to tune the system with intelligent fallback rules.
+
+## Measurable results at 3 months
+
+Three months after going to production, we did the objective measurement with the hotel director. The results:
+
+**Staff workload reduction: 42 hours/month** freed from reception staff on repetitive queries. Equivalent to about 1.4 hours of qualified staff per day.
+
+**Query coverage: 73%** of incoming queries are resolved completely by the system with no human intervention. The remaining 27% gets escalated to reception with full context, not as a "new message": the team knows what's been asked, what's already been answered, and why it's being escalated.
+
+**Response time: 4-8 seconds** average for the 73% automated. Before, after-hours messages could go unanswered for 2-6 hours. Now the first response is immediate 24/7.
+
+**Effective multilingual: 4 languages** in production with automatic detection. The actual distribution was 38% Spanish, 27% French, 21% English, 14% Catalan. Without the system, the hotel only guaranteed fluid attention in two languages at reception during daytime hours.
+
+**Operational cost: approximately €80/month** in AI costs (models + Perplexity + shared infrastructure). Compared to the cost of staff time freed, ROI was positive from the first month.
+
+These aren't theoretical numbers: they're measured with real data over three months of production.
+
+## What we learned
+
+Three key lessons from this project that we now apply to similar cases:
+
+**1. Language detection is worth working on properly.** First messages are short and ambiguous. We had an initial bug where the system defaulted to the wrong language when the Redis session hadn't yet been created. It was a day of debugging, but once fixed, the reliability of the multilingual system jumped significantly.
+
+**2. Integration with human staff is as important as automation.** The 27% of queries that get escalated aren't system "failures". They're exactly what we wanted: the system knows when it's not up to it and passes it to humans with context. This design —the "knowing when to be quiet"— was one of the most important product decisions, not a concession.
+
+**3. The most expensive model isn't always the best.** We did evaluations with GPT-4o, Claude Sonnet and GPT-4.1-mini. The quality difference perceived by guests was minimal; the cost difference was 3-5x. For this specific case, mini was the right decision. For a banking or legal case, it would probably have been the other way around.
+
+## Conclusion
+
+This project is a relatively typical case of what we do at MindRise: a real operational problem, a design scoped to the necessary complexity, an architecture agnostic to any specific tool, and measurable results. It's not a pilot that never leaves testing; it's a system in production that keeps working every day.
+
+If you have a similar case —repetitive operational tasks, multilingual, integration with external systems—, get in touch. We'll give you an honest assessment before proposing anything. Sometimes the case justifies a system like this. Other times a simpler solution already solves the problem. The difference between the two answers is something we know after looking at the real data, not before.`;
+
+const N8N_42H_FR = `L'un de nos clients dans l'hôtellerie —un hôtel boutique d'environ 50 chambres en zone touristique alpine européenne— est arrivé chez MindRise avec un problème qui se voit peu mais qui pèse beaucoup au quotidien : le personnel de réception consacrait environ 2-3 heures par jour à répondre aux mêmes demandes encore et encore. Horaires du spa, recommandations de restaurants, comment se rendre au télésiège le plus proche, prévisions météo pour les prochains jours, comment réserver une table au restaurant de l'hôtel. Multiplié par quatre langues —espagnol, anglais, français et catalan— et par une haute saison de cinq mois par an.
+
+Le calcul net, fait avec le directeur de l'hôtel, donnait environ **42 heures par mois** de temps réel de personnel qualifié consacré à des tâches répétitives. Du temps qui ne pouvait être consacré aux check-ins, à l'accueil en personne, à de vrais problèmes des clients ni à la coordination des équipes. La direction l'avait identifié comme un point d'amélioration clair mais ne savait pas par où commencer.
+
+Cet article explique le cas pas à pas : ce que nous avons trouvé lors du diagnostic, pourquoi la solution évidente (un chatbot) ne suffisait pas, comment nous avons conçu la solution qui a finalement été implantée et quels résultats nous avons mesurés trois mois après la mise en production.
+
+## Le problème en détail
+
+Quand nous analysons un cas, nous commençons toujours par demander un échantillon du flux réel d'une semaine. Dans cet hôtel, l'échantillon comprenait :
+
+- 87 demandes par WhatsApp en une semaine, dans quatre langues différentes
+- 34 demandes à la réception en personne sur des sujets qui pouvaient être résolus par message
+- 12 appels téléphoniques de même nature
+- Une distribution moyenne du temps de **8-12 minutes par demande** (incluant recherche d'informations, rédaction de la réponse, suivi éventuel)
+
+Le schéma était prévisible : 70 % des demandes se répétaient semaine après semaine. Recommandations de restaurants à 10 minutes à pied. Horaires du télésiège le plus proche. Si le spa était ouvert le dimanche. S'il fallait réserver le dîner au restaurant de l'hôtel. Quelles étaient les prévisions de neige pour les trois prochains jours.
+
+Ce profil de demandes a deux caractéristiques : elles sont **facilement automatisables** (réponse avec information structurée) et, en même temps, **nécessitent un contexte actualisé** (météo d'aujourd'hui, événements locaux de ce week-end, horaires qui changent selon la saison). Ce n'est pas la typique FAQ statique. Nous avions besoin d'une solution qui combinait une base de connaissances propre avec un accès aux données en temps réel.
+
+## Pourquoi un chatbot standard ne convenait pas
+
+C'est ici qu'intervient une distinction que nous essayons toujours d'expliquer aux clients avant de proposer quoi que ce soit. Un chatbot traditionnel —du type déployé sur une plateforme standard avec trois prompts— aurait résolu 30-40 % des demandes. Il aurait été capable de répondre aux horaires fixes et aux questions statiques. Mais il aurait échoué sur les 60 % restants : les demandes qui nécessitent un accès aux systèmes externes (météo, événements, disponibilité), celles qui requièrent une rédaction multilingue fluide, et celles qui doivent être transférées à une personne quand les choses se compliquent.
+
+L'autre option extrême —construire un agent complexe avec architecture de planification— aurait été du sur-engineering pour ce cas. Il n'était pas nécessaire que le système « raisonne » sur de longues séquences d'actions. Il fallait qu'il réponde bien, en quatre langues, avec un contexte frais, et qu'il sache quand transférer à la réception.
+
+La conclusion après le diagnostic était claire : nous avions besoin d'une **architecture intermédiaire**. Un système avec des capacités d'agent pour faire des requêtes externes en temps réel, mais avec un design plus simple qu'un agent généraliste. Ce que nous appelons techniquement un système hybride, mais que nous expliquons au client comme « un assistant qui sait ce qu'il sait sur votre hôtel, cherche ce qu'il ne sait pas quand il en a besoin, et sait quand se taire et prévenir votre équipe ».
+
+## La solution que nous avons conçue
+
+L'architecture finale combinait sept composants clés, chacun avec une fonction spécifique :
+
+**WhatsApp Business API** comme canal principal. C'est là que les clients écrivent déjà, donc il n'était pas nécessaire de les éduquer à une nouvelle interface. Connecté via l'API officielle de Meta, pas via des tiers, parce que nous voulions un contrôle complet sur le flux de données et le respect des exigences de confidentialité de l'hôtel.
+
+**Kapso** comme couche d'orchestration de la conversation. Elle se charge de maintenir le contexte d'une conversation au fil du temps (un même client peut écrire mercredi soir et continuer la conversation jeudi matin), gérer le flux des tours, et décider quand transférer à un humain.
+
+**n8n self-hosted** comme moteur d'intégrations. C'est là que tout se passe : connexion avec la base de connaissances de l'hôtel, requêtes aux services externes, lecture et écriture sur Google Sheets pour le registre opérationnel, gestion des fallbacks. Self-hosted parce que les données des clients ne quittent jamais l'infrastructure du client.
+
+**GPT-4.1-mini** comme modèle principal de génération. C'était le meilleur rapport qualité-coût-vitesse pour le cas. Des modèles plus puissants offraient des réponses marginalement meilleures à un coût bien plus élevé ; des modèles plus petits ne maintenaient pas la qualité multilingue dont nous avions besoin.
+
+**Perplexity** comme source d'information actualisée en temps réel. Quand un client demande les prévisions météo, les événements de ce week-end ou le prix des forfaits aujourd'hui, Perplexity répond avec des informations à jour, pas avec des données obsolètes issues de l'entraînement du modèle.
+
+**Redis** pour la gestion des sessions et la mémoire à court terme de chaque conversation.
+
+**PostgreSQL** pour l'enregistrement persistant de toutes les interactions, sans inclure de données personnelles identifiables. Indispensable pour l'audit, l'amélioration continue et la compliance.
+
+L'ensemble du système opère en quatre langues avec détection automatique dès le premier message. Si un client commence en français, toute la conversation continue en français sauf changement explicite. La détection a été l'un des points les plus délicats : les premiers messages courts (« Bonjour ») sont ambigus entre le catalan et l'espagnol, nous avons donc dû affiner le système avec des règles de fallback intelligentes.
+
+## Résultats mesurables à 3 mois
+
+Trois mois après la mise en production, nous avons fait la mesure objective avec le directeur de l'hôtel. Les résultats :
+
+**Réduction de la charge de personnel : 42 heures/mois** libérées du personnel de réception sur des demandes répétitives. Équivalent à environ 1,4 heure de personnel qualifié par jour.
+
+**Couverture des demandes : 73 %** des demandes entrantes sont résolues complètement par le système sans intervention humaine. Les 27 % restants sont transférés à la réception avec un contexte complet, pas comme un « nouveau message » : l'équipe sait ce qui a été demandé, ce qui a déjà été répondu et pourquoi le transfert a lieu.
+
+**Temps de réponse : 4-8 secondes** en moyenne pour les 73 % automatisés. Avant, les messages en dehors des heures pouvaient rester sans réponse pendant 2-6 heures. Maintenant la première réponse est immédiate 24/7.
+
+**Multilingue effectif : 4 langues** en production avec détection automatique. La distribution réelle a été de 38 % espagnol, 27 % français, 21 % anglais, 14 % catalan. Sans le système, l'hôtel ne garantissait une attention fluide qu'en deux langues à la réception aux heures de jour.
+
+**Coût opérationnel : environ 80€/mois** de coûts d'IA (modèles + Perplexity + infrastructure partagée). Comparé au coût du personnel libéré, le retour sur investissement a été positif dès le premier mois.
+
+Ce ne sont pas des chiffres théoriques : ils sont mesurés avec des données réelles sur trois mois de production.
+
+## Ce que nous avons appris
+
+Trois leçons clés de ce projet que nous appliquons maintenant à des cas similaires :
+
+**1. La détection de langue mérite d'être bien travaillée.** Les premiers messages sont courts et ambigus. Nous avons eu un bug initial où le système retombait par défaut sur la mauvaise langue quand la session Redis n'avait pas encore été créée. Une journée de debug, mais une fois corrigé, la fiabilité du système multilingue a fait un bond significatif.
+
+**2. L'intégration avec le personnel humain est aussi importante que l'automatisation.** Les 27 % de demandes transférées ne sont pas des « échecs » du système. Ils sont exactement ce que nous voulions : le système sait quand il n'est pas à la hauteur et le transmet à des humains avec contexte. Ce design —le « savoir se taire »— a été l'une des décisions produit les plus importantes, pas une concession.
+
+**3. Le modèle le plus cher n'est pas toujours le meilleur.** Nous avons fait des évaluations avec GPT-4o, Claude Sonnet et GPT-4.1-mini. La différence de qualité perçue par les clients était minime ; la différence de coût était de 3-5x. Pour ce cas concret, mini était la bonne décision. Pour un cas bancaire ou juridique, cela aurait probablement été l'inverse.
+
+## Conclusion
+
+Ce projet est un cas relativement typique de ce que nous faisons chez MindRise : un problème opérationnel réel, un design adapté à la complexité nécessaire, une architecture agnostique vis-à-vis de tout outil spécifique et des résultats mesurables. Ce n'est pas un pilote qui ne quitte jamais les tests ; c'est un système en production qui continue à fonctionner chaque jour.
+
+Si vous avez un cas similaire —tâches opérationnelles répétitives, multilingue, intégration avec des systèmes externes—, écrivez-nous. Nous vous donnerons une évaluation honnête avant de proposer quoi que ce soit. Parfois le cas justifie un système comme celui-ci. D'autres fois une solution plus simple résout déjà le problème. La différence entre les deux réponses, nous la connaissons après avoir regardé les données réelles, pas avant.`;
+
 const BODIES: Record<string, Record<Locale, string>> = {
   'ia-on-no': {
     ca: IA_ON_NO_CA,
@@ -510,6 +826,12 @@ const BODIES: Record<string, Record<Locale, string>> = {
     es: AGENTS_NO_CHATBOTS_ES,
     en: AGENTS_NO_CHATBOTS_EN,
     fr: AGENTS_NO_CHATBOTS_FR,
+  },
+  'n8n-42h-mes': {
+    ca: N8N_42H_CA,
+    es: N8N_42H_ES,
+    en: N8N_42H_EN,
+    fr: N8N_42H_FR,
   },
 };
 
