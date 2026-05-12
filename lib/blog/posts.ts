@@ -21,7 +21,7 @@ export type Post = {
 };
 
 export const POSTS_META: PostMeta[] = [
-  { slug: 'agents-ia-no-son-chatbots', variant: 0, cat: 0, dateISO: '2026-04-18' },
+  { slug: 'agents-ia-no-son-chatbots', variant: 0, cat: 0, dateISO: '2026-05-13' },
   { slug: 'n8n-42h-mes', variant: 1, cat: 1, dateISO: '2026-04-02' },
   { slug: 'mcp-claude-code', variant: 2, cat: 2, dateISO: '2026-03-24' },
   { slug: 'rag-empresa-mitjana', variant: 3, cat: 0, dateISO: '2026-03-10' },
@@ -309,12 +309,202 @@ La question la plus précieuse que vous pouvez vous poser avant de démarrer un 
 
 Si vous doutez de savoir si votre cas entre dans l'un des scénarios de cet article, écrivez-nous. Nous vous donnerons une évaluation honnête lors d'un premier appel, sans engagement. Parfois, le meilleur conseil est de confirmer que vous n'avez pas besoin d'un cabinet de conseil.`;
 
+const AGENTS_NO_CHATBOTS_CA = `Quan parlem amb empreses que estan explorant projectes d'IA, una de les confusions més comunes és pensar que tot el que respon en llenguatge natural és el mateix tipus de sistema. "Ja tenim un chatbot, ara volem un agent". "Necessitem que el chatbot pugui fer reserves, prendre decisions, contestar emails". La paraula "chatbot" s'ha convertit en una mena de comodí que cobreix coses molt diferents, i això porta a expectatives equivocades sobre què es pot construir, què costa i quins resultats donarà.
+
+La diferència entre un chatbot i un agent no és cosmètica. És arquitectònica. I entendre-la abans de demanar un pressupost t'estalviarà sorpreses tant tècniques com econòmiques.
+
+Aquest article explica què és realment un agent d'IA, en què es diferencia d'un chatbot, i per què aquesta distinció és rellevant a l'hora de decidir què construir per a la teva empresa.
+
+## Què és realment un agent
+
+Un chatbot és, en essència, una interfície de conversa. Reps una pregunta, generes una resposta, fi. Pot semblar intel·ligent perquè utilitza un model de llenguatge potent, però la seva feina acaba en el text que produeix. No fa res més enllà de respondre.
+
+Un agent, en canvi, és un sistema que **actua sobre el món**. Pot consultar dades, escriure en sistemes externs, executar accions, comprovar resultats, tornar enrere si alguna cosa falla i prendre decisions sobre què fer a continuació. Una conversa amb un agent pot acabar amb un correu enviat, una factura registrada, una reserva confirmada o tres consultes fetes a tres sistemes diferents. La conversa és només la capa visible; el que importa és el que passa per sota.
+
+Una analogia útil: un chatbot és un caixer automàtic que sap respondre preguntes sobre el teu compte. Un agent és un assessor financer que pot consultar el teu compte, fer transferències, contactar la teva gestoria i preparar-te una proposta d'inversió. Tots dos parlen, però la naturalesa del que fan és radicalment diferent.
+
+## Les quatre diferències clau
+
+A partir dels projectes que hem construït i revisat aquest últim any, hi ha quatre dimensions on un agent es separa clarament d'un chatbot:
+
+**1. Accés a eines i sistemes externs.** Un chatbot funciona amb el que té dins del seu model: el coneixement amb el qual va ser entrenat i, opcionalment, alguns documents que li passes per context. Un agent té accés a "eines" (tools): pot consultar una base de dades, cridar una API, llegir un correu, executar un script. Aquesta capacitat el converteix en un actor dins del teu sistema, no només en un comentarista. Quan un agent diu "he reservat la sala a les 10h", ha reservat la sala de veritat. Quan un chatbot ho diu, només ho ha dit.
+
+**2. Memòria i estat entre passos.** Un chatbot tradicional treballa pregunta a pregunta: rep input, genera output, oblida. Un agent manté un estat al llarg d'un procés que pot durar segons, minuts o hores. Sap què ha intentat ja, què ha funcionat, què ha de tornar a provar amb un altre enfocament. Aquesta memòria operativa és el que li permet completar tasques de múltiples passos sense perdre's pel camí.
+
+**3. Capacitat de raonar sobre seqüències d'accions.** Un chatbot respon una pregunta directament. Un agent decideix què fer abans de fer-ho: "per resoldre això, primer he de consultar la base X, després comprovar el calendari Y, i si l'horari és lliure, fer la reserva a Z". Aquesta planificació no la fa un humà al davant; la fa el sistema. El model raona sobre quina seqüència d'eines i decisions porta al resultat desitjat, i s'ajusta si una de les passes falla. Això requereix arquitectura específica, no només un bon prompt.
+
+**4. Manteniment, observabilitat i evaluació.** Aquesta és la diferència que més sorprèn als clients: un agent en producció no és software estàtic. Necessita monitoratge constant per veure què fa, evaluacions periòdiques per validar que segueix prenent decisions correctes, i ajustos quan el comportament deriva. Un chatbot pots posar-lo en marxa i revisar-lo cada sis mesos. Un agent és un sistema viu que requereix la mateixa atenció operativa que qualsevol altre component crític de la teva infraestructura.
+
+## Per què aquesta distinció importa al teu negoci
+
+Aquestes diferències arquitectòniques tenen tres implicacions directes per a una empresa que es planteja un projecte:
+
+**Implicació 1: el cost de construcció i operació no és comparable.** Muntar un chatbot avui és relativament econòmic. Hi ha plataformes que et permeten desplegar-ne un en hores. Un agent, en canvi, requereix disseny d'arquitectura, integració amb sistemes interns, sistema d'evaluacions, monitoratge i, sovint, infraestructura pròpia. La inversió inicial pot ser entre cinc i deu vegades superior. Si un proveïdor t'ofereix un "agent complet per 500€/mes", desconfia: probablement et ven un chatbot vestit d'agent.
+
+**Implicació 2: el valor que aporta tampoc és comparable.** Un chatbot pot resoldre consultes simples: horaris, preguntes freqüents, primera línia de suport. Un agent pot **substituir tasques operatives senceres**: revisar factures, gestionar agendes, preparar borradors d'auditoria, coordinar processos multi-sistema. La diferència de ROI és proporcional a la diferència de complexitat: el primer redueix temps de resposta; el segon redueix hores-persona.
+
+**Implicació 3: el manteniment és diferent.** Un chatbot mal mantingut és un xat lent o desactualitzat. Un agent mal mantingut pot prendre decisions equivocades sobre dades reals. Aquesta diferència de risc operatiu obliga a tractar els projectes d'agent com a infraestructura crítica, no com a tool de marketing. Equip de manteniment, sistema d'alertes, plans de rollback, evaluacions setmanals: tot això forma part del cost real de tenir un agent en producció.
+
+## Llavors, quan vull un chatbot i quan vull un agent?
+
+Una pregunta útil abans de decidir: **el que necessites és respondre o és fer?**
+
+Si el que necessites és que algú parli amb l'usuari, doni informació o respongui dubtes freqüents, probablement vols un chatbot. Si el que necessites és que un sistema actuï sobre la teva operativa, coordini sistemes interns o executi tasques completes, vols un agent. Confondre els dos porta a invertir massa en projectes que no ho necessitaven, o massa poc en projectes que sí.
+
+A MindRise, abans de proposar arquitectura d'agent a un client, ens preguntem si el cas justifica la complexitat. A vegades la resposta és no: un chatbot ben dissenyat amb tres integracions clau resol el problema millor i a una fracció del cost. Altres vegades la resposta és clarament sí: el problema és sistèmic, repetitiu, multi-pas, i automatitzar-lo amb un chatbot seria pegar tirets a un tanc.
+
+La pregunta correcta no és "vull un chatbot o un agent?". És "quin tipus de sistema necessita realment el meu problema?". Si t'ajuda a decidir, escriu-nos. Et donarem una valoració honesta abans de plantejar res. A vegades el millor consell és confirmar que un chatbot et serveix; altres vegades és explicar-te per què tens un problema d'agent encara que no en sabessis el nom.`;
+
+const AGENTS_NO_CHATBOTS_ES = `Cuando hablamos con empresas que están explorando proyectos de IA, una de las confusiones más comunes es pensar que todo lo que responde en lenguaje natural es el mismo tipo de sistema. "Ya tenemos un chatbot, ahora queremos un agente". "Necesitamos que el chatbot pueda hacer reservas, tomar decisiones, contestar emails". La palabra "chatbot" se ha convertido en una especie de comodín que cubre cosas muy distintas, y eso lleva a expectativas equivocadas sobre qué se puede construir, qué cuesta y qué resultados dará.
+
+La diferencia entre un chatbot y un agente no es cosmética. Es arquitectónica. Y entenderla antes de pedir un presupuesto te ahorrará sorpresas tanto técnicas como económicas.
+
+Este artículo explica qué es realmente un agente de IA, en qué se diferencia de un chatbot, y por qué esta distinción es relevante a la hora de decidir qué construir para tu empresa.
+
+## Qué es realmente un agente
+
+Un chatbot es, en esencia, una interfaz de conversación. Recibes una pregunta, generas una respuesta, fin. Puede parecer inteligente porque utiliza un modelo de lenguaje potente, pero su trabajo acaba en el texto que produce. No hace nada más allá de responder.
+
+Un agente, en cambio, es un sistema que **actúa sobre el mundo**. Puede consultar datos, escribir en sistemas externos, ejecutar acciones, comprobar resultados, volver atrás si algo falla y tomar decisiones sobre qué hacer a continuación. Una conversación con un agente puede acabar con un correo enviado, una factura registrada, una reserva confirmada o tres consultas hechas a tres sistemas diferentes. La conversación es solo la capa visible; lo que importa es lo que pasa por debajo.
+
+Una analogía útil: un chatbot es un cajero automático que sabe responder preguntas sobre tu cuenta. Un agente es un asesor financiero que puede consultar tu cuenta, hacer transferencias, contactar a tu gestoría y prepararte una propuesta de inversión. Ambos hablan, pero la naturaleza de lo que hacen es radicalmente distinta.
+
+## Las cuatro diferencias clave
+
+A partir de los proyectos que hemos construido y revisado este último año, hay cuatro dimensiones donde un agente se separa claramente de un chatbot:
+
+**1. Acceso a herramientas y sistemas externos.** Un chatbot funciona con lo que tiene dentro de su modelo: el conocimiento con el que fue entrenado y, opcionalmente, algunos documentos que le pasas por contexto. Un agente tiene acceso a "herramientas" (tools): puede consultar una base de datos, llamar a una API, leer un correo, ejecutar un script. Esta capacidad lo convierte en un actor dentro de tu sistema, no solo en un comentarista. Cuando un agente dice "he reservado la sala a las 10h", ha reservado la sala de verdad. Cuando un chatbot lo dice, solo lo ha dicho.
+
+**2. Memoria y estado entre pasos.** Un chatbot tradicional trabaja pregunta a pregunta: recibe input, genera output, olvida. Un agente mantiene un estado a lo largo de un proceso que puede durar segundos, minutos u horas. Sabe qué ha intentado ya, qué ha funcionado, qué tiene que volver a probar con otro enfoque. Esta memoria operativa es lo que le permite completar tareas de múltiples pasos sin perderse por el camino.
+
+**3. Capacidad de razonar sobre secuencias de acciones.** Un chatbot responde una pregunta directamente. Un agente decide qué hacer antes de hacerlo: "para resolver esto, primero tengo que consultar la base X, después comprobar el calendario Y, y si el horario está libre, hacer la reserva en Z". Esta planificación no la hace un humano delante; la hace el sistema. El modelo razona sobre qué secuencia de herramientas y decisiones lleva al resultado deseado, y se ajusta si uno de los pasos falla. Eso requiere arquitectura específica, no solo un buen prompt.
+
+**4. Mantenimiento, observabilidad y evaluación.** Esta es la diferencia que más sorprende a los clientes: un agente en producción no es software estático. Necesita monitorización constante para ver qué hace, evaluaciones periódicas para validar que sigue tomando decisiones correctas, y ajustes cuando el comportamiento deriva. Un chatbot puedes ponerlo en marcha y revisarlo cada seis meses. Un agente es un sistema vivo que requiere la misma atención operativa que cualquier otro componente crítico de tu infraestructura.
+
+## Por qué esta distinción importa a tu negocio
+
+Estas diferencias arquitectónicas tienen tres implicaciones directas para una empresa que se plantea un proyecto:
+
+**Implicación 1: el coste de construcción y operación no es comparable.** Montar un chatbot hoy es relativamente económico. Hay plataformas que te permiten desplegar uno en horas. Un agente, en cambio, requiere diseño de arquitectura, integración con sistemas internos, sistema de evaluaciones, monitorización y, a menudo, infraestructura propia. La inversión inicial puede ser entre cinco y diez veces superior. Si un proveedor te ofrece un "agente completo por 500€/mes", desconfía: probablemente te vende un chatbot disfrazado de agente.
+
+**Implicación 2: el valor que aporta tampoco es comparable.** Un chatbot puede resolver consultas simples: horarios, preguntas frecuentes, primera línea de soporte. Un agente puede **sustituir tareas operativas enteras**: revisar facturas, gestionar agendas, preparar borradores de auditoría, coordinar procesos multi-sistema. La diferencia de ROI es proporcional a la diferencia de complejidad: el primero reduce tiempo de respuesta; el segundo reduce horas-persona.
+
+**Implicación 3: el mantenimiento es distinto.** Un chatbot mal mantenido es un chat lento o desactualizado. Un agente mal mantenido puede tomar decisiones equivocadas sobre datos reales. Esta diferencia de riesgo operativo obliga a tratar los proyectos de agente como infraestructura crítica, no como tool de marketing. Equipo de mantenimiento, sistema de alertas, planes de rollback, evaluaciones semanales: todo eso forma parte del coste real de tener un agente en producción.
+
+## Entonces, ¿cuándo quiero un chatbot y cuándo quiero un agente?
+
+Una pregunta útil antes de decidir: **¿lo que necesitas es responder o es hacer?**
+
+Si lo que necesitas es que alguien hable con el usuario, dé información o responda dudas frecuentes, probablemente quieres un chatbot. Si lo que necesitas es que un sistema actúe sobre tu operativa, coordine sistemas internos o ejecute tareas completas, quieres un agente. Confundir los dos lleva a invertir demasiado en proyectos que no lo necesitaban, o demasiado poco en proyectos que sí.
+
+En MindRise, antes de proponer arquitectura de agente a un cliente, nos preguntamos si el caso justifica la complejidad. A veces la respuesta es no: un chatbot bien diseñado con tres integraciones clave resuelve el problema mejor y a una fracción del coste. Otras veces la respuesta es claramente sí: el problema es sistémico, repetitivo, multi-paso, y automatizarlo con un chatbot sería pegar tiros a un tanque.
+
+La pregunta correcta no es "¿quiero un chatbot o un agente?". Es "¿qué tipo de sistema necesita realmente mi problema?". Si te ayuda a decidir, escríbenos. Te daremos una valoración honesta antes de plantear nada. A veces el mejor consejo es confirmar que un chatbot te sirve; otras veces es explicarte por qué tienes un problema de agente aunque no supieras el nombre.`;
+
+const AGENTS_NO_CHATBOTS_EN = `When we talk to companies exploring AI projects, one of the most common confusions is thinking that anything responding in natural language is the same kind of system. "We already have a chatbot, now we want an agent". "We need the chatbot to make reservations, take decisions, reply to emails". The word "chatbot" has become a sort of catch-all covering very different things, and that leads to wrong expectations about what can be built, what it costs and what results it'll deliver.
+
+The difference between a chatbot and an agent isn't cosmetic. It's architectural. And understanding it before asking for a quote will save you both technical and financial surprises.
+
+This article explains what an AI agent really is, how it differs from a chatbot, and why this distinction is relevant when deciding what to build for your company.
+
+## What an agent really is
+
+A chatbot is, essentially, a conversation interface. You get a question, you generate an answer, done. It can seem intelligent because it uses a powerful language model, but its work ends with the text it produces. It does nothing beyond responding.
+
+An agent, on the other hand, is a system that **acts on the world**. It can query data, write to external systems, execute actions, check results, roll back if something fails and take decisions about what to do next. A conversation with an agent can end with an email sent, an invoice registered, a reservation confirmed or three queries made to three different systems. The conversation is only the visible layer; what matters is what happens underneath.
+
+A useful analogy: a chatbot is an ATM that can answer questions about your account. An agent is a financial advisor that can check your account, make transfers, contact your accountant and prepare an investment proposal. Both speak, but the nature of what they do is radically different.
+
+## The four key differences
+
+Based on the projects we've built and reviewed this past year, there are four dimensions where an agent clearly separates from a chatbot:
+
+**1. Access to external tools and systems.** A chatbot works with what it has inside its model: the knowledge it was trained on and, optionally, some documents you pass it as context. An agent has access to "tools": it can query a database, call an API, read an email, execute a script. This capacity turns it into an actor inside your system, not just a commentator. When an agent says "I've booked the room for 10am", it has actually booked the room. When a chatbot says it, it just said it.
+
+**2. Memory and state across steps.** A traditional chatbot works question by question: receives input, generates output, forgets. An agent maintains state throughout a process that may last seconds, minutes or hours. It knows what it has already tried, what worked, what it needs to try again with a different approach. This operational memory is what allows it to complete multi-step tasks without getting lost along the way.
+
+**3. Ability to reason about sequences of actions.** A chatbot answers a question directly. An agent decides what to do before doing it: "to solve this, first I need to query database X, then check calendar Y, and if the slot is free, make the reservation on Z". This planning isn't done by a human at the front; it's done by the system. The model reasons about which sequence of tools and decisions leads to the desired outcome, and adjusts if one of the steps fails. That requires specific architecture, not just a good prompt.
+
+**4. Maintenance, observability and evaluation.** This is the difference that surprises clients the most: an agent in production isn't static software. It needs constant monitoring to see what it's doing, periodic evaluations to validate that it keeps making correct decisions, and adjustments when behaviour drifts. A chatbot you can launch and review every six months. An agent is a living system that requires the same operational attention as any other critical component of your infrastructure.
+
+## Why this distinction matters to your business
+
+These architectural differences have three direct implications for a company considering a project:
+
+**Implication 1: build and operation costs aren't comparable.** Building a chatbot today is relatively cheap. There are platforms that let you deploy one in hours. An agent, on the other hand, requires architectural design, integration with internal systems, an evaluation system, monitoring and often dedicated infrastructure. Initial investment can be five to ten times higher. If a vendor offers you a "complete agent for €500/month", be suspicious: they're probably selling you a chatbot dressed as an agent.
+
+**Implication 2: the value it delivers isn't comparable either.** A chatbot can solve simple queries: opening hours, FAQs, first-line support. An agent can **replace entire operational tasks**: reviewing invoices, managing calendars, preparing audit drafts, coordinating multi-system processes. The ROI difference is proportional to the complexity difference: the first reduces response time; the second reduces person-hours.
+
+**Implication 3: maintenance is different.** A poorly maintained chatbot is a slow or outdated chat. A poorly maintained agent can make wrong decisions about real data. This difference in operational risk forces you to treat agent projects as critical infrastructure, not as a marketing tool. Maintenance team, alert system, rollback plans, weekly evaluations: all of that is part of the real cost of running an agent in production.
+
+## So, when do I want a chatbot and when do I want an agent?
+
+A useful question before deciding: **do you need to respond or do you need to act?**
+
+If what you need is someone to talk to the user, give information or answer common questions, you probably want a chatbot. If what you need is a system that acts on your operations, coordinates internal systems or executes complete tasks, you want an agent. Confusing the two leads to investing too much in projects that didn't need it, or too little in projects that did.
+
+At MindRise, before proposing agent architecture to a client, we ask ourselves whether the case justifies the complexity. Sometimes the answer is no: a well-designed chatbot with three key integrations solves the problem better and at a fraction of the cost. Other times the answer is clearly yes: the problem is systemic, repetitive, multi-step, and automating it with a chatbot would be like shooting a tank with a slingshot.
+
+The right question isn't "do I want a chatbot or an agent?". It's "what kind of system does my problem actually need?". If it helps you decide, get in touch. We'll give you an honest assessment before proposing anything. Sometimes the best advice is confirming that a chatbot serves you; other times it's explaining why you have an agent problem even if you didn't know the name.`;
+
+const AGENTS_NO_CHATBOTS_FR = `Quand nous discutons avec des entreprises qui explorent des projets d'IA, l'une des confusions les plus courantes consiste à penser que tout ce qui répond en langage naturel est le même type de système. « Nous avons déjà un chatbot, maintenant nous voulons un agent ». « Nous avons besoin que le chatbot puisse faire des réservations, prendre des décisions, répondre à des emails ». Le mot « chatbot » est devenu une sorte de fourre-tout qui couvre des choses très différentes, et cela conduit à de fausses attentes sur ce qui peut être construit, ce que cela coûte et quels résultats cela donnera.
+
+La différence entre un chatbot et un agent n'est pas cosmétique. Elle est architecturale. Et la comprendre avant de demander un devis vous évitera des surprises tant techniques que financières.
+
+Cet article explique ce qu'est vraiment un agent d'IA, en quoi il diffère d'un chatbot, et pourquoi cette distinction est pertinente au moment de décider quoi construire pour votre entreprise.
+
+## Ce qu'est vraiment un agent
+
+Un chatbot est, essentiellement, une interface de conversation. Vous recevez une question, vous générez une réponse, fin. Cela peut sembler intelligent parce qu'il utilise un modèle de langage puissant, mais son travail s'arrête au texte qu'il produit. Il ne fait rien au-delà de répondre.
+
+Un agent, en revanche, est un système qui **agit sur le monde**. Il peut consulter des données, écrire dans des systèmes externes, exécuter des actions, vérifier des résultats, revenir en arrière si quelque chose échoue et prendre des décisions sur la suite. Une conversation avec un agent peut se terminer par un email envoyé, une facture enregistrée, une réservation confirmée ou trois requêtes faites à trois systèmes différents. La conversation n'est que la couche visible ; ce qui compte est ce qui se passe en dessous.
+
+Une analogie utile : un chatbot est un distributeur automatique qui sait répondre à des questions sur votre compte. Un agent est un conseiller financier qui peut consulter votre compte, effectuer des virements, contacter votre comptable et vous préparer une proposition d'investissement. Les deux parlent, mais la nature de ce qu'ils font est radicalement différente.
+
+## Les quatre différences clés
+
+À partir des projets que nous avons construits et révisés cette dernière année, il existe quatre dimensions où un agent se sépare clairement d'un chatbot :
+
+**1. Accès aux outils et systèmes externes.** Un chatbot fonctionne avec ce qu'il a à l'intérieur de son modèle : les connaissances avec lesquelles il a été entraîné et, optionnellement, quelques documents que vous lui passez en contexte. Un agent a accès à des « outils » (tools) : il peut consulter une base de données, appeler une API, lire un email, exécuter un script. Cette capacité le transforme en acteur à l'intérieur de votre système, et non pas seulement en commentateur. Quand un agent dit « j'ai réservé la salle pour 10h », il a vraiment réservé la salle. Quand un chatbot le dit, il l'a seulement dit.
+
+**2. Mémoire et état entre les étapes.** Un chatbot traditionnel travaille question par question : il reçoit l'entrée, génère la sortie, oublie. Un agent maintient un état tout au long d'un processus qui peut durer des secondes, des minutes ou des heures. Il sait ce qu'il a déjà essayé, ce qui a fonctionné, ce qu'il doit réessayer avec une autre approche. Cette mémoire opérationnelle est ce qui lui permet de compléter des tâches en plusieurs étapes sans se perdre en chemin.
+
+**3. Capacité à raisonner sur des séquences d'actions.** Un chatbot répond directement à une question. Un agent décide quoi faire avant de le faire : « pour résoudre cela, je dois d'abord consulter la base X, puis vérifier le calendrier Y, et si le créneau est libre, faire la réservation sur Z ». Cette planification n'est pas faite par un humain en face ; elle est faite par le système. Le modèle raisonne sur quelle séquence d'outils et de décisions mène au résultat souhaité, et s'ajuste si l'une des étapes échoue. Cela nécessite une architecture spécifique, pas seulement un bon prompt.
+
+**4. Maintenance, observabilité et évaluation.** C'est la différence qui surprend le plus les clients : un agent en production n'est pas un logiciel statique. Il a besoin d'une surveillance constante pour voir ce qu'il fait, d'évaluations périodiques pour valider qu'il continue à prendre des décisions correctes, et d'ajustements quand le comportement dérive. Un chatbot, vous pouvez le mettre en marche et le revoir tous les six mois. Un agent est un système vivant qui requiert la même attention opérationnelle que n'importe quel autre composant critique de votre infrastructure.
+
+## Pourquoi cette distinction importe pour votre business
+
+Ces différences architecturales ont trois implications directes pour une entreprise qui envisage un projet :
+
+**Implication 1 : le coût de construction et d'opération n'est pas comparable.** Monter un chatbot aujourd'hui est relativement bon marché. Il existe des plateformes qui vous permettent d'en déployer un en quelques heures. Un agent, en revanche, nécessite une conception architecturale, l'intégration avec des systèmes internes, un système d'évaluations, une surveillance et, souvent, une infrastructure propre. L'investissement initial peut être de cinq à dix fois supérieur. Si un fournisseur vous propose un « agent complet pour 500 €/mois », méfiez-vous : il vous vend probablement un chatbot déguisé en agent.
+
+**Implication 2 : la valeur apportée n'est pas comparable non plus.** Un chatbot peut résoudre des requêtes simples : horaires, FAQ, première ligne de support. Un agent peut **remplacer des tâches opérationnelles entières** : réviser des factures, gérer des agendas, préparer des brouillons d'audit, coordonner des processus multi-systèmes. La différence de ROI est proportionnelle à la différence de complexité : le premier réduit le temps de réponse ; le second réduit les heures-personnes.
+
+**Implication 3 : la maintenance est différente.** Un chatbot mal maintenu est un chat lent ou obsolète. Un agent mal maintenu peut prendre de mauvaises décisions sur des données réelles. Cette différence de risque opérationnel oblige à traiter les projets d'agent comme une infrastructure critique, pas comme un outil de marketing. Équipe de maintenance, système d'alertes, plans de rollback, évaluations hebdomadaires : tout cela fait partie du coût réel d'avoir un agent en production.
+
+## Alors, quand est-ce que je veux un chatbot et quand est-ce que je veux un agent ?
+
+Une question utile avant de décider : **ce dont vous avez besoin, c'est de répondre ou d'agir ?**
+
+Si ce dont vous avez besoin, c'est que quelqu'un parle avec l'utilisateur, donne des informations ou réponde à des questions fréquentes, vous voulez probablement un chatbot. Si ce dont vous avez besoin, c'est qu'un système agisse sur votre opérationnel, coordonne des systèmes internes ou exécute des tâches complètes, vous voulez un agent. Confondre les deux conduit à investir trop dans des projets qui n'en avaient pas besoin, ou trop peu dans des projets qui en avaient besoin.
+
+Chez MindRise, avant de proposer une architecture d'agent à un client, nous nous demandons si le cas justifie la complexité. Parfois la réponse est non : un chatbot bien conçu avec trois intégrations clés résout le problème mieux et à une fraction du coût. D'autres fois la réponse est clairement oui : le problème est systémique, répétitif, multi-étapes, et l'automatiser avec un chatbot reviendrait à tirer sur un char avec un lance-pierre.
+
+La bonne question n'est pas « est-ce que je veux un chatbot ou un agent ? ». C'est « quel type de système mon problème nécessite-t-il vraiment ? ». Si cela vous aide à décider, écrivez-nous. Nous vous donnerons une évaluation honnête avant de proposer quoi que ce soit. Parfois le meilleur conseil consiste à confirmer qu'un chatbot vous suffit ; d'autres fois, c'est de vous expliquer pourquoi vous avez un problème d'agent même sans en connaître le nom.`;
+
 const BODIES: Record<string, Record<Locale, string>> = {
   'ia-on-no': {
     ca: IA_ON_NO_CA,
     es: IA_ON_NO_ES,
     en: IA_ON_NO_EN,
     fr: IA_ON_NO_FR,
+  },
+  'agents-ia-no-son-chatbots': {
+    ca: AGENTS_NO_CHATBOTS_CA,
+    es: AGENTS_NO_CHATBOTS_ES,
+    en: AGENTS_NO_CHATBOTS_EN,
+    fr: AGENTS_NO_CHATBOTS_FR,
   },
 };
 
