@@ -1,3 +1,4 @@
+import ReactMarkdown from 'react-markdown';
 import { Link } from '@/lib/i18n/routing';
 import { BlogCover, ArrowIcon } from '@/components/icons/Icons';
 import type { Post } from '@/lib/blog/posts';
@@ -50,9 +51,7 @@ export function PostPageView({
       <section className="post-body">
         <div className="wrap">
           <div className="post-body__inner reveal">
-            {post.body.map((p, i) => (
-              <p key={i}>{p}</p>
-            ))}
+            <ReactMarkdown>{post.body}</ReactMarkdown>
           </div>
         </div>
       </section>
